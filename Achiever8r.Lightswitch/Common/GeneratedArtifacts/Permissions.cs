@@ -20,6 +20,14 @@ namespace LightSwitchApplication
         /// Provides the ability to manage security for the application.
         /// </summary>
         public const string SecurityAdministration = global::Microsoft.LightSwitch.Security.ApplicationPermissions.SecurityAdministration;
+        /// <summary>
+        /// Provides basic access to minimal functionality
+        /// </summary>
+        public const string GeneralAccess = "LightSwitchApplication:GeneralAccess";
+        /// <summary>
+        /// Provides the ability to manage system level data
+        /// </summary>
+        public const string ApplicationAdministration = "LightSwitchApplication:ApplicationAdministration";
 
         /// <summary>
         /// Gets all permissions defined for the application.  This includes system and user-defined permissions.

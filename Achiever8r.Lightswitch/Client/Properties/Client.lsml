@@ -4,7 +4,7 @@
     DefaultNavigationItem="!module/NavigationItems[Tasks]"
     Name="LightSwitchApplication"
     Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
-    Theme="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanTheme"
+    Theme="MetroThemeExtension:MetroTheme"
     Version="1.0.0.0">
     <Application.Attributes>
       <ModuleNamespace

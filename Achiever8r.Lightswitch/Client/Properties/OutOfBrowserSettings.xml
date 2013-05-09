@@ -1,8 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<OutOfBrowserSettings ShortName="Achiever8r.Lightswitch" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
+﻿<OutOfBrowserSettings ShortName="Achiever8r.Lightswitch" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
   <OutOfBrowserSettings.Blurb>Achiever8r.Lightswitch</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="Achiever8r.Lightswitch" WindowStartupLocation="Manual" Top="0" Left="0"/>
+    <WindowSettings Title="Achiever8r.Lightswitch" Top="0" Left="0" WindowStartupLocation="Manual" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.SecuritySettings>
     <SecuritySettings ElevatedPermissions="Required" />
