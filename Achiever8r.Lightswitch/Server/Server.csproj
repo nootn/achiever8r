@@ -51,6 +51,9 @@
     <NoWarn>1522</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroThemeExtension.Common">
+      <HintPath>..\_Pvt_Extensions\MetroThemeExtension\Server\Reference\MetroThemeExtension.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.LightSwitch.Extensions.Server">
       <HintPath>..\_Pvt_Extensions\Microsoft.LightSwitch.Extensions\ServerGen\Reference\Microsoft.LightSwitch.Extensions.Server.dll</HintPath>
     </Reference>
@@ -161,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserCode\ApplicationDataService.cs" />
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Service.lsml">
@@ -175,11 +179,11 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Web\Achiever8r.Lightswitch.Client.xap" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataLogic\" />
     <Folder Include="DataSources\" />
-    <Folder Include="Web\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>

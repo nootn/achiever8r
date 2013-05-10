@@ -29,7 +29,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="LoginId" ColumnName="LoginId" />
-          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

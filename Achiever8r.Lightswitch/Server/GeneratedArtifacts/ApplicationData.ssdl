@@ -53,7 +53,7 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="LoginId" Type="nvarchar" Nullable="false" MaxLength="255" />
-    <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="255" />
   </EntityType>
   <EntityType Name="Rating">
     <Key>

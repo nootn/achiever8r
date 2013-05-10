@@ -18,14 +18,15 @@
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
-    <ApplicationClientType>Desktop</ApplicationClientType>
-    <ApplicationServerType>LocalHost</ApplicationServerType>
-    <AuthenticationType>None</AuthenticationType>
+    <ApplicationClientType>Browser</ApplicationClientType>
+    <ApplicationServerType>IIS</ApplicationServerType>
+    <AuthenticationType>Windows</AuthenticationType>
     <ApplicationName>Achiever8r.Lightswitch</ApplicationName>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
+    <AllowAllWindowsUsers>false</AllowAllWindowsUsers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -165,6 +166,10 @@
     </_BuildFile>
   </ItemGroup>
   <ItemGroup>
+    <LightSwitchExtension Include="MetroThemeExtension">
+      <Client>METROTHEMEEXTENSION.CLIENT;METROTHEMEEXTENSION.COMMON</Client>
+      <Server>METROTHEMEEXTENSION.COMMON</Server>
+    </LightSwitchExtension>
     <LightSwitchExtension Include="Microsoft.LightSwitch.Cosmopolitan">
       <Client>MICROSOFT.LIGHTSWITCH.COSMOPOLITAN.CLIENT</Client>
     </LightSwitchExtension>

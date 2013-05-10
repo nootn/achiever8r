@@ -32,7 +32,7 @@
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="LoginId" Type="Edm.String" Nullable="false" MaxLength="255" />
-    <Property Name="DisplayName" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="FullName" Type="Edm.String" Nullable="false" MaxLength="255" />
     <NavigationProperty Name="Achievements" Relationship="LightSwitchApplication.Achievement_User" ToRole="Achievement" FromRole="User" />
     <NavigationProperty Name="AchievementNominations" Relationship="LightSwitchApplication.Achievement_User1" ToRole="Achievement" FromRole="User" />
     <NavigationProperty Name="Ratings" Relationship="LightSwitchApplication.Rating_User" ToRole="Rating" FromRole="User" />

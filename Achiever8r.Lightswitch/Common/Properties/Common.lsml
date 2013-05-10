@@ -537,18 +537,30 @@
         Association="Achievement_User"
         FromEnd="Achievement"
         Name="AchievedByUser"
-        ToEnd="User" />
+        ToEnd="User">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Achieved By" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Association="Achievement_User1"
         FromEnd="Achievement"
         Name="NominatedByUser"
-        ToEnd="User" />
+        ToEnd="User">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Nominated By" />
+          <Hidden />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
         Name="NominatedOn"
         PropertyType=":Date">
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <Hidden />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -576,6 +588,10 @@
   </Association>
   <EntityType
     Name="User">
+    <EntityType.Attributes>
+      <SummaryProperty
+        Property="User/Properties[DisplayName]" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -613,12 +629,19 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="DisplayName"
+        Name="FullName"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
           <MaxLength
             Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DisplayName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty

@@ -9,4 +9,636 @@
 
 namespace LightSwitchApplication
 {
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    public sealed partial class AdministerAchievementCategories
+        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass>
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private AdministerAchievementCategories() : base("LightSwitchApplication:AdministerAchievementCategories")
+        {
+            global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.Initialize(this);
+        }
+
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static AdministerAchievementCategories CreateInstance()
+        {
+            return new global::LightSwitchApplication.AdministerAchievementCategories(
+            );
+        }
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AdministerAchievementCategories_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AdministerAchievementCategories_Created();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AdministerAchievementCategories_Activated();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AdministerAchievementCategories_Saving(ref bool handled);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AdministerAchievementCategories_Saved();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AdministerAchievementCategories_Closing(ref bool cancel);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AdministerAchievementCategories_SaveError(global::System.Exception exception, ref bool handled);
+     
+        #region Private Properties
+        
+        /// <summary>
+        /// Gets the Application object for this application.  The Application object provides access to active screens, methods to open screens and access to the current user.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Gets the containing data workspace.  The data workspace provides access to all data sources in the application.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
+            }
+        }
+        
+        #endregion
+ 
+        partial void AchievementCategories_SelectionChanged();
+
+        partial void AchievementCategories_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Loaded(bool succeeded);
+
+        /// <summary>
+        /// Gets the AchievementCategories visual collection. The collection contains all records currently shown on the respective list or grid control.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.AchievementCategory> AchievementCategories
+        {
+            get
+            {
+                return global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.GetValue(this, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySetProperties.AchievementCategories);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public sealed class DetailsClass
+            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySet, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.CommandSet, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.MethodSet>
+        {
+
+            static DetailsClass()
+            {
+                var initializePropertyEntry = global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySetProperties.AchievementCategories;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass>.Entry
+                __AdministerAchievementCategoriesEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass>.Entry(
+                    global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.__AdministerAchievementCategories_InvokeInitializeDataWorkspace,
+                    global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.__AdministerAchievementCategories_InvokeSavingEvent,
+                    global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.__AdministerAchievementCategories_InvokeSavedEvent,
+                    global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.__AdministerAchievementCategories_InvokeClosingEvent,
+                    global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.__AdministerAchievementCategories_InvokeCreated,
+                    global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.__AdministerAchievementCategories_InvokeActivated,
+                    global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.__AdministerAchievementCategories_InvokeSaveErrorEvent);
+            private static void __AdministerAchievementCategories_InvokeInitializeDataWorkspace(global::LightSwitchApplication.AdministerAchievementCategories s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+            {
+                s.AdministerAchievementCategories_InitializeDataWorkspace(saveChangesTo);
+            }
+            private static bool __AdministerAchievementCategories_InvokeSavingEvent(global::LightSwitchApplication.AdministerAchievementCategories s)
+            {
+                bool handled = false;
+                s.AdministerAchievementCategories_Saving(ref handled);
+                return handled;
+            }
+            private static void __AdministerAchievementCategories_InvokeSavedEvent(global::LightSwitchApplication.AdministerAchievementCategories s)
+            {
+                s.AdministerAchievementCategories_Saved();
+            }
+            private static bool __AdministerAchievementCategories_InvokeClosingEvent(global::LightSwitchApplication.AdministerAchievementCategories s)
+            {
+                bool cancel = false;
+                s.AdministerAchievementCategories_Closing(ref cancel);
+                return cancel;
+            }
+            private static void __AdministerAchievementCategories_InvokeCreated(global::LightSwitchApplication.AdministerAchievementCategories s)
+            {
+                s.AdministerAchievementCategories_Created();
+            }
+            private static void __AdministerAchievementCategories_InvokeActivated(global::LightSwitchApplication.AdministerAchievementCategories s)
+            {
+                s.AdministerAchievementCategories_Activated();
+            }
+            private static bool __AdministerAchievementCategories_InvokeSaveErrorEvent(global::LightSwitchApplication.AdministerAchievementCategories s, global::System.Exception ex)
+            {
+                bool handled = false;
+                s.AdministerAchievementCategories_SaveError(ex, ref handled);
+                return handled;
+            }
+
+            public DetailsClass() : base()
+            {
+            }
+
+            public new global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySet Properties
+            {
+                get
+                {
+                    return base.Properties;
+                }
+            }
+
+            public new global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.CommandSet Commands
+            {
+                get
+                {
+                    return base.Commands;
+                }
+            }
+
+            public new global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.MethodSet Methods
+            {
+                get
+                {
+                    return base.Methods;
+                }
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable AchievementCategoriesQuery()
+            {
+                return this.Screen.DataWorkspace.ApplicationData.AchievementCategories;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass, global::LightSwitchApplication.AchievementCategory>.Data _AchievementCategories;
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class PropertySet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass, global::LightSwitchApplication.AchievementCategory> AchievementCategories
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass, global::LightSwitchApplication.AchievementCategory>)base.GetItem(global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySetProperties.AchievementCategories);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class CommandSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class MethodSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class PropertySetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass, global::LightSwitchApplication.AchievementCategory>.Entry
+                    AchievementCategories = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass, global::LightSwitchApplication.AchievementCategory>.Entry(
+                        "AchievementCategories",
+                        global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySetProperties._AchievementCategories_Stub,
+                        global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySetProperties._AchievementCategories_Validate,
+                        global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySetProperties._AchievementCategories_CreateQuery,
+                        global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySetProperties._AchievementCategories_SelectionChanged,
+                        global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySetProperties._AchievementCategories_OnCollectionChanged,
+                        global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass.PropertySetProperties._AchievementCategories_OnLoaded);
+                private static void _AchievementCategories_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.AdministerAchievementCategories, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass, global::LightSwitchApplication.AchievementCategory>.Data> c, global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass d, object sf)
+                {
+                    c(d, ref d._AchievementCategories, sf);
+                }
+                private static void _AchievementCategories_Validate(global::LightSwitchApplication.AdministerAchievementCategories s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.AchievementCategories_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _AchievementCategories_CreateQuery(global::LightSwitchApplication.AdministerAchievementCategories.DetailsClass d, object[] args)
+                {
+                    return d.AchievementCategoriesQuery();
+                }
+                private static void _AchievementCategories_SelectionChanged(global::LightSwitchApplication.AdministerAchievementCategories s)
+                {
+                    s.AchievementCategories_SelectionChanged();
+                }
+                private static void _AchievementCategories_OnCollectionChanged(global::LightSwitchApplication.AdministerAchievementCategories s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.AchievementCategories_Changed(e);
+                }
+                private static void _AchievementCategories_OnLoaded(global::LightSwitchApplication.AdministerAchievementCategories s, bool succeeded)
+                {
+                    s.AchievementCategories_Loaded(succeeded);
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class CommandSetProperties
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class MethodSetProperties
+            {
+            }
+        }
+    }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    public sealed partial class RecentAchievements
+        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass>
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private RecentAchievements() : base("LightSwitchApplication:RecentAchievements")
+        {
+            global::LightSwitchApplication.RecentAchievements.DetailsClass.Initialize(this);
+        }
+
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static RecentAchievements CreateInstance()
+        {
+            return new global::LightSwitchApplication.RecentAchievements(
+            );
+        }
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RecentAchievements_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RecentAchievements_Created();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RecentAchievements_Activated();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RecentAchievements_Saving(ref bool handled);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RecentAchievements_Saved();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RecentAchievements_Closing(ref bool cancel);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RecentAchievements_SaveError(global::System.Exception exception, ref bool handled);
+     
+        #region Private Properties
+        
+        /// <summary>
+        /// Gets the Application object for this application.  The Application object provides access to active screens, methods to open screens and access to the current user.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Gets the containing data workspace.  The data workspace provides access to all data sources in the application.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
+            }
+        }
+        
+        #endregion
+ 
+        partial void Achievements_SelectionChanged();
+
+        partial void Achievements_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Loaded(bool succeeded);
+
+        partial void Ratings_SelectionChanged();
+
+        partial void Ratings_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Loaded(bool succeeded);
+
+        /// <summary>
+        /// Gets the Achievements visual collection. The collection contains all records currently shown on the respective list or grid control.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.Achievement> Achievements
+        {
+            get
+            {
+                return global::LightSwitchApplication.RecentAchievements.DetailsClass.GetValue(this, global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties.Achievements);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Gets the Ratings visual collection. The collection contains all records currently shown on the respective list or grid control.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.Rating> Ratings
+        {
+            get
+            {
+                return global::LightSwitchApplication.RecentAchievements.DetailsClass.GetValue(this, global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties.Ratings);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public sealed class DetailsClass
+            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySet, global::LightSwitchApplication.RecentAchievements.DetailsClass.CommandSet, global::LightSwitchApplication.RecentAchievements.DetailsClass.MethodSet>
+        {
+
+            static DetailsClass()
+            {
+                var initializePropertyEntry = global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties.Achievements;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass>.Entry
+                __RecentAchievementsEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass>.Entry(
+                    global::LightSwitchApplication.RecentAchievements.DetailsClass.__RecentAchievements_InvokeInitializeDataWorkspace,
+                    global::LightSwitchApplication.RecentAchievements.DetailsClass.__RecentAchievements_InvokeSavingEvent,
+                    global::LightSwitchApplication.RecentAchievements.DetailsClass.__RecentAchievements_InvokeSavedEvent,
+                    global::LightSwitchApplication.RecentAchievements.DetailsClass.__RecentAchievements_InvokeClosingEvent,
+                    global::LightSwitchApplication.RecentAchievements.DetailsClass.__RecentAchievements_InvokeCreated,
+                    global::LightSwitchApplication.RecentAchievements.DetailsClass.__RecentAchievements_InvokeActivated,
+                    global::LightSwitchApplication.RecentAchievements.DetailsClass.__RecentAchievements_InvokeSaveErrorEvent);
+            private static void __RecentAchievements_InvokeInitializeDataWorkspace(global::LightSwitchApplication.RecentAchievements s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+            {
+                s.RecentAchievements_InitializeDataWorkspace(saveChangesTo);
+            }
+            private static bool __RecentAchievements_InvokeSavingEvent(global::LightSwitchApplication.RecentAchievements s)
+            {
+                bool handled = false;
+                s.RecentAchievements_Saving(ref handled);
+                return handled;
+            }
+            private static void __RecentAchievements_InvokeSavedEvent(global::LightSwitchApplication.RecentAchievements s)
+            {
+                s.RecentAchievements_Saved();
+            }
+            private static bool __RecentAchievements_InvokeClosingEvent(global::LightSwitchApplication.RecentAchievements s)
+            {
+                bool cancel = false;
+                s.RecentAchievements_Closing(ref cancel);
+                return cancel;
+            }
+            private static void __RecentAchievements_InvokeCreated(global::LightSwitchApplication.RecentAchievements s)
+            {
+                s.RecentAchievements_Created();
+            }
+            private static void __RecentAchievements_InvokeActivated(global::LightSwitchApplication.RecentAchievements s)
+            {
+                s.RecentAchievements_Activated();
+            }
+            private static bool __RecentAchievements_InvokeSaveErrorEvent(global::LightSwitchApplication.RecentAchievements s, global::System.Exception ex)
+            {
+                bool handled = false;
+                s.RecentAchievements_SaveError(ex, ref handled);
+                return handled;
+            }
+
+            public DetailsClass() : base()
+            {
+            }
+
+            public new global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySet Properties
+            {
+                get
+                {
+                    return base.Properties;
+                }
+            }
+
+            public new global::LightSwitchApplication.RecentAchievements.DetailsClass.CommandSet Commands
+            {
+                get
+                {
+                    return base.Commands;
+                }
+            }
+
+            public new global::LightSwitchApplication.RecentAchievements.DetailsClass.MethodSet Methods
+            {
+                get
+                {
+                    return base.Methods;
+                }
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable AchievementsQuery()
+            {
+                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                        global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                            this.Screen.DataWorkspace.ApplicationData.Achievements,
+                            "AchievementCategory"),
+                        "AchievedByUser"),
+                    "NominatedByUser");
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable RatingsQuery()
+            {
+                if (this.Screen.Achievements.SelectedItem == null)
+                {
+                    return null;
+                }
+
+                global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.Rating> loader =
+                    (global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.Rating>)((global::Microsoft.LightSwitch.Details.ILoadableProperty)this.Screen.Achievements.SelectedItem.Details.Properties.Ratings).Loader;
+                if (loader == null)
+                {
+                    return null;
+                }
+
+                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    loader,
+                    "RatedByUser");
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Achievement>.Data _Achievements;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Rating>.Data _Ratings;
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class PropertySet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Achievement> Achievements
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Achievement>)base.GetItem(global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties.Achievements);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Rating> Ratings
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Rating>)base.GetItem(global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties.Ratings);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class CommandSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class MethodSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class PropertySetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Achievement>.Entry
+                    Achievements = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Achievement>.Entry(
+                        "Achievements",
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Achievements_Stub,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Achievements_Validate,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Achievements_CreateQuery,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Achievements_SelectionChanged,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Achievements_OnCollectionChanged,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Achievements_OnLoaded);
+                private static void _Achievements_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.RecentAchievements.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Achievement>.Data> c, global::LightSwitchApplication.RecentAchievements.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Achievements, sf);
+                }
+                private static void _Achievements_Validate(global::LightSwitchApplication.RecentAchievements s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.Achievements_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Achievements_CreateQuery(global::LightSwitchApplication.RecentAchievements.DetailsClass d, object[] args)
+                {
+                    return d.AchievementsQuery();
+                }
+                private static void _Achievements_SelectionChanged(global::LightSwitchApplication.RecentAchievements s)
+                {
+                    s.Achievements_SelectionChanged();
+                }
+                private static void _Achievements_OnCollectionChanged(global::LightSwitchApplication.RecentAchievements s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.Achievements_Changed(e);
+                }
+                private static void _Achievements_OnLoaded(global::LightSwitchApplication.RecentAchievements s, bool succeeded)
+                {
+                    s.Achievements_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Rating>.Entry
+                    Ratings = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Rating>.Entry(
+                        "Ratings",
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Ratings_Stub,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Ratings_Validate,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Ratings_CreateQuery,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Ratings_SelectionChanged,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Ratings_OnCollectionChanged,
+                        global::LightSwitchApplication.RecentAchievements.DetailsClass.PropertySetProperties._Ratings_OnLoaded);
+                private static void _Ratings_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.RecentAchievements.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.RecentAchievements, global::LightSwitchApplication.RecentAchievements.DetailsClass, global::LightSwitchApplication.Rating>.Data> c, global::LightSwitchApplication.RecentAchievements.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Ratings, sf);
+                }
+                private static void _Ratings_Validate(global::LightSwitchApplication.RecentAchievements s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.Ratings_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Ratings_CreateQuery(global::LightSwitchApplication.RecentAchievements.DetailsClass d, object[] args)
+                {
+                    return d.RatingsQuery();
+                }
+                private static void _Ratings_SelectionChanged(global::LightSwitchApplication.RecentAchievements s)
+                {
+                    s.Ratings_SelectionChanged();
+                }
+                private static void _Ratings_OnCollectionChanged(global::LightSwitchApplication.RecentAchievements s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.Ratings_Changed(e);
+                }
+                private static void _Ratings_OnLoaded(global::LightSwitchApplication.RecentAchievements s, bool succeeded)
+                {
+                    s.Ratings_Loaded(succeeded);
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class CommandSetProperties
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class MethodSetProperties
+            {
+            }
+        }
+    }
 }

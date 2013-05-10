@@ -925,14 +925,14 @@ namespace ApplicationData.Implementation
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
         /// <param name="loginId">Initial value of the LoginId property.</param>
-        /// <param name="displayName">Initial value of the DisplayName property.</param>
-        public static User CreateUser(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String loginId, global::System.String displayName)
+        /// <param name="fullName">Initial value of the FullName property.</param>
+        public static User CreateUser(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String loginId, global::System.String fullName)
         {
             User user = new User();
             user.Id = id;
             user.RowVersion = rowVersion;
             user.LoginId = loginId;
-            user.DisplayName = displayName;
+            user.FullName = fullName;
             return user;
         }
 
@@ -1020,24 +1020,24 @@ namespace ApplicationData.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String DisplayName
+        public global::System.String FullName
         {
             get
             {
-                return _DisplayName;
+                return _FullName;
             }
             set
             {
-                OnDisplayNameChanging(value);
-                ReportPropertyChanging("DisplayName");
-                _DisplayName = value;
-                ReportPropertyChanged("DisplayName");
-                OnDisplayNameChanged();
+                OnFullNameChanging(value);
+                ReportPropertyChanging("FullName");
+                _FullName = value;
+                ReportPropertyChanged("FullName");
+                OnFullNameChanged();
             }
         }
-        private global::System.String _DisplayName;
-        partial void OnDisplayNameChanging(global::System.String value);
-        partial void OnDisplayNameChanged();
+        private global::System.String _FullName;
+        partial void OnFullNameChanging(global::System.String value);
+        partial void OnFullNameChanged();
 
         #endregion
 

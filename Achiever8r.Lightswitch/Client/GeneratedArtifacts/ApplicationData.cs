@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 5/9/2013 10:45:27 PM
+// Generation date: 5/10/2013 10:43:35 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -708,15 +708,15 @@ namespace LightSwitchApplication.Implementation
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
         /// <param name="loginId">Initial value of LoginId.</param>
-        /// <param name="displayName">Initial value of DisplayName.</param>
+        /// <param name="fullName">Initial value of FullName.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static User CreateUser(int ID, byte[] rowVersion, string loginId, string displayName)
+        public static User CreateUser(int ID, byte[] rowVersion, string loginId, string fullName)
         {
             User user = new User();
             user.Id = ID;
             user.RowVersion = rowVersion;
             user.LoginId = loginId;
-            user.DisplayName = displayName;
+            user.FullName = fullName;
             return user;
         }
         /// <summary>
@@ -805,31 +805,31 @@ namespace LightSwitchApplication.Implementation
         partial void OnLoginIdChanging(string value);
         partial void OnLoginIdChanged();
         /// <summary>
-        /// There are no comments for Property DisplayName in the schema.
+        /// There are no comments for Property FullName in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string DisplayName
+        public string FullName
         {
             get
             {
-                return this._DisplayName;
+                return this._FullName;
             }
             set
             {
-                this.OnDisplayNameChanging(value);
-                if (object.Equals(this.DisplayName, value))
+                this.OnFullNameChanging(value);
+                if (object.Equals(this.FullName, value))
                 {
                     return;
                 }
-                this._DisplayName = value;
-                this.OnDisplayNameChanged();
-                this.OnPropertyChanged("DisplayName");
+                this._FullName = value;
+                this.OnFullNameChanged();
+                this.OnPropertyChanged("FullName");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _DisplayName;
-        partial void OnDisplayNameChanging(string value);
-        partial void OnDisplayNameChanged();
+        private string _FullName;
+        partial void OnFullNameChanging(string value);
+        partial void OnFullNameChanged();
         /// <summary>
         /// There are no comments for Achievements in the schema.
         /// </summary>

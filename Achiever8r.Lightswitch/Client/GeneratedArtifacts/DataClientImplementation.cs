@@ -253,9 +253,9 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("LoginId");
         }
         
-        partial void OnDisplayNameChanged()
+        partial void OnFullNameChanged()
         {
-            this.___OnPropertyChanged("DisplayName");
+            this.___OnPropertyChanged("FullName");
         }
         
         global::System.Collections.IEnumerable global::LightSwitchApplication.User.DetailsClass.IImplementation.Achievements
