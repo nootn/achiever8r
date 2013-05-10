@@ -11,5 +11,581 @@ namespace LightSwitchApplication
 {
     #region Data Services
     
+    /// <summary>
+    /// Provides members to query and update data in the ApplicationData datasource.
+    /// </summary>
+    public sealed partial class ApplicationDataService
+        : global::LightSwitchApplication.ApplicationData
+    {
+        #region Constructors
+    
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public ApplicationDataService() : base()
+        {
+        }
+    
+        #endregion
+    
+        #region Private Properties
+        
+        /// <summary>
+        /// Gets the Application object for this application.  The Application object provides access to active screens, methods to open screens and access to the current user.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Gets the containing data workspace.  The data workspace provides access to all data sources in the application.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)this.Details.DataWorkspace;
+            }
+        }
+        
+        #endregion
+    
+        #region Server Interceptions Points
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Inserting(global::LightSwitchApplication.AchievementCategory entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Inserted(global::LightSwitchApplication.AchievementCategory entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Updating(global::LightSwitchApplication.AchievementCategory entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Updated(global::LightSwitchApplication.AchievementCategory entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Deleting(global::LightSwitchApplication.AchievementCategory entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Deleted(global::LightSwitchApplication.AchievementCategory entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Validate(global::LightSwitchApplication.AchievementCategory entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementCategories_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.AchievementCategory, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Inserting(global::LightSwitchApplication.Achievement entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Inserted(global::LightSwitchApplication.Achievement entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Updating(global::LightSwitchApplication.Achievement entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Updated(global::LightSwitchApplication.Achievement entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Deleting(global::LightSwitchApplication.Achievement entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Deleted(global::LightSwitchApplication.Achievement entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Validate(global::LightSwitchApplication.Achievement entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Achievements_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Achievement, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_Inserting(global::LightSwitchApplication.User entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_Inserted(global::LightSwitchApplication.User entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_Updating(global::LightSwitchApplication.User entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_Updated(global::LightSwitchApplication.User entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_Deleting(global::LightSwitchApplication.User entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_Deleted(global::LightSwitchApplication.User entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_Validate(global::LightSwitchApplication.User entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Users_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.User, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Inserting(global::LightSwitchApplication.Rating entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Inserted(global::LightSwitchApplication.Rating entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Updating(global::LightSwitchApplication.Rating entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Updated(global::LightSwitchApplication.Rating entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Deleting(global::LightSwitchApplication.Rating entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Deleted(global::LightSwitchApplication.Rating entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Validate(global::LightSwitchApplication.Rating entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Ratings_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Rating, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SaveChanges_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SaveChanges_Executing();
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SaveChanges_Executed();
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SaveChanges_ExecuteFailed(global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Query_Executed(global::Microsoft.LightSwitch.QueryExecutedDescriptor queryDescriptor);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Query_ExecuteFailed(global::Microsoft.LightSwitch.QueryExecuteFailedDescriptor queryDescriptor);
+    
+        #endregion
+    
+        #region Details Class
+    
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        public static new class DetailsClass
+        {
+    
+            static DetailsClass()
+            {
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AchievementCategory>
+                __AchievementCategoriesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.AchievementCategory>(
+                    "AchievementCategories",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__AchievementCategories_Filter);
+            private static bool __AchievementCategories_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.AchievementCategories_CanInsert(ref result);
+                return result;
+            }
+            private static bool __AchievementCategories_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.AchievementCategories_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __AchievementCategories_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.AchievementCategories_CanDelete(ref result);
+                return result;
+            }
+            private static bool __AchievementCategories_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.AchievementCategories_CanRead(ref result);
+                return result;
+            }
+            private static void __AchievementCategories_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.AchievementCategory e)
+            {
+                d.AchievementCategories_Inserting(e);
+            }
+            private static void __AchievementCategories_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.AchievementCategory e)
+            {
+                d.AchievementCategories_Inserted(e);
+            }
+            private static void __AchievementCategories_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.AchievementCategory e)
+            {
+                d.AchievementCategories_Updating(e);
+            }
+            private static void __AchievementCategories_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.AchievementCategory e)
+            {
+                d.AchievementCategories_Updated(e);
+            }
+            private static void __AchievementCategories_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.AchievementCategory e)
+            {
+                d.AchievementCategories_Deleting(e);
+            }
+            private static void __AchievementCategories_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.AchievementCategory e)
+            {
+                d.AchievementCategories_Deleted(e);
+            }
+            private static void __AchievementCategories_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.AchievementCategory e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.AchievementCategories_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.AchievementCategory, bool>> __AchievementCategories_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.AchievementCategory, bool>> filter = null;
+                d.AchievementCategories_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Achievement>
+                __AchievementsEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Achievement>(
+                    "Achievements",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Achievements_Filter);
+            private static bool __Achievements_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Achievements_CanInsert(ref result);
+                return result;
+            }
+            private static bool __Achievements_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Achievements_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __Achievements_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Achievements_CanDelete(ref result);
+                return result;
+            }
+            private static bool __Achievements_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Achievements_CanRead(ref result);
+                return result;
+            }
+            private static void __Achievements_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Achievement e)
+            {
+                d.Achievements_Inserting(e);
+            }
+            private static void __Achievements_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Achievement e)
+            {
+                d.Achievements_Inserted(e);
+            }
+            private static void __Achievements_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Achievement e)
+            {
+                d.Achievements_Updating(e);
+            }
+            private static void __Achievements_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Achievement e)
+            {
+                d.Achievements_Updated(e);
+            }
+            private static void __Achievements_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Achievement e)
+            {
+                d.Achievements_Deleting(e);
+            }
+            private static void __Achievements_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Achievement e)
+            {
+                d.Achievements_Deleted(e);
+            }
+            private static void __Achievements_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Achievement e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.Achievements_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Achievement, bool>> __Achievements_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Achievement, bool>> filter = null;
+                d.Achievements_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.User>
+                __UsersEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.User>(
+                    "Users",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Users_Filter);
+            private static bool __Users_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Users_CanInsert(ref result);
+                return result;
+            }
+            private static bool __Users_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Users_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __Users_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Users_CanDelete(ref result);
+                return result;
+            }
+            private static bool __Users_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Users_CanRead(ref result);
+                return result;
+            }
+            private static void __Users_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.User e)
+            {
+                d.Users_Inserting(e);
+            }
+            private static void __Users_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.User e)
+            {
+                d.Users_Inserted(e);
+            }
+            private static void __Users_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.User e)
+            {
+                d.Users_Updating(e);
+            }
+            private static void __Users_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.User e)
+            {
+                d.Users_Updated(e);
+            }
+            private static void __Users_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.User e)
+            {
+                d.Users_Deleting(e);
+            }
+            private static void __Users_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.User e)
+            {
+                d.Users_Deleted(e);
+            }
+            private static void __Users_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.User e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.Users_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.User, bool>> __Users_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.User, bool>> filter = null;
+                d.Users_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rating>
+                __RatingsEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Rating>(
+                    "Ratings",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Ratings_Filter);
+            private static bool __Ratings_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Ratings_CanInsert(ref result);
+                return result;
+            }
+            private static bool __Ratings_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Ratings_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __Ratings_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Ratings_CanDelete(ref result);
+                return result;
+            }
+            private static bool __Ratings_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.Ratings_CanRead(ref result);
+                return result;
+            }
+            private static void __Ratings_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Rating e)
+            {
+                d.Ratings_Inserting(e);
+            }
+            private static void __Ratings_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Rating e)
+            {
+                d.Ratings_Inserted(e);
+            }
+            private static void __Ratings_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Rating e)
+            {
+                d.Ratings_Updating(e);
+            }
+            private static void __Ratings_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Rating e)
+            {
+                d.Ratings_Updated(e);
+            }
+            private static void __Ratings_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Rating e)
+            {
+                d.Ratings_Deleting(e);
+            }
+            private static void __Ratings_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Rating e)
+            {
+                d.Ratings_Deleted(e);
+            }
+            private static void __Ratings_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.Rating e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.Ratings_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Rating, bool>> __Ratings_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Rating, bool>> filter = null;
+                d.Ratings_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.OperationEntry<global::LightSwitchApplication.ApplicationDataService>
+                __SaveChangesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.OperationEntry<global::LightSwitchApplication.ApplicationDataService>(
+                    "SaveChanges",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__SaveChanges_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__SaveChanges_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__SaveChanges_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__SaveChanges_Failed);
+            private static bool __SaveChanges_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.SaveChanges_CanExecute(ref r);
+                return r;
+            }
+            private static void __SaveChanges_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.SaveChanges_Executing();
+            }
+            private static void __SaveChanges_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.SaveChanges_Executed();
+            }
+            private static void __SaveChanges_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.SaveChanges_ExecuteFailed(ex);
+            }
+    
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryEntry<global::LightSwitchApplication.ApplicationDataService>
+                ___QueryEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryEntry<global::LightSwitchApplication.ApplicationDataService>(
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Query_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Query_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Query_Failed);
+            private static void __Query_Executing(global::LightSwitchApplication.ApplicationDataService d, global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor)
+            {
+                d.Query_Executing(queryDescriptor);
+            }
+            private static void __Query_Executed(global::LightSwitchApplication.ApplicationDataService d, global::Microsoft.LightSwitch.QueryExecutedDescriptor queryDescriptor)
+            {
+                d.Query_Executed(queryDescriptor);
+            }
+            private static void __Query_Failed(global::LightSwitchApplication.ApplicationDataService d, global::Microsoft.LightSwitch.QueryExecuteFailedDescriptor queryDescriptor)
+            {
+                d.Query_ExecuteFailed(queryDescriptor);
+            }
+        }
+    
+        #endregion
+    }
+    
     #endregion
 }

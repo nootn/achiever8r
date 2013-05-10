@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="AchievementCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <NavigationProperty Name="Achievements" Relationship="LightSwitchApplication.Achievement_AchievementCategory" ToRole="Achievement" FromRole="AchievementCategory" />
+  </EntityType>
+  <EntityType Name="Achievement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="NominatedOn" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="Achievement_AchievementCategory" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Achievement_User" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Achievement_User1" Type="Edm.Int32" Nullable="false" />
+    <NavigationProperty Name="AchievementCategory" Relationship="LightSwitchApplication.Achievement_AchievementCategory" ToRole="AchievementCategory" FromRole="Achievement" />
+    <NavigationProperty Name="AchievedByUser" Relationship="LightSwitchApplication.Achievement_User" ToRole="User" FromRole="Achievement" />
+    <NavigationProperty Name="NominatedByUser" Relationship="LightSwitchApplication.Achievement_User1" ToRole="User" FromRole="Achievement" />
+    <NavigationProperty Name="Ratings" Relationship="LightSwitchApplication.Rating_Achievement" ToRole="Rating" FromRole="Achievement" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="LoginId" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="DisplayName" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <NavigationProperty Name="Achievements" Relationship="LightSwitchApplication.Achievement_User" ToRole="Achievement" FromRole="User" />
+    <NavigationProperty Name="AchievementNominations" Relationship="LightSwitchApplication.Achievement_User1" ToRole="Achievement" FromRole="User" />
+    <NavigationProperty Name="Ratings" Relationship="LightSwitchApplication.Rating_User" ToRole="Rating" FromRole="User" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="RatedOn" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="Rating_Achievement" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Rating_User" Type="Edm.Int32" Nullable="false" />
+    <NavigationProperty Name="Achievement" Relationship="LightSwitchApplication.Rating_Achievement" ToRole="Achievement" FromRole="Rating" />
+    <NavigationProperty Name="RatedByUser" Relationship="LightSwitchApplication.Rating_User" ToRole="User" FromRole="Rating" />
+  </EntityType>
+  <Association Name="Achievement_AchievementCategory">
+    <End Role="AchievementCategory" Type="LightSwitchApplication.AchievementCategory" Multiplicity="1" />
+    <End Role="Achievement" Type="LightSwitchApplication.Achievement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AchievementCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Achievement">
+        <PropertyRef Name="Achievement_AchievementCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Achievement_User">
+    <End Role="User" Type="LightSwitchApplication.User" Multiplicity="1" />
+    <End Role="Achievement" Type="LightSwitchApplication.Achievement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Achievement">
+        <PropertyRef Name="Achievement_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Achievement_User1">
+    <End Role="User" Type="LightSwitchApplication.User" Multiplicity="1" />
+    <End Role="Achievement" Type="LightSwitchApplication.Achievement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Achievement">
+        <PropertyRef Name="Achievement_User1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rating_Achievement">
+    <End Role="Achievement" Type="LightSwitchApplication.Achievement" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rating" Type="LightSwitchApplication.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Achievement">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="Rating_Achievement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rating_User">
+    <End Role="User" Type="LightSwitchApplication.User" Multiplicity="1" />
+    <End Role="Rating" Type="LightSwitchApplication.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="Rating_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="AchievementCategories" EntityType="LightSwitchApplication.AchievementCategory" />
+    <EntitySet Name="Achievements" EntityType="LightSwitchApplication.Achievement" />
+    <EntitySet Name="Users" EntityType="LightSwitchApplication.User" />
+    <EntitySet Name="Ratings" EntityType="LightSwitchApplication.Rating" />
+    <AssociationSet Name="Achievement_AchievementCategory" Association="LightSwitchApplication.Achievement_AchievementCategory">
+      <End Role="AchievementCategory" EntitySet="AchievementCategories" />
+      <End Role="Achievement" EntitySet="Achievements" />
+    </AssociationSet>
+    <AssociationSet Name="Achievement_User" Association="LightSwitchApplication.Achievement_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Achievement" EntitySet="Achievements" />
+    </AssociationSet>
+    <AssociationSet Name="Achievement_User1" Association="LightSwitchApplication.Achievement_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Achievement" EntitySet="Achievements" />
+    </AssociationSet>
+    <AssociationSet Name="Rating_Achievement" Association="LightSwitchApplication.Rating_Achievement">
+      <End Role="Achievement" EntitySet="Achievements" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="Rating_User" Association="LightSwitchApplication.Rating_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,11 +1,151 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
-
-  <ServiceApplication Name="LightSwitchServiceApplication"
-                      Version="1.0.0.0">
+  <ServiceApplication
+    Name="LightSwitchServiceApplication"
+    Version="1.0.0.0">
     <ServiceApplication.Attributes>
-      <ModuleNamespace Namespace="LightSwitchApplication" />
+      <ModuleNamespace
+        Namespace="LightSwitchApplication" />
     </ServiceApplication.Attributes>
   </ServiceApplication>
-
+  <DataService
+    DataProvider="EntityFrameworkDataProvider"
+    EntityContainer="LightSwitchCommonModule:ApplicationData"
+    Name="ApplicationDataMapping">
+    <AssociationSetMapping
+      AssociationSet="Achievement_AchievementCategories">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Achievement_AchievementCategories" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_AchievementCategories]/Members[Achievement]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Achievement_AchievementCategory" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_AchievementCategories]/Members[AchievementCategory]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="Achievements">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="Achievement_AchievementCategory"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="Achievement_User"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="Achievement_User1"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="Achievement_Users">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Achievement_Users" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_Users]/Members[Achievement]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Achievement_User" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_Users]/Members[User]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Achievement_User1Set">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Achievement_User1Set" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_User1Set]/Members[Achievement]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Achievement_User1" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_User1Set]/Members[User]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Rating_Achievements">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Rating_Achievements" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Rating_Achievements]/Members[Rating]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Rating_Achievement" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Rating_Achievements]/Members[Achievement]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <EntitySetMapping
+      EntitySet="Ratings">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="Rating_Achievement"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="Rating_User"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="Rating_Users">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Rating_Users" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Rating_Users]/Members[Rating]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Rating_User" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:ApplicationData/Members[Rating_Users]/Members[User]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
 </ModelFragment>

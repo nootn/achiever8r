@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="AchievementCategories" EntityType="ApplicationDataStore.AchievementCategory" store:Type="Tables" Schema="dbo" Table="AchievementCategories" />
+    <EntitySet Name="Achievements" EntityType="ApplicationDataStore.Achievement" store:Type="Tables" Schema="dbo" Table="Achievements" />
+    <EntitySet Name="Users" EntityType="ApplicationDataStore.User" store:Type="Tables" Schema="dbo" Table="Users" />
+    <EntitySet Name="Ratings" EntityType="ApplicationDataStore.Rating" store:Type="Tables" Schema="dbo" Table="Ratings" />
+    <AssociationSet Name="Achievement_AchievementCategory" Association="ApplicationDataStore.Achievement_AchievementCategory">
+      <End Role="AchievementCategory" EntitySet="AchievementCategories" />
+      <End Role="Achievement" EntitySet="Achievements" />
+    </AssociationSet>
+    <AssociationSet Name="Achievement_User" Association="ApplicationDataStore.Achievement_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Achievement" EntitySet="Achievements" />
+    </AssociationSet>
+    <AssociationSet Name="Achievement_User1" Association="ApplicationDataStore.Achievement_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Achievement" EntitySet="Achievements" />
+    </AssociationSet>
+    <AssociationSet Name="Rating_Achievement" Association="ApplicationDataStore.Rating_Achievement">
+      <End Role="Achievement" EntitySet="Achievements" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="Rating_User" Association="ApplicationDataStore.Rating_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AchievementCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Achievement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="NominatedOn" Type="datetime" Nullable="false" />
+    <Property Name="Achievement_AchievementCategory" Type="int" Nullable="false" />
+    <Property Name="Achievement_User" Type="int" Nullable="false" />
+    <Property Name="Achievement_User1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="LoginId" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="RatedOn" Type="datetime" Nullable="false" />
+    <Property Name="Rating_Achievement" Type="int" Nullable="false" />
+    <Property Name="Rating_User" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Achievement_AchievementCategory">
+    <End Role="AchievementCategory" Type="ApplicationDataStore.AchievementCategory" Multiplicity="1" />
+    <End Role="Achievement" Type="ApplicationDataStore.Achievement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AchievementCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Achievement">
+        <PropertyRef Name="Achievement_AchievementCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Achievement_User">
+    <End Role="User" Type="ApplicationDataStore.User" Multiplicity="1" />
+    <End Role="Achievement" Type="ApplicationDataStore.Achievement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Achievement">
+        <PropertyRef Name="Achievement_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Achievement_User1">
+    <End Role="User" Type="ApplicationDataStore.User" Multiplicity="1" />
+    <End Role="Achievement" Type="ApplicationDataStore.Achievement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Achievement">
+        <PropertyRef Name="Achievement_User1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rating_Achievement">
+    <End Role="Achievement" Type="ApplicationDataStore.Achievement" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Rating" Type="ApplicationDataStore.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Achievement">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="Rating_Achievement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rating_User">
+    <End Role="User" Type="ApplicationDataStore.User" Multiplicity="1" />
+    <End Role="Rating" Type="ApplicationDataStore.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="Rating_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

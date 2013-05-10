@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="ApplicationDataObjectContext" StorageEntityContainer="ApplicationDataStore">
+    <EntitySetMapping Name="AchievementCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.AchievementCategory)">
+        <MappingFragment StoreEntitySet="AchievementCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Achievements">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Achievement)">
+        <MappingFragment StoreEntitySet="Achievements">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Achievement_AchievementCategory" ColumnName="Achievement_AchievementCategory" />
+          <ScalarProperty Name="Achievement_User" ColumnName="Achievement_User" />
+          <ScalarProperty Name="Achievement_User1" ColumnName="Achievement_User1" />
+          <ScalarProperty Name="NominatedOn" ColumnName="NominatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ratings">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Rating)">
+        <MappingFragment StoreEntitySet="Ratings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="RatedOn" ColumnName="RatedOn" />
+          <ScalarProperty Name="Rating_Achievement" ColumnName="Rating_Achievement" />
+          <ScalarProperty Name="Rating_User" ColumnName="Rating_User" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
