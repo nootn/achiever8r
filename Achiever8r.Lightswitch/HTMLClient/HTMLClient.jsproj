@@ -40,6 +40,8 @@
     <Content Include="Content\Images\icons-18-white.png" />
     <Content Include="Content\Images\icons-36-black.png" />
     <Content Include="Content\Images\icons-36-white.png" />
+    <Content Include="Content\Images\user-logo.png" />
+    <Content Include="Content\Images\Logo-Main.png" />
     <Content Include="Content\Images\msls-black-icons-18.png" />
     <Content Include="Content\Images\msls-black-icons-36.png" />
     <Content Include="Content\Images\msls-loader-dark.gif" />
@@ -59,7 +61,7 @@
     <Content Include="Content\msls-light.css" />
     <Content Include="default.htm" />
     <Content Include="Content\user-customization.css" />
-    <Content Include="Content\Images\user-logo.png" />
+    <Content Include="Content\Images\user-logo-orig.png" />
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
@@ -85,36 +87,34 @@
   <ItemGroup>
     <LightSwitchModel Include="Properties\Client.lsml">
       <ProjectCritical>true</ProjectCritical>
-    </LightSwitchModel>    
+    </LightSwitchModel>
   </ItemGroup>
-  <ItemGroup>  
+  <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">
-        <SubFolder>Content\Resources\Generated</SubFolder>
+      <SubFolder>Content\Resources\Generated</SubFolder>
     </_ClientBuildFile>
     <_ClientBuildFile Include="GeneratedArtifacts\data.js">
-        <SubFolder>Scripts\Generated</SubFolder>
+      <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
     <_ClientBuildFile Include="GeneratedArtifacts\viewModel.js">
-        <SubFolder>Scripts\Generated</SubFolder>
+      <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
     <_ClientBuildFile Include="GeneratedArtifacts\usercode.js">
-        <SubFolder>Scripts\Generated</SubFolder>
+      <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
     <_ClientBuildFile Include="GeneratedArtifacts\resources.js">
       <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v3.0\MobileClient\Microsoft.LightSwitch.MobileClient.targets"/>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v3.0\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v3.0\Microsoft.LightSwitch.Build.Tasks.targets" />
-
-    <!-- Redefine the targets to be empty -->
-    <Target Name="GetXapOutputFile" />
-
-    <PropertyGroup>
-      <AppxPackage>false</AppxPackage>
-      <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
-    </PropertyGroup>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- Redefine the targets to be empty -->
+  <Target Name="GetXapOutputFile" />
+  <PropertyGroup>
+    <AppxPackage>false</AppxPackage>
+    <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
