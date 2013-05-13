@@ -2,6 +2,7 @@
 <ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
   <Application
     DefaultNavigationItem="!module/NavigationItems[Tasks]"
+    Logo="Microsoft.LightSwitch.UserImageResources::Resources\Logo-Main.png"
     Name="LightSwitchApplication"
     Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
     Theme="MetroThemeExtension:MetroTheme"
@@ -743,6 +744,10 @@
               Kind="Collection"
               Name="Ratings"
               View=":DataGrid">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="R8ings" />
+              </ContentItem.Attributes>
               <ContentItem.CommandItems>
                 <ContentItem
                   Kind="Command"

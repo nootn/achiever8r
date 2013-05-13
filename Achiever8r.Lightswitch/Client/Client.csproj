@@ -195,6 +195,11 @@
     <Folder Include="DataSources\" />
     <Folder Include="Screens\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Icon-Main.png" />
+    <Resource Include="Resources\R8.png" />
+    <Resource Include="Resources\Logo-Main.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />
   <Target Name="BeforeBuild">

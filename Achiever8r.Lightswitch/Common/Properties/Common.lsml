@@ -695,6 +695,10 @@
   </Association>
   <EntityType
     Name="Rating">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="R8ing" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -728,6 +732,8 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <DisplayName
+            Value="R8ed On" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -739,7 +745,12 @@
         Association="Rating_User"
         FromEnd="Rating"
         Name="RatedByUser"
-        ToEnd="User" />
+        ToEnd="User">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="R8ed By" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
