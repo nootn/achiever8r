@@ -7,20 +7,21 @@
     </ProductVersion>
     <SchemaVersion>
     </SchemaVersion>
-    <ProjectTypeGuids>{01074E5A-9000-460e-AB81-3A9263818D40};{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{DA98106F-DEFA-4A62-8804-0BD2F166A45D};{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{6D4A6659-E42F-44FB-87F3-F2697E7F5425}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>LightSwitchApplication</RootNamespace>
     <AssemblyName>Application.Common</AssemblyName>
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
-    <LightSwitchVersion>v2.0</LightSwitchVersion>
+    <LightSwitchVersion>v3.0</LightSwitchVersion>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>$supported_culture$</SupportedCultures>
     <XapOutputs>false</XapOutputs>
-    <LightSwitchProjectType>Common</LightSwitchProjectType>
     <LightSwitchPath Condition=" '$(LightSwitchPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\11.0@InstallDir)</LightSwitchPath>
+    <LightSwitchProjectTypeV3>Common</LightSwitchProjectTypeV3>
+    <DefaultLanguage>en-US</DefaultLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

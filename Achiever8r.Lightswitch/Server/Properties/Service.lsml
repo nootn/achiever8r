@@ -8,9 +8,789 @@
         Namespace="LightSwitchApplication" />
     </ServiceApplication.Attributes>
   </ServiceApplication>
+  <EntityContainerGroup
+    Name="DataWorkspace">
+    <EntityContainerGroupProperty
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData"
+      Name="SecurityData">
+      <EntityContainerGroupProperty.Attributes>
+        <Generated />
+        <DisplayName
+          Value="Security Data" />
+        <Description
+          Value="Service that provides access to security-related data." />
+      </EntityContainerGroupProperty.Attributes>
+    </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      EntityContainer="ApplicationData"
+      Name="ApplicationData" />
+  </EntityContainerGroup>
+  <EntityContainer
+    IsIntrinsic="True"
+    Name="ApplicationData">
+    <SubmitOperation
+      Name="SaveChanges" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="AchievementCategory"
+      Name="AchievementCategories" />
+    <QueryOperation
+      Name="AchievementCategories_Single"
+      ReturnType="AchievementCategory">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="AchievementCategories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="AchievementCategories_SingleOrDefault"
+      ReturnType="AchievementCategory">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="AchievementCategories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Achievement"
+      Name="Achievements" />
+    <QueryOperation
+      Name="Achievements_Single"
+      ReturnType="Achievement">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Achievements" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Achievements_SingleOrDefault"
+      ReturnType="Achievement">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Achievements" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="Achievement_AchievementCategory"
+      Name="Achievement_AchievementCategories">
+      <AssociationSetEnd
+        EntitySet="Achievements"
+        Name="Achievement" />
+      <AssociationSetEnd
+        EntitySet="AchievementCategories"
+        Name="AchievementCategory" />
+    </AssociationSet>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="User"
+      Name="Users" />
+    <QueryOperation
+      Name="Users_Single"
+      ReturnType="User">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Users" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Users_SingleOrDefault"
+      ReturnType="User">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Users" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="Achievement_User"
+      Name="Achievement_Users">
+      <AssociationSetEnd
+        EntitySet="Achievements"
+        Name="Achievement" />
+      <AssociationSetEnd
+        EntitySet="Users"
+        Name="User" />
+    </AssociationSet>
+    <AssociationSet
+      Association="Achievement_User1"
+      Name="Achievement_User1Set">
+      <AssociationSetEnd
+        EntitySet="Achievements"
+        Name="Achievement" />
+      <AssociationSetEnd
+        EntitySet="Users"
+        Name="User" />
+    </AssociationSet>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Rating"
+      Name="Ratings" />
+    <QueryOperation
+      Name="Ratings_Single"
+      ReturnType="Rating">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Ratings" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Ratings_SingleOrDefault"
+      ReturnType="Rating">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Ratings" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Association="Rating_Achievement"
+      Name="Rating_Achievements">
+      <AssociationSetEnd
+        EntitySet="Ratings"
+        Name="Rating" />
+      <AssociationSetEnd
+        EntitySet="Achievements"
+        Name="Achievement" />
+    </AssociationSet>
+    <AssociationSet
+      Association="Rating_User"
+      Name="Rating_Users">
+      <AssociationSetEnd
+        EntitySet="Ratings"
+        Name="Rating" />
+      <AssociationSetEnd
+        EntitySet="Users"
+        Name="User" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType
+    Name="AchievementCategory">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Description"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="Achievement_AchievementCategory"
+        FromEnd="AchievementCategory"
+        Name="Achievements"
+        ToEnd="Achievement" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="Achievement">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Description"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="Achievement_AchievementCategory"
+        FromEnd="Achievement"
+        Name="AchievementCategory"
+        ToEnd="AchievementCategory" />
+      <NavigationProperty
+        Association="Achievement_User"
+        FromEnd="Achievement"
+        Name="AchievedByUser"
+        ToEnd="User">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Achieved By" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <NavigationProperty
+        Association="Achievement_User1"
+        FromEnd="Achievement"
+        Name="NominatedByUser"
+        ToEnd="User">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Nominated By" />
+          <Hidden />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <EntityProperty
+        Name="NominatedOn"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <Hidden />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="Rating_Achievement"
+        FromEnd="Achievement"
+        Name="Ratings"
+        ToEnd="Rating" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="User">
+    <EntityType.Attributes></EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LoginId"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FullName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DisplayName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="Achievement_User"
+        FromEnd="User"
+        Name="Achievements"
+        ToEnd="Achievement" />
+      <NavigationProperty
+        Association="Achievement_User1"
+        FromEnd="User"
+        Name="AchievementNominations"
+        ToEnd="Achievement" />
+      <NavigationProperty
+        Association="Rating_User"
+        FromEnd="User"
+        Name="Ratings"
+        ToEnd="Rating" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="Rating">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="R8ing" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RatedOn"
+        PropertyType=":DateTime">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <DisplayName
+            Value="R8ed On" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="Rating_Achievement"
+        FromEnd="Rating"
+        Name="Achievement"
+        ToEnd="Achievement" />
+      <NavigationProperty
+        Association="Rating_User"
+        FromEnd="Rating"
+        Name="RatedByUser"
+        ToEnd="User">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="R8ed By" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="Achievement_AchievementCategory">
+    <AssociationEnd
+      EntityType="Achievement"
+      Multiplicity="Many"
+      Name="Achievement" />
+    <AssociationEnd
+      EntityType="AchievementCategory"
+      Multiplicity="One"
+      Name="AchievementCategory">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="Achievement_User">
+    <AssociationEnd
+      EntityType="Achievement"
+      Multiplicity="Many"
+      Name="Achievement" />
+    <AssociationEnd
+      EntityType="User"
+      Multiplicity="One"
+      Name="User">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="Achievement_User1">
+    <AssociationEnd
+      EntityType="Achievement"
+      Multiplicity="Many"
+      Name="Achievement" />
+    <AssociationEnd
+      EntityType="User"
+      Multiplicity="One"
+      Name="User">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="Rating_Achievement">
+    <AssociationEnd
+      EntityType="Rating"
+      Multiplicity="Many"
+      Name="Rating" />
+    <AssociationEnd
+      EntityType="Achievement"
+      Multiplicity="One"
+      Name="Achievement">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="Rating_User">
+    <AssociationEnd
+      EntityType="Rating"
+      Multiplicity="Many"
+      Name="Rating" />
+    <AssociationEnd
+      EntityType="User"
+      Multiplicity="One"
+      Name="User">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Permission
+    Name="GeneralAccess">
+    <Permission.Attributes>
+      <DisplayName
+        Value="General Access" />
+      <Description
+        Value="Provides basic access to minimal functionality" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="ApplicationAdministration">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Application Administration" />
+      <Description
+        Value="Provides the ability to manage system level data" />
+    </Permission.Attributes>
+  </Permission>
+  <GlobalAttributeGroup
+    Name="LightSwitchServiceApplicationGroup">
+    <GlobalAttributeGroup.Attributes>
+      <AutomaticDisplayName
+        Expression="(\p{Ll})(\p{Lu})|_+"
+        Replacement="$1 $2" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
   <DataService
     DataProvider="EntityFrameworkDataProvider"
-    EntityContainer="LightSwitchCommonModule:ApplicationData"
+    EntityContainer="ApplicationData"
     Name="ApplicationDataMapping">
     <AssociationSetMapping
       AssociationSet="Achievement_AchievementCategories">
@@ -18,14 +798,14 @@
         <SsdlAssociationSet
           Name="Achievement_AchievementCategories" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_AchievementCategories]/Members[Achievement]">
+          End="ApplicationData/Members[Achievement_AchievementCategories]/Members[Achievement]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Achievement_AchievementCategory" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_AchievementCategories]/Members[AchievementCategory]">
+          End="ApplicationData/Members[Achievement_AchievementCategories]/Members[AchievementCategory]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -56,14 +836,14 @@
         <SsdlAssociationSet
           Name="Achievement_Users" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_Users]/Members[Achievement]">
+          End="ApplicationData/Members[Achievement_Users]/Members[Achievement]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Achievement_User" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_Users]/Members[User]">
+          End="ApplicationData/Members[Achievement_Users]/Members[User]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -77,14 +857,14 @@
         <SsdlAssociationSet
           Name="Achievement_User1Set" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_User1Set]/Members[Achievement]">
+          End="ApplicationData/Members[Achievement_User1Set]/Members[Achievement]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Achievement_User1" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Achievement_User1Set]/Members[User]">
+          End="ApplicationData/Members[Achievement_User1Set]/Members[User]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -98,14 +878,14 @@
         <SsdlAssociationSet
           Name="Rating_Achievements" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Rating_Achievements]/Members[Rating]">
+          End="ApplicationData/Members[Rating_Achievements]/Members[Rating]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Rating_Achievement" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Rating_Achievements]/Members[Achievement]">
+          End="ApplicationData/Members[Rating_Achievements]/Members[Achievement]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -132,14 +912,14 @@
         <SsdlAssociationSet
           Name="Rating_Users" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Rating_Users]/Members[Rating]">
+          End="ApplicationData/Members[Rating_Users]/Members[Rating]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Rating_User" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:ApplicationData/Members[Rating_Users]/Members[User]">
+          End="ApplicationData/Members[Rating_Users]/Members[User]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />

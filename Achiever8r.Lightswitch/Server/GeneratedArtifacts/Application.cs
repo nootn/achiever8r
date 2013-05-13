@@ -12,14 +12,14 @@
 
 namespace LightSwitchApplication
 {
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     public sealed partial class Application
         : global::Microsoft.LightSwitch.Framework.Server.ServerApplication<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass, global::LightSwitchApplication.DataWorkspace>
     {
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public Application(global::Microsoft.LightSwitch.Model.IServiceApplicationDefinition applicationDefinition, global::Microsoft.LightSwitch.Threading.IDispatcher logicDispatcher) : base(applicationDefinition, logicDispatcher)
         {
-            global::LightSwitchApplication.Application.DetailsClass.Initialize(this);
         }
 
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -35,7 +35,7 @@ namespace LightSwitchApplication
         }
 
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public sealed class DetailsClass
             : global::Microsoft.LightSwitch.Details.Framework.Server.ServerApplicationDetails<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass, global::LightSwitchApplication.Application.DetailsClass.PropertySet, global::LightSwitchApplication.Application.DetailsClass.CommandSet, global::LightSwitchApplication.Application.DetailsClass.MethodSet>
@@ -83,7 +83,7 @@ namespace LightSwitchApplication
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public sealed class PropertySet
                 : global::Microsoft.LightSwitch.Details.Framework.Server.ServerApplicationPropertySet<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>
@@ -92,7 +92,7 @@ namespace LightSwitchApplication
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public sealed class CommandSet
                 : global::Microsoft.LightSwitch.Details.Framework.Server.ServerApplicationCommandSet<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>
@@ -101,7 +101,7 @@ namespace LightSwitchApplication
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public sealed class MethodSet
                 : global::Microsoft.LightSwitch.Details.Framework.Server.ServerApplicationMethodSet<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>
@@ -110,7 +110,7 @@ namespace LightSwitchApplication
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class PropertySetProperties
             {
@@ -118,7 +118,7 @@ namespace LightSwitchApplication
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class CommandSetProperties
             {
@@ -126,7 +126,7 @@ namespace LightSwitchApplication
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class MethodSetProperties
             {
@@ -135,9 +135,14 @@ namespace LightSwitchApplication
 
         }
     }
-}
-namespace LightSwitchApplication
-{
+
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public sealed class ServerApplicationContext
+        : global::Microsoft.LightSwitch.Framework.Server.ServerApplicationContext<global::LightSwitchApplication.ServerApplicationContext, global::LightSwitchApplication.Application, global::LightSwitchApplication.DataWorkspace>
+    {
+    }
+    
     [global::System.ComponentModel.Composition.Export(typeof(global::Microsoft.LightSwitch.Model.IModuleDefinitionLoader))]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -145,16 +150,35 @@ namespace LightSwitchApplication
     [global::Microsoft.LightSwitch.Model.ModuleDefinitionLoader("LightSwitchServiceApplication")]
     public class ServiceModuleLoader : global::Microsoft.LightSwitch.Model.IModuleDefinitionLoader
     {
+        private bool resourceManagerChecked;
+        private global::System.Resources.ResourceManager resourceManager;
+    
         public global::System.Resources.ResourceManager GetModelResourceManager()
         {
-            return null;
+            if (resourceManagerChecked == false)
+            {
+                global::System.Reflection.Assembly assembly = global::System.Reflection.Assembly.GetExecutingAssembly();
+                
+                foreach (string resourceName in assembly.GetManifestResourceNames()) 
+                {
+                    if (resourceName.EndsWith("Service.resources", global::System.StringComparison.OrdinalIgnoreCase)) 
+                    {
+                        string resxName = resourceName.Substring(0, resourceName.Length - ".resources".Length);
+                        resourceManager = new global::System.Resources.ResourceManager(resxName, assembly);
+                        break;
+                    }
+                }
+                resourceManagerChecked = true;
+            }
+    
+            return resourceManager;
         }
-
+    
         public global::System.Collections.Generic.IEnumerable<global::System.IO.Stream> LoadModelFragments()
         {
             global::System.Reflection.Assembly assembly = global::System.Reflection.Assembly.GetExecutingAssembly();
             global::System.Collections.Generic.List<global::System.IO.Stream> streams = new global::System.Collections.Generic.List<global::System.IO.Stream>();
-
+    
             foreach (string resourceName in assembly.GetManifestResourceNames())
             {
                 if (resourceName.EndsWith(".lsml", global::System.StringComparison.OrdinalIgnoreCase))
@@ -162,7 +186,7 @@ namespace LightSwitchApplication
                     streams.Add(assembly.GetManifestResourceStream(resourceName));
                 }
             }
-
+    
             return streams;
         }
     }

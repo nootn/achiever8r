@@ -111,7 +111,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
     <EntitySet Name="AchievementCategories" EntityType="LightSwitchApplication.AchievementCategory" />
     <EntitySet Name="Achievements" EntityType="LightSwitchApplication.Achievement" />
     <EntitySet Name="Users" EntityType="LightSwitchApplication.User" />

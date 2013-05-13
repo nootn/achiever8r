@@ -12,7 +12,7 @@ namespace LightSwitchApplication.Implementation
     [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
     [global::System.ComponentModel.Composition.Export(typeof(global::Microsoft.LightSwitch.ServerGenerated.IServerApplicationFactory))]
     [global::System.ComponentModel.Composition.PartCreationPolicy(global::System.ComponentModel.Composition.CreationPolicy.Shared)]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed class ApplicationFactory
         : global::Microsoft.LightSwitch.ServerGenerated.Implementation.ServerApplicationFactory
@@ -21,13 +21,17 @@ namespace LightSwitchApplication.Implementation
         {
             return new global::LightSwitchApplication.Application(applicationDefinition, logicDispatcher);
         }
+        public override global::Microsoft.LightSwitch.Server.IServerApplicationContext CreateContext()
+        {
+            return new global::LightSwitchApplication.ServerApplicationContext();
+        }
     }
 
     [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
     [global::System.ComponentModel.Composition.Export(typeof(global::Microsoft.LightSwitch.IModuleFactory))]
     [global::System.ComponentModel.Composition.PartCreationPolicy(global::System.ComponentModel.Composition.CreationPolicy.Shared)]
     [global::Microsoft.LightSwitch.Framework.Base.ModuleFactory("LightSwitchServiceApplication")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed class ModuleFactory
         : global::Microsoft.LightSwitch.Framework.Base.ModuleFactory

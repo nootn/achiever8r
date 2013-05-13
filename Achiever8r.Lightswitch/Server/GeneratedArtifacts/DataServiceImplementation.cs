@@ -11,26 +11,26 @@ using global::System.Linq;
 
 namespace LightSwitchApplication.Implementation
 {
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public class ApplicationDataDataService
-        : global::Microsoft.LightSwitch.ServerGenerated.Implementation.DataService<global::ApplicationData.Implementation.ApplicationDataObjectContext>
+        : global::Microsoft.LightSwitch.ServerGenerated.Implementation.DataService<global::LightSwitchApplication.Implementation.ApplicationData>
     {
     
         public ApplicationDataDataService() : base()
         {
         }
     
-        protected override global::Microsoft.LightSwitch.IDataService CreateDataService()
+        protected override global::Microsoft.LightSwitch.IDataService GetDataService(global::Microsoft.LightSwitch.IDataWorkspace dataWorkspace)
         {
-            return new global::LightSwitchApplication.DataWorkspace().ApplicationData;
+            return ((global::LightSwitchApplication.DataWorkspace)dataWorkspace).ApplicationData;
         }
     }
     
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public class ApplicationDataServiceImplementation
-        : global::Microsoft.LightSwitch.ServerGenerated.Implementation.DataServiceImplementation<global::ApplicationData.Implementation.ApplicationDataObjectContext>
+        : global::Microsoft.LightSwitch.ServerGenerated.Implementation.DataServiceImplementation<global::LightSwitchApplication.Implementation.ApplicationData>
     {
         public ApplicationDataServiceImplementation(global::Microsoft.LightSwitch.IDataService dataService) : base(dataService)
         {
@@ -42,52 +42,53 @@ namespace LightSwitchApplication.Implementation
     #region Protected Methods
         protected override object CreateObject(global::System.Type type)
         {
-            if (type == typeof(global::ApplicationData.Implementation.AchievementCategory))
+            if (type == typeof(global::LightSwitchApplication.Implementation.AchievementCategory))
             {
-                return new global::ApplicationData.Implementation.AchievementCategory();
+                return new global::LightSwitchApplication.Implementation.AchievementCategory();
             }
-            if (type == typeof(global::ApplicationData.Implementation.Achievement))
+            if (type == typeof(global::LightSwitchApplication.Implementation.Achievement))
             {
-                return new global::ApplicationData.Implementation.Achievement();
+                return new global::LightSwitchApplication.Implementation.Achievement();
             }
-            if (type == typeof(global::ApplicationData.Implementation.User))
+            if (type == typeof(global::LightSwitchApplication.Implementation.User))
             {
-                return new global::ApplicationData.Implementation.User();
+                return new global::LightSwitchApplication.Implementation.User();
             }
-            if (type == typeof(global::ApplicationData.Implementation.Rating))
+            if (type == typeof(global::LightSwitchApplication.Implementation.Rating))
             {
-                return new global::ApplicationData.Implementation.Rating();
+                return new global::LightSwitchApplication.Implementation.Rating();
             }
     
             return base.CreateObject(type);
         }
     
-        protected override global::ApplicationData.Implementation.ApplicationDataObjectContext CreateObjectContext()
+        protected override global::LightSwitchApplication.Implementation.ApplicationData CreateObjectContext()
         {
             string assemblyName = global::System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
-            return new global::ApplicationData.Implementation.ApplicationDataObjectContext(base.GetEntityConnectionString(
-                "_IntrinsicData", 
-                "res://" + assemblyName + "/ApplicationData.csdl|res://" + assemblyName + "/ApplicationData.ssdl|res://" + assemblyName + "/ApplicationData.msl", 
-                "System.Data.SqlClient"));
+            return new global::LightSwitchApplication.Implementation.ApplicationData(this.GetEntityConnectionString(
+                "_IntrinsicData",
+                "res://" + assemblyName + "/ApplicationData.csdl|res://" + assemblyName + "/ApplicationData.ssdl|res://" + assemblyName + "/ApplicationData.msl",
+                "System.Data.SqlClient",
+                true));
         }
     
         protected override global::Microsoft.LightSwitch.Internal.IEntityImplementation CreateEntityImplementation<T>()
         {
             if (typeof(T) == typeof(global::LightSwitchApplication.AchievementCategory))
             {
-                return new global::ApplicationData.Implementation.AchievementCategory();
+                return new global::LightSwitchApplication.Implementation.AchievementCategory();
             }
             if (typeof(T) == typeof(global::LightSwitchApplication.Achievement))
             {
-                return new global::ApplicationData.Implementation.Achievement();
+                return new global::LightSwitchApplication.Implementation.Achievement();
             }
             if (typeof(T) == typeof(global::LightSwitchApplication.User))
             {
-                return new global::ApplicationData.Implementation.User();
+                return new global::LightSwitchApplication.Implementation.User();
             }
             if (typeof(T) == typeof(global::LightSwitchApplication.Rating))
             {
-                return new global::ApplicationData.Implementation.Rating();
+                return new global::LightSwitchApplication.Implementation.Rating();
             }
             return null;
         }
@@ -99,15 +100,15 @@ namespace LightSwitchApplication.Implementation
     #region DataServiceImplementationFactory
     [global::System.ComponentModel.Composition.PartCreationPolicy(global::System.ComponentModel.Composition.CreationPolicy.Shared)]
     [global::System.ComponentModel.Composition.Export(typeof(global::Microsoft.LightSwitch.Internal.IDataServiceFactory))]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public class DataServiceFactory :
+    public class __DataServiceFactory :
         global::Microsoft.LightSwitch.ServerGenerated.Implementation.DataServiceFactory
     {
     
         protected override global::Microsoft.LightSwitch.IDataService CreateDataService(global::System.Type dataServiceType)
         {
-            if (dataServiceType == typeof(global::LightSwitchApplication.ApplicationData))
+            if (dataServiceType == typeof(global::LightSwitchApplication.ApplicationDataService))
             {
                 return new global::LightSwitchApplication.ApplicationDataService();
             }
@@ -116,7 +117,7 @@ namespace LightSwitchApplication.Implementation
     
         protected override global::Microsoft.LightSwitch.Internal.IDataServiceImplementation CreateDataServiceImplementation<TDataService>(TDataService dataService)
         {
-            if (typeof(TDataService) == typeof(global::LightSwitchApplication.ApplicationData))
+            if (typeof(TDataService) == typeof(global::LightSwitchApplication.ApplicationDataService))
             {
                 return new global::LightSwitchApplication.Implementation.ApplicationDataServiceImplementation(dataService);
             }
@@ -127,7 +128,7 @@ namespace LightSwitchApplication.Implementation
     
     [global::System.ComponentModel.Composition.PartCreationPolicy(global::System.ComponentModel.Composition.CreationPolicy.Shared)]
     [global::System.ComponentModel.Composition.Export(typeof(global::Microsoft.LightSwitch.Internal.ITypeMappingProvider))]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public class __TypeMapping
         : global::Microsoft.LightSwitch.Internal.ITypeMappingProvider
@@ -136,29 +137,24 @@ namespace LightSwitchApplication.Implementation
         {
             if (typeof(global::LightSwitchApplication.AchievementCategory) == definitionType)
             {
-                return typeof(global::ApplicationData.Implementation.AchievementCategory);
+                return typeof(global::LightSwitchApplication.Implementation.AchievementCategory);
             }
             if (typeof(global::LightSwitchApplication.Achievement) == definitionType)
             {
-                return typeof(global::ApplicationData.Implementation.Achievement);
+                return typeof(global::LightSwitchApplication.Implementation.Achievement);
             }
             if (typeof(global::LightSwitchApplication.User) == definitionType)
             {
-                return typeof(global::ApplicationData.Implementation.User);
+                return typeof(global::LightSwitchApplication.Implementation.User);
             }
             if (typeof(global::LightSwitchApplication.Rating) == definitionType)
             {
-                return typeof(global::ApplicationData.Implementation.Rating);
+                return typeof(global::LightSwitchApplication.Implementation.Rating);
             }
             return null;
         }
     }
-}
-
-namespace ApplicationData.Implementation
-{
-
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public partial class AchievementCategory :
         global::LightSwitchApplication.AchievementCategory.DetailsClass.IImplementation
@@ -199,7 +195,7 @@ namespace ApplicationData.Implementation
         #endregion
     }
     
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public partial class Achievement :
         global::LightSwitchApplication.Achievement.DetailsClass.IImplementation
@@ -213,7 +209,7 @@ namespace ApplicationData.Implementation
             }
             set
             {
-                this.AchievementCategory = (global::ApplicationData.Implementation.AchievementCategory)value;
+                this.AchievementCategory = (global::LightSwitchApplication.Implementation.AchievementCategory)value;
                 if (this.__host != null)
                 {
                     this.__host.RaisePropertyChanged("AchievementCategory");
@@ -229,7 +225,7 @@ namespace ApplicationData.Implementation
             }
             set
             {
-                this.AchievedByUser = (global::ApplicationData.Implementation.User)value;
+                this.AchievedByUser = (global::LightSwitchApplication.Implementation.User)value;
                 if (this.__host != null)
                 {
                     this.__host.RaisePropertyChanged("AchievedByUser");
@@ -245,7 +241,7 @@ namespace ApplicationData.Implementation
             }
             set
             {
-                this.NominatedByUser = (global::ApplicationData.Implementation.User)value;
+                this.NominatedByUser = (global::LightSwitchApplication.Implementation.User)value;
                 if (this.__host != null)
                 {
                     this.__host.RaisePropertyChanged("NominatedByUser");
@@ -312,7 +308,7 @@ namespace ApplicationData.Implementation
         #endregion
     }
     
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public partial class User :
         global::LightSwitchApplication.User.DetailsClass.IImplementation
@@ -369,7 +365,7 @@ namespace ApplicationData.Implementation
         #endregion
     }
     
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public partial class Rating :
         global::LightSwitchApplication.Rating.DetailsClass.IImplementation
@@ -383,7 +379,7 @@ namespace ApplicationData.Implementation
             }
             set
             {
-                this.Achievement = (global::ApplicationData.Implementation.Achievement)value;
+                this.Achievement = (global::LightSwitchApplication.Implementation.Achievement)value;
                 if (this.__host != null)
                 {
                     this.__host.RaisePropertyChanged("Achievement");
@@ -399,7 +395,7 @@ namespace ApplicationData.Implementation
             }
             set
             {
-                this.RatedByUser = (global::ApplicationData.Implementation.User)value;
+                this.RatedByUser = (global::LightSwitchApplication.Implementation.User)value;
                 if (this.__host != null)
                 {
                     this.__host.RaisePropertyChanged("RatedByUser");

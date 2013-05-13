@@ -6,7 +6,8 @@
     Name="LightSwitchApplication"
     Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
     Theme="MetroThemeExtension:MetroTheme"
-    Version="1.0.0.0">
+    Version="1.0.0.0"
+    TargetPlatform="RichClient">
     <Application.Attributes>
       <ModuleNamespace
         Namespace="LightSwitchApplication" />
@@ -63,11 +64,116 @@
       Name="ScreenCommandShowRecentAchievements"
       Target="!module/Methods[ShowRecentAchievements]" />
   </Application>
+  <EntityContainerGroup
+    Name="DataWorkspace">
+    <EntityContainerGroupProperty
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData"
+      Name="SecurityData">
+      <EntityContainerGroupProperty.Attributes>
+        <Generated />
+        <DisplayName
+          Value="Security Data" />
+        <Description
+          Value="Service that provides access to security-related data." />
+      </EntityContainerGroupProperty.Attributes>
+    </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      EntityContainer="ApplicationData"
+      Name="ApplicationData" />
+  </EntityContainerGroup>
+  <EntityContainer>
+    <EntityContainer.Attributes>
+      <Proxy
+        Target="ServiceInterface:ApplicationData" />
+    </EntityContainer.Attributes>
+  </EntityContainer>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:AchievementCategory" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Achievement" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:User" />
+      <SummaryProperty
+        Property="User/Properties[DisplayName]" />
+    </EntityType.Attributes>
+    <EntityType.Properties>
+      <EntityProperty>
+        <EntityProperty.Attributes>
+          <Proxy
+            Target="LightSwitchServiceApplication:User/Properties[DisplayName]" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Rating" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Achievement_AchievementCategory" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Achievement_User" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Achievement_User1" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Rating_Achievement" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Rating_User" />
+    </Association.Attributes>
+  </Association>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:GeneralAccess" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ApplicationAdministration" />
+    </Permission.Attributes>
+  </Permission>
+  <GlobalAttributeGroup>
+    <GlobalAttributeGroup.Attributes>
+      <Proxy
+        Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
   <Screen
     Name="AdministerAchievementCategories">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="LightSwitchCommonModule:ApplicationData" />
+        EntityContainer="ApplicationData" />
     </Screen.Attributes>
     <Screen.Methods>
       <ScreenMethod
@@ -103,18 +209,18 @@
       <ScreenCollectionProperty
         Name="AchievementCategories"
         PageSize="45"
-        PropertyType="LightSwitchCommonModule:CollectionView$AchievementCategory">
+        PropertyType="CollectionView$AchievementCategory">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="AchievementCategoriesQuery"
-            ReturnType="LightSwitchCommonModule:AchievementCategory*">
+            ReturnType="AchievementCategory*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="LightSwitchCommonModule:ApplicationData/Members[AchievementCategories]" />
+                  Member="ApplicationData/Members[AchievementCategories]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -161,7 +267,7 @@
           Kind="Group"
           Name="ScreenLayout">
           <ContentItem
-            DataType="LightSwitchCommonModule:CollectionView$AchievementCategory"
+            DataType="CollectionView$AchievementCategory"
             Kind="Collection"
             Name="grid">
             <ContentItem.CommandItems>
@@ -218,7 +324,7 @@
             </ContentItem.DataSource>
             <ContentItem.PropertySources>
               <ControlPropertySource
-                Property=":RootControl/Properties[VerticalAlignment]">
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
@@ -228,7 +334,7 @@
                 </ScreenExpressionTree>
               </ControlPropertySource>
               <ControlPropertySource
-                Property=":RootControl/Properties[AttachedLabelPosition]">
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
@@ -239,7 +345,7 @@
               </ControlPropertySource>
             </ContentItem.PropertySources>
             <ContentItem
-              DataType="LightSwitchCommonModule:AchievementCategory"
+              DataType="AchievementCategory"
               Kind="Details"
               Name="RowTemplate">
               <ContentItem.DataSource>
@@ -255,7 +361,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="LightSwitchCommonModule:AchievementCategory/Properties[Description]" />
+                        Member="AchievementCategory/Properties[Description]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -270,7 +376,7 @@
     Name="RecentAchievements">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="LightSwitchCommonModule:ApplicationData" />
+        EntityContainer="ApplicationData" />
     </Screen.Attributes>
     <Screen.Methods>
       <ScreenMethod
@@ -306,18 +412,18 @@
       <ScreenCollectionProperty
         Name="Achievements"
         PageSize="45"
-        PropertyType="LightSwitchCommonModule:CollectionView$Achievement">
+        PropertyType="CollectionView$Achievement">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="AchievementsQuery"
-            ReturnType="LightSwitchCommonModule:Achievement*">
+            ReturnType="Achievement*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="LightSwitchCommonModule:ApplicationData/Members[Achievements]" />
+                  Member="ApplicationData/Members[Achievements]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -332,11 +438,11 @@
       <ScreenCollectionProperty
         Name="Ratings"
         PageSize="15"
-        PropertyType="LightSwitchCommonModule:CollectionView$Rating">
+        PropertyType="CollectionView$Rating">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="RatingsQuery"
-            ReturnType="LightSwitchCommonModule:Rating*">
+            ReturnType="Rating*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
@@ -395,13 +501,13 @@
         <ContentItem
           Kind="Group"
           Name="ScreenLayout"
-          View="Microsoft.LightSwitch:ColumnsLayout">
+          View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
           <ContentItem
             Kind="Group"
             Name="ListColumn">
             <ContentItem.PropertySources>
               <ControlPropertySource
-                Property=":ColumnsLayout/Properties[WeightedColumnWidth]">
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
@@ -412,10 +518,10 @@
               </ControlPropertySource>
             </ContentItem.PropertySources>
             <ContentItem
-              DataType="LightSwitchCommonModule:CollectionView$Achievement"
+              DataType="CollectionView$Achievement"
               Kind="Collection"
               Name="AchievementList"
-              View="Microsoft.LightSwitch:List">
+              View="Microsoft.LightSwitch.RichClient:List">
               <ContentItem.CommandItems>
                 <ContentItem
                   Kind="Command"
@@ -470,7 +576,7 @@
               </ContentItem.DataSource>
               <ContentItem.PropertySources>
                 <ControlPropertySource
-                  Property=":RootControl/Properties[AttachedLabelPosition]">
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
@@ -480,7 +586,7 @@
                   </ScreenExpressionTree>
                 </ControlPropertySource>
                 <ControlPropertySource
-                  Property=":RootControl/Properties[VerticalAlignment]">
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
@@ -491,7 +597,7 @@
                 </ControlPropertySource>
               </ContentItem.PropertySources>
               <ContentItem
-                DataType="LightSwitchCommonModule:Achievement"
+                DataType="Achievement"
                 Kind="Details"
                 Name="RowTemplate">
                 <ContentItem.DataSource>
@@ -507,25 +613,25 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="LightSwitchCommonModule:Achievement/Properties[Description]" />
+                          Member="Achievement/Properties[Description]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType="LightSwitchCommonModule:AchievementCategory"
+                  DataType="AchievementCategory"
                   Kind="Details"
                   Name="AchievementCategory">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="LightSwitchCommonModule:Achievement/Properties[AchievementCategory]" />
+                          Member="Achievement/Properties[AchievementCategory]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    DataType="LightSwitchCommonModule:AchievementCategory"
+                    DataType="AchievementCategory"
                     Kind="Details"
                     Name="RowTemplate1">
                     <ContentItem.DataSource>
@@ -536,19 +642,19 @@
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  DataType="LightSwitchCommonModule:User"
+                  DataType="User"
                   Kind="Details"
                   Name="AchievedByUser">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="LightSwitchCommonModule:Achievement/Properties[AchievedByUser]" />
+                          Member="Achievement/Properties[AchievedByUser]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    DataType="LightSwitchCommonModule:User"
+                    DataType="User"
                     Kind="Details"
                     Name="RowTemplate2">
                     <ContentItem.DataSource>
@@ -559,19 +665,19 @@
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  DataType="LightSwitchCommonModule:User"
+                  DataType="User"
                   Kind="Details"
                   Name="NominatedByUser">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="LightSwitchCommonModule:Achievement/Properties[NominatedByUser]" />
+                          Member="Achievement/Properties[NominatedByUser]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    DataType="LightSwitchCommonModule:User"
+                    DataType="User"
                     Kind="Details"
                     Name="RowTemplate3">
                     <ContentItem.DataSource>
@@ -589,7 +695,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="LightSwitchCommonModule:Achievement/Properties[NominatedOn]" />
+                          Member="Achievement/Properties[NominatedOn]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -602,7 +708,7 @@
             Name="DetailsColumn">
             <ContentItem.PropertySources>
               <ControlPropertySource
-                Property=":ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+                Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
@@ -612,7 +718,7 @@
                 </ScreenExpressionTree>
               </ControlPropertySource>
               <ControlPropertySource
-                Property=":ColumnsLayout/Properties[WeightedColumnWidth]">
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
@@ -623,7 +729,7 @@
               </ControlPropertySource>
             </ContentItem.PropertySources>
             <ContentItem
-              DataType="LightSwitchCommonModule:Achievement"
+              DataType="Achievement"
               Kind="Details"
               Name="AchievementDetails">
               <ContentItem.Attributes>
@@ -642,7 +748,7 @@
               </ContentItem.DataSource>
               <ContentItem.PropertySources>
                 <ControlPropertySource
-                  Property=":RootControl/Properties[VerticalAlignment]">
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
@@ -660,25 +766,25 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="LightSwitchCommonModule:Achievement/Properties[Description]" />
+                        Member="Achievement/Properties[Description]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                DataType="LightSwitchCommonModule:AchievementCategory"
+                DataType="AchievementCategory"
                 Kind="Details"
                 Name="AchievementCategory1">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="LightSwitchCommonModule:Achievement/Properties[AchievementCategory]" />
+                        Member="Achievement/Properties[AchievementCategory]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  DataType="LightSwitchCommonModule:AchievementCategory"
+                  DataType="AchievementCategory"
                   Kind="Details"
                   Name="RowTemplate4">
                   <ContentItem.DataSource>
@@ -689,19 +795,19 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
-                DataType="LightSwitchCommonModule:User"
+                DataType="User"
                 Kind="Details"
                 Name="AchievedByUser1">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="LightSwitchCommonModule:Achievement/Properties[AchievedByUser]" />
+                        Member="Achievement/Properties[AchievedByUser]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  DataType="LightSwitchCommonModule:User"
+                  DataType="User"
                   Kind="Details"
                   Name="RowTemplate5">
                   <ContentItem.DataSource>
@@ -712,15 +818,15 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
-                DataType="LightSwitchCommonModule:User"
+                DataType="User"
                 Kind="Details"
                 Name="NominatedByUser1"
-                View=":Summary">
+                View="Microsoft.LightSwitch.RichClient:Summary">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="LightSwitchCommonModule:Achievement/Properties[NominatedByUser]" />
+                        Member="Achievement/Properties[NominatedByUser]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -733,17 +839,17 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="LightSwitchCommonModule:Achievement/Properties[NominatedOn]" />
+                        Member="Achievement/Properties[NominatedOn]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
             </ContentItem>
             <ContentItem
-              DataType="LightSwitchCommonModule:CollectionView$Rating"
+              DataType="CollectionView$Rating"
               Kind="Collection"
               Name="Ratings"
-              View=":DataGrid">
+              View="Microsoft.LightSwitch.RichClient:DataGrid">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="R8ings" />
@@ -802,7 +908,7 @@
               </ContentItem.DataSource>
               <ContentItem.PropertySources>
                 <ControlPropertySource
-                  Property=":RootControl/Properties[VerticalAlignment]">
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
@@ -813,7 +919,7 @@
                 </ControlPropertySource>
               </ContentItem.PropertySources>
               <ContentItem
-                DataType="LightSwitchCommonModule:Rating"
+                DataType="Rating"
                 Kind="Details"
                 Name="RowTemplate7">
                 <ContentItem.DataSource>
@@ -829,25 +935,25 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="LightSwitchCommonModule:Rating/Properties[RatedOn]" />
+                          Member="Rating/Properties[RatedOn]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  DataType="LightSwitchCommonModule:User"
+                  DataType="User"
                   Kind="Details"
                   Name="RatedByUser">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="LightSwitchCommonModule:Rating/Properties[RatedByUser]" />
+                          Member="Rating/Properties[RatedByUser]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    DataType="LightSwitchCommonModule:User"
+                    DataType="User"
                     Kind="Details"
                     Name="RowTemplate8">
                     <ContentItem.DataSource>

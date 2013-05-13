@@ -3,6 +3,7 @@
   <Manifests>
     <Manifest>Microsoft.LightSwitch.Base.Client.Manifest.xml</Manifest>
     <Manifest>Microsoft.LightSwitch.Client.Internal.Manifest.xml</Manifest>
+    <Manifest>Microsoft.LightSwitch.Model.Xaml.Client.Manifest.xml</Manifest>
   </Manifests>
   <SubsystemPackages>
     <SubsystemPackage>ModelLoader</SubsystemPackage>
@@ -20,7 +21,7 @@
   </SubsystemPackages>
   <UserCodeAssemblies></UserCodeAssemblies>
   <ExtensionAssemblies>
-    <ExtensionAssembly>Microsoft.LightSwitch.SdkProxy, Version=10.0.11.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
+    <ExtensionAssembly>Microsoft.LightSwitch.SdkProxy, Version=10.0.11.3, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
     <ExtensionAssembly>Microsoft.LightSwitch.Cosmopolitan.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
     <ExtensionAssembly>Microsoft.LightSwitch.Extensions.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>
     <ExtensionAssembly>MetroThemeExtension.Client, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35</ExtensionAssembly>

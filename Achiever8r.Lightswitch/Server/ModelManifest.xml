@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="C:\Git\achiever8r\Achiever8r.Lightswitch\Common\Properties\Common.lsml" Checksum="AD39D30BD7934AAE1514FAC0D9063D976CF5BE3441A36C1AF1784971F4F28DDA" />
-    <Document FullPath="C:\Git\achiever8r\Achiever8r.Lightswitch\Server\Properties\Service.lsml" Checksum="381DB0BF145D5BBDD15431F6BF59668C11CC0D16F522462A049097989B49B413" />
+    <Document FullPath="C:\Git\achiever8r\Achiever8r.Lightswitch\Server\Properties\Service.lsml" Checksum="5089EAD7702B091762DC81F1D6E5A3F08ACAF7C64D9BE259B5BCEBBD10C76448" />
   </Documents>
 </ModelDocumentManifest>

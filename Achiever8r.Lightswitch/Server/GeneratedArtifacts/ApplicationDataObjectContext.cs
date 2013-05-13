@@ -19,45 +19,45 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Achievement_AchievementCategory", "AchievementCategory", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.AchievementCategory), "Achievement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Achievement), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Achievement_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.User), "Achievement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Achievement), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Achievement_User1", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.User), "Achievement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Achievement), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rating_Achievement", "Achievement", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.Achievement), "Rating", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rating), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rating_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(ApplicationData.Implementation.User), "Rating", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(ApplicationData.Implementation.Rating), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Achievement_AchievementCategory", "AchievementCategory", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.AchievementCategory), "Achievement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Achievement), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Achievement_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.User), "Achievement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Achievement), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Achievement_User1", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.User), "Achievement", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Achievement), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rating_Achievement", "Achievement", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Achievement), "Rating", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Rating), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "Rating_User", "User", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.User), "Rating", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Rating), true)]
 
 #endregion
 
-namespace ApplicationData.Implementation
+namespace LightSwitchApplication.Implementation
 {
     #region Contexts
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class ApplicationDataObjectContext : ObjectContext
+    public partial class ApplicationData : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new ApplicationDataObjectContext object using the connection string found in the 'ApplicationDataObjectContext' section of the application configuration file.
+        /// Initializes a new ApplicationData object using the connection string found in the 'ApplicationData' section of the application configuration file.
         /// </summary>
-        public ApplicationDataObjectContext() : base("name=ApplicationDataObjectContext", "ApplicationDataObjectContext")
+        public ApplicationData() : base("name=ApplicationData", "ApplicationData")
         {
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new ApplicationDataObjectContext object.
+        /// Initialize a new ApplicationData object.
         /// </summary>
-        public ApplicationDataObjectContext(string connectionString) : base(connectionString, "ApplicationDataObjectContext")
+        public ApplicationData(string connectionString) : base(connectionString, "ApplicationData")
         {
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new ApplicationDataObjectContext object.
+        /// Initialize a new ApplicationData object.
         /// </summary>
-        public ApplicationDataObjectContext(EntityConnection connection) : base(connection, "ApplicationDataObjectContext")
+        public ApplicationData(EntityConnection connection) : base(connection, "ApplicationData")
         {
             OnContextCreated();
         }

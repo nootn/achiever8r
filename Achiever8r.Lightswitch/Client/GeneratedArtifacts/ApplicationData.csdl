@@ -111,7 +111,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
     <EntitySet Name="AchievementCategories" EntityType="LightSwitchApplication.AchievementCategory" />
     <EntitySet Name="Achievements" EntityType="LightSwitchApplication.Achievement" />
     <EntitySet Name="Users" EntityType="LightSwitchApplication.User" />
@@ -136,5 +136,8 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Rating" EntitySet="Ratings" />
     </AssociationSet>
+    <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
+      <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>
