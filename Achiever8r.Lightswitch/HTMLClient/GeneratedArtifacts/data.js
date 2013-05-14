@@ -245,6 +245,14 @@ window.myapp = msls.application;
                         lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/Ratings(" + "Id=" + $toODataString(Id, "Int32?") + ")"
                     );
                 }
+            },
+            {
+                name: "GetMissingUsers", value: function () {
+                    return new $DataServiceQuery({ _entitySet: this.Users },
+                        lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/GetMissingUsers()",
+                        {
+                        });
+                }
             }
         ]),
 

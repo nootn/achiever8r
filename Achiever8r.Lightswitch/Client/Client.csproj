@@ -181,6 +181,9 @@
     <Compile Include="..\Server\UserCode\Shared\Achievement.cs">
       <Link>UserCode\Shared\Achievement.cs</Link>
     </Compile>
+    <Compile Include="..\Server\UserCode\Shared\Rating.cs">
+      <Link>UserCode\Shared\Rating.cs</Link>
+    </Compile>
     <Compile Include="..\Server\UserCode\Shared\User.cs">
       <Link>UserCode\Shared\User.cs</Link>
     </Compile>

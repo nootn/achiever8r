@@ -11,8 +11,8 @@
   <EntityContainerGroup
     Name="DataWorkspace">
     <EntityContainerGroupProperty
-      EntityContainer="Microsoft.LightSwitch.Security:SecurityData"
-      Name="SecurityData">
+      Name="SecurityData"
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData">
       <EntityContainerGroupProperty.Attributes>
         <Generated />
         <DisplayName
@@ -22,20 +22,20 @@
       </EntityContainerGroupProperty.Attributes>
     </EntityContainerGroupProperty>
     <EntityContainerGroupProperty
-      EntityContainer="ApplicationData"
-      Name="ApplicationData" />
+      Name="ApplicationData"
+      EntityContainer="ApplicationData" />
   </EntityContainerGroup>
   <EntityContainer
-    IsIntrinsic="True"
-    Name="ApplicationData">
+    Name="ApplicationData"
+    IsIntrinsic="True">
     <SubmitOperation
       Name="SaveChanges" />
     <EntitySet
+      Name="AchievementCategories"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="AchievementCategory"
-      Name="AchievementCategories" />
+      EntityType="AchievementCategory" />
     <QueryOperation
       Name="AchievementCategories_Single"
       ReturnType="AchievementCategory">
@@ -117,11 +117,11 @@
       </QueryOperationParameter>
     </QueryOperation>
     <EntitySet
+      Name="Achievements"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Achievement"
-      Name="Achievements" />
+      EntityType="Achievement" />
     <QueryOperation
       Name="Achievements_Single"
       ReturnType="Achievement">
@@ -203,21 +203,21 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Association="Achievement_AchievementCategory"
-      Name="Achievement_AchievementCategories">
+      Name="Achievement_AchievementCategories"
+      Association="Achievement_AchievementCategory">
       <AssociationSetEnd
-        EntitySet="Achievements"
-        Name="Achievement" />
+        Name="Achievement"
+        EntitySet="Achievements" />
       <AssociationSetEnd
-        EntitySet="AchievementCategories"
-        Name="AchievementCategory" />
+        Name="AchievementCategory"
+        EntitySet="AchievementCategories" />
     </AssociationSet>
     <EntitySet
+      Name="Users"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="User"
-      Name="Users" />
+      EntityType="User" />
     <QueryOperation
       Name="Users_Single"
       ReturnType="User">
@@ -299,31 +299,31 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Association="Achievement_User"
-      Name="Achievement_Users">
+      Name="Achievement_Users"
+      Association="Achievement_User">
       <AssociationSetEnd
-        EntitySet="Achievements"
-        Name="Achievement" />
+        Name="Achievement"
+        EntitySet="Achievements" />
       <AssociationSetEnd
-        EntitySet="Users"
-        Name="User" />
+        Name="User"
+        EntitySet="Users" />
     </AssociationSet>
     <AssociationSet
-      Association="Achievement_User1"
-      Name="Achievement_User1Set">
+      Name="Achievement_User1Set"
+      Association="Achievement_User1">
       <AssociationSetEnd
-        EntitySet="Achievements"
-        Name="Achievement" />
+        Name="Achievement"
+        EntitySet="Achievements" />
       <AssociationSetEnd
-        EntitySet="Users"
-        Name="User" />
+        Name="User"
+        EntitySet="Users" />
     </AssociationSet>
     <EntitySet
+      Name="Ratings"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Rating"
-      Name="Ratings" />
+      EntityType="Rating" />
     <QueryOperation
       Name="Ratings_Single"
       ReturnType="Rating">
@@ -405,25 +405,38 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Association="Rating_Achievement"
-      Name="Rating_Achievements">
+      Name="Rating_Achievements"
+      Association="Rating_Achievement">
       <AssociationSetEnd
-        EntitySet="Ratings"
-        Name="Rating" />
+        Name="Rating"
+        EntitySet="Ratings" />
       <AssociationSetEnd
-        EntitySet="Achievements"
-        Name="Achievement" />
+        Name="Achievement"
+        EntitySet="Achievements" />
     </AssociationSet>
     <AssociationSet
-      Association="Rating_User"
-      Name="Rating_Users">
+      Name="Rating_Users"
+      Association="Rating_User">
       <AssociationSetEnd
-        EntitySet="Ratings"
-        Name="Rating" />
+        Name="Rating"
+        EntitySet="Ratings" />
       <AssociationSetEnd
-        EntitySet="Users"
-        Name="User" />
+        Name="User"
+        EntitySet="Users" />
     </AssociationSet>
+    <QueryOperation
+      Name="GetMissingUsers"
+      ReturnType="User*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree />
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Users" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+    </QueryOperation>
   </EntityContainer>
   <EntityType
     Name="AchievementCategory">
@@ -464,9 +477,9 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
+        Name="Achievements"
         Association="Achievement_AchievementCategory"
         FromEnd="AchievementCategory"
-        Name="Achievements"
         ToEnd="Achievement" />
     </EntityType.Properties>
   </EntityType>
@@ -509,14 +522,14 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
+        Name="AchievementCategory"
         Association="Achievement_AchievementCategory"
         FromEnd="Achievement"
-        Name="AchievementCategory"
         ToEnd="AchievementCategory" />
       <NavigationProperty
+        Name="AchievedByUser"
         Association="Achievement_User"
         FromEnd="Achievement"
-        Name="AchievedByUser"
         ToEnd="User">
         <NavigationProperty.Attributes>
           <DisplayName
@@ -524,9 +537,9 @@
         </NavigationProperty.Attributes>
       </NavigationProperty>
       <NavigationProperty
+        Name="NominatedByUser"
         Association="Achievement_User1"
         FromEnd="Achievement"
-        Name="NominatedByUser"
         ToEnd="User">
         <NavigationProperty.Attributes>
           <DisplayName
@@ -544,15 +557,14 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
+        Name="Ratings"
         Association="Rating_Achievement"
         FromEnd="Achievement"
-        Name="Ratings"
         ToEnd="Rating" />
     </EntityType.Properties>
   </EntityType>
   <EntityType
     Name="User">
-    <EntityType.Attributes></EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -606,19 +618,19 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
+        Name="Achievements"
         Association="Achievement_User"
         FromEnd="User"
-        Name="Achievements"
         ToEnd="Achievement" />
       <NavigationProperty
+        Name="AchievementNominations"
         Association="Achievement_User1"
         FromEnd="User"
-        Name="AchievementNominations"
         ToEnd="Achievement" />
       <NavigationProperty
+        Name="Ratings"
         Association="Rating_User"
         FromEnd="User"
-        Name="Ratings"
         ToEnd="Rating" />
     </EntityType.Properties>
   </EntityType>
@@ -666,14 +678,14 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
+        Name="Achievement"
         Association="Rating_Achievement"
         FromEnd="Rating"
-        Name="Achievement"
         ToEnd="Achievement" />
       <NavigationProperty
+        Name="RatedByUser"
         Association="Rating_User"
         FromEnd="Rating"
-        Name="RatedByUser"
         ToEnd="User">
         <NavigationProperty.Attributes>
           <DisplayName
@@ -685,13 +697,13 @@
   <Association
     Name="Achievement_AchievementCategory">
     <AssociationEnd
-      EntityType="Achievement"
+      Name="Achievement"
       Multiplicity="Many"
-      Name="Achievement" />
+      EntityType="Achievement" />
     <AssociationEnd
-      EntityType="AchievementCategory"
+      Name="AchievementCategory"
       Multiplicity="One"
-      Name="AchievementCategory">
+      EntityType="AchievementCategory">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -701,13 +713,13 @@
   <Association
     Name="Achievement_User">
     <AssociationEnd
-      EntityType="Achievement"
+      Name="Achievement"
       Multiplicity="Many"
-      Name="Achievement" />
+      EntityType="Achievement" />
     <AssociationEnd
-      EntityType="User"
+      Name="User"
       Multiplicity="One"
-      Name="User">
+      EntityType="User">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -717,13 +729,13 @@
   <Association
     Name="Achievement_User1">
     <AssociationEnd
-      EntityType="Achievement"
+      Name="Achievement"
       Multiplicity="Many"
-      Name="Achievement" />
+      EntityType="Achievement" />
     <AssociationEnd
-      EntityType="User"
+      Name="User"
       Multiplicity="One"
-      Name="User">
+      EntityType="User">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -733,13 +745,13 @@
   <Association
     Name="Rating_Achievement">
     <AssociationEnd
-      EntityType="Rating"
+      Name="Rating"
       Multiplicity="Many"
-      Name="Rating" />
+      EntityType="Rating" />
     <AssociationEnd
-      EntityType="Achievement"
+      Name="Achievement"
       Multiplicity="One"
-      Name="Achievement">
+      EntityType="Achievement">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Cascade" />
@@ -749,13 +761,13 @@
   <Association
     Name="Rating_User">
     <AssociationEnd
-      EntityType="Rating"
+      Name="Rating"
       Multiplicity="Many"
-      Name="Rating" />
+      EntityType="Rating" />
     <AssociationEnd
-      EntityType="User"
+      Name="User"
       Multiplicity="One"
-      Name="User">
+      EntityType="User">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -789,9 +801,9 @@
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
   <DataService
+    Name="ApplicationDataMapping"
     DataProvider="EntityFrameworkDataProvider"
-    EntityContainer="ApplicationData"
-    Name="ApplicationDataMapping">
+    EntityContainer="ApplicationData">
     <AssociationSetMapping
       AssociationSet="Achievement_AchievementCategories">
       <AssociationSetMapping.Attributes>

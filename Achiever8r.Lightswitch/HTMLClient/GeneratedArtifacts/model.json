@@ -326,6 +326,17 @@
                   "parameterType": { "__id": ":Int32?" }
                 }
               ]
+            },
+            {
+              "id": "ApplicationData/Members[GetMissingUsers]",
+              "name": "GetMissingUsers",
+              "elementType": { "__id": "User" },
+              "query": { "__id": "ApplicationData/Members[GetMissingUsers]" },
+              "returnType": { "__id": "User*" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[Users]" }
+              }
             }
           ]
         },

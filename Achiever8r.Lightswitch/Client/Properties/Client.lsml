@@ -1,17 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
   <Application
-    DefaultNavigationItem="!module/NavigationItems[Tasks]"
-    Logo="Microsoft.LightSwitch.UserImageResources::Resources\Logo-Main.png"
     Name="LightSwitchApplication"
-    Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
-    Theme="MetroThemeExtension:MetroTheme"
+    TargetPlatform="RichClient"
+    Logo="Microsoft.LightSwitch.UserImageResources::Resources\Logo-Main.png"
     Version="1.0.0.0"
-    TargetPlatform="RichClient">
+    DefaultNavigationItem="!module/NavigationItems[Tasks]"
+    Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
+    Theme="MetroThemeExtension:MetroTheme">
     <Application.Attributes>
       <ModuleNamespace
         Namespace="LightSwitchApplication" />
     </Application.Attributes>
+    <ApplicationCommand
+      Name="ScreenCommandShowAdministerAchievementCategories"
+      Target="!module/Methods[ShowAdministerAchievementCategories]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowRecentAchievements"
+      Target="!module/Methods[ShowRecentAchievements]" />
     <Application.Methods>
       <ApplicationMethod
         Name="ShowAdministerAchievementCategories">
@@ -30,15 +36,15 @@
     </Application.Methods>
     <Application.NavigationItems>
       <ApplicationNavigationGroup
-        DefaultItem="!module/NavigationItems[Tasks]/Children[RecentAchievements]"
-        Name="Tasks">
+        Name="Tasks"
+        DefaultItem="!module/NavigationItems[Tasks]/Children[RecentAchievements]">
         <ApplicationNavigationGroup.Attributes>
           <DisplayName
             Value="Achievements" />
         </ApplicationNavigationGroup.Attributes>
         <ApplicationNavigationLink
-          Command="!module/Commands[ScreenCommandShowRecentAchievements]"
-          Name="RecentAchievements" />
+          Name="RecentAchievements"
+          Command="!module/Commands[ScreenCommandShowRecentAchievements]" />
       </ApplicationNavigationGroup>
       <ApplicationNavigationGroup
         Name="Administration">
@@ -47,28 +53,22 @@
             Value="Administration" />
         </ApplicationNavigationGroup.Attributes>
         <ApplicationNavigationLink
-          Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowRolesScreen]"
-          Name="RolesScreen" />
+          Name="RolesScreen"
+          Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowRolesScreen]" />
         <ApplicationNavigationLink
-          Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]"
-          Name="UsersScreen" />
+          Name="UsersScreen"
+          Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
         <ApplicationNavigationLink
-          Command="!module/Commands[ScreenCommandShowAdministerAchievementCategories]"
-          Name="link" />
+          Name="link"
+          Command="!module/Commands[ScreenCommandShowAdministerAchievementCategories]" />
       </ApplicationNavigationGroup>
     </Application.NavigationItems>
-    <ApplicationCommand
-      Name="ScreenCommandShowAdministerAchievementCategories"
-      Target="!module/Methods[ShowAdministerAchievementCategories]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowRecentAchievements"
-      Target="!module/Methods[ShowRecentAchievements]" />
   </Application>
   <EntityContainerGroup
     Name="DataWorkspace">
     <EntityContainerGroupProperty
-      EntityContainer="Microsoft.LightSwitch.Security:SecurityData"
-      Name="SecurityData">
+      Name="SecurityData"
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData">
       <EntityContainerGroupProperty.Attributes>
         <Generated />
         <DisplayName
@@ -78,8 +78,8 @@
       </EntityContainerGroupProperty.Attributes>
     </EntityContainerGroupProperty>
     <EntityContainerGroupProperty
-      EntityContainer="ApplicationData"
-      Name="ApplicationData" />
+      Name="ApplicationData"
+      EntityContainer="ApplicationData" />
   </EntityContainerGroup>
   <EntityContainer>
     <EntityContainer.Attributes>
@@ -175,6 +175,144 @@
       <SaveChangesTo
         EntityContainer="ApplicationData" />
     </Screen.Attributes>
+    <Screen.RootContentItem>
+      <ContentItem
+        Name="RootContentItem"
+        Kind="Screen">
+        <ContentItem
+          Name="ScreenLayout"
+          Kind="Group">
+          <ContentItem
+            Name="grid"
+            Kind="Collection"
+            DataType="CollectionView$AchievementCategory">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="AdministerAchievementCategories/Properties[AchievementCategories]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem
+              Name="RowTemplate"
+              Kind="Details"
+              DataType="AchievementCategory">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="Description"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="AchievementCategory/Properties[Description]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="AchievementCategories_AddAndEditNew"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="AdministerAchievementCategories/Properties[AchievementCategories]" />
+                      <CallExpression
+                        Target="AddAndEditNew" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="AchievementCategories_EditSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="AdministerAchievementCategories/Properties[AchievementCategories]" />
+                      <CallExpression
+                        Target="EditSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="AchievementCategories_DeleteSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="AdministerAchievementCategories/Properties[AchievementCategories]" />
+                      <CallExpression
+                        Target="DeleteSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Stretch"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Collapsed"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+        </ContentItem>
+        <ContentItem.CommandItems>
+          <ContentItem
+            Name="Save"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="AdministerAchievementCategories/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Name="Refresh"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="AdministerAchievementCategories/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+      </ContentItem>
+    </Screen.RootContentItem>
     <Screen.Methods>
       <ScreenMethod
         Name="Save">
@@ -233,144 +371,6 @@
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
     </Screen.Properties>
-    <Screen.RootContentItem>
-      <ContentItem
-        Kind="Screen"
-        Name="RootContentItem">
-        <ContentItem.CommandItems>
-          <ContentItem
-            Kind="Command"
-            Name="Save">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="AdministerAchievementCategories/Methods[Save]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-          <ContentItem
-            Kind="Command"
-            Name="Refresh">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="AdministerAchievementCategories/Methods[Refresh]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-        </ContentItem.CommandItems>
-        <ContentItem
-          Kind="Group"
-          Name="ScreenLayout">
-          <ContentItem
-            DataType="CollectionView$AchievementCategory"
-            Kind="Collection"
-            Name="grid">
-            <ContentItem.CommandItems>
-              <ContentItem
-                Kind="Command"
-                Name="AchievementCategories_AddAndEditNew">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="AdministerAchievementCategories/Properties[AchievementCategories]" />
-                      <CallExpression
-                        Target="AddAndEditNew" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Kind="Command"
-                Name="AchievementCategories_EditSelected">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="AdministerAchievementCategories/Properties[AchievementCategories]" />
-                      <CallExpression
-                        Target="EditSelected" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Kind="Command"
-                Name="AchievementCategories_DeleteSelected">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="AdministerAchievementCategories/Properties[AchievementCategories]" />
-                      <CallExpression
-                        Target="DeleteSelected" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem.CommandItems>
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="AdministerAchievementCategories/Properties[AchievementCategories]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      ResultType=":String"
-                      Value="Stretch" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      ResultType=":String"
-                      Value="Collapsed" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
-            <ContentItem
-              DataType="AchievementCategory"
-              Kind="Details"
-              Name="RowTemplate">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression />
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Description">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="AchievementCategory/Properties[Description]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-          </ContentItem>
-        </ContentItem>
-      </ContentItem>
-    </Screen.RootContentItem>
   </Screen>
   <Screen
     Name="RecentAchievements">
@@ -378,6 +378,507 @@
       <SaveChangesTo
         EntityContainer="ApplicationData" />
     </Screen.Attributes>
+    <Screen.RootContentItem>
+      <ContentItem
+        Name="RootContentItem"
+        Kind="Screen">
+        <ContentItem
+          Name="ScreenLayout"
+          Kind="Group"
+          View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+          <ContentItem
+            Name="ListColumn"
+            Kind="Group">
+            <ContentItem
+              Name="AchievementList"
+              Kind="Collection"
+              DataType="CollectionView$Achievement"
+              View="Microsoft.LightSwitch.RichClient:List">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="RecentAchievements/Properties[Achievements]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="RowTemplate"
+                Kind="Details"
+                DataType="Achievement">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Description"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Achievement/Properties[Description]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="AchievementCategory"
+                  Kind="Details"
+                  DataType="AchievementCategory">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Achievement/Properties[AchievementCategory]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate1"
+                    Kind="Details"
+                    DataType="AchievementCategory">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="AchievedByUser"
+                  Kind="Details"
+                  DataType="User">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Achievement/Properties[AchievedByUser]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate2"
+                    Kind="Details"
+                    DataType="User">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="NominatedByUser"
+                  Kind="Details"
+                  DataType="User">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Achievement/Properties[NominatedByUser]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate3"
+                    Kind="Details"
+                    DataType="User">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="NominatedOn"
+                  Kind="Value"
+                  DataType=":Date">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Achievement/Properties[NominatedOn]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Name="Achievements_AddAndEditNew"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="RecentAchievements/Properties[Achievements]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Achievements_EditSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="RecentAchievements/Properties[Achievements]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Achievements_DeleteSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="RecentAchievements/Properties[Achievements]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Collapsed"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Stretch"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="2"
+                      ResultType=":Double" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
+            Name="DetailsColumn"
+            Kind="Group">
+            <ContentItem
+              Name="AchievementDetails"
+              Kind="Details"
+              DataType="Achievement">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Achievement Details" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="RecentAchievements/Properties[Achievements]" />
+                    <MemberExpression
+                      Member="SelectedItem" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="Description1"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Achievement/Properties[Description]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="AchievementCategory1"
+                Kind="Details"
+                DataType="AchievementCategory">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Achievement/Properties[AchievementCategory]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="RowTemplate4"
+                  Kind="Details"
+                  DataType="AchievementCategory">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="AchievedByUser1"
+                Kind="Details"
+                DataType="User">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Achievement/Properties[AchievedByUser]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="RowTemplate5"
+                  Kind="Details"
+                  DataType="User">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="NominatedByUser1"
+                Kind="Details"
+                DataType="User"
+                View="Microsoft.LightSwitch.RichClient:Summary">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Achievement/Properties[NominatedByUser]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="NominatedOn1"
+                Kind="Value"
+                DataType=":Date">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Achievement/Properties[NominatedOn]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Top"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Name="Ratings"
+              Kind="Collection"
+              DataType="CollectionView$Rating"
+              View="Microsoft.LightSwitch.RichClient:DataGrid">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="R8ings" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="RecentAchievements/Properties[Ratings]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="RowTemplate7"
+                Kind="Details"
+                DataType="Rating">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="RatedOn"
+                  Kind="Value"
+                  DataType=":DateTime">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Rating/Properties[RatedOn]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="RatedByUser"
+                  Kind="Details"
+                  DataType="User">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Rating/Properties[RatedByUser]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate8"
+                    Kind="Details"
+                    DataType="User">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Name="Ratings_AddAndEditNew"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="RecentAchievements/Properties[Ratings]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Ratings_EditSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="RecentAchievements/Properties[Ratings]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Ratings_DeleteSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="RecentAchievements/Properties[Ratings]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Stretch"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="True"
+                      ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="3"
+                      ResultType=":Double" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+        </ContentItem>
+        <ContentItem.CommandItems>
+          <ContentItem
+            Name="Save"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="RecentAchievements/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Name="Refresh"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="RecentAchievements/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+      </ContentItem>
+    </Screen.RootContentItem>
     <Screen.Methods>
       <ScreenMethod
         Name="Save">
@@ -468,506 +969,5 @@
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
     </Screen.Properties>
-    <Screen.RootContentItem>
-      <ContentItem
-        Kind="Screen"
-        Name="RootContentItem">
-        <ContentItem.CommandItems>
-          <ContentItem
-            Kind="Command"
-            Name="Save">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="RecentAchievements/Methods[Save]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-          <ContentItem
-            Kind="Command"
-            Name="Refresh">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="RecentAchievements/Methods[Refresh]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-        </ContentItem.CommandItems>
-        <ContentItem
-          Kind="Group"
-          Name="ScreenLayout"
-          View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
-          <ContentItem
-            Kind="Group"
-            Name="ListColumn">
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      ResultType=":Double"
-                      Value="2" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
-            <ContentItem
-              DataType="CollectionView$Achievement"
-              Kind="Collection"
-              Name="AchievementList"
-              View="Microsoft.LightSwitch.RichClient:List">
-              <ContentItem.CommandItems>
-                <ContentItem
-                  Kind="Command"
-                  Name="Achievements_AddAndEditNew">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="RecentAchievements/Properties[Achievements]" />
-                        <CallExpression
-                          Target="AddAndEditNew" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="Achievements_EditSelected">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="RecentAchievements/Properties[Achievements]" />
-                        <CallExpression
-                          Target="EditSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="Achievements_DeleteSelected">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="RecentAchievements/Properties[Achievements]" />
-                        <CallExpression
-                          Target="DeleteSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem.CommandItems>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="RecentAchievements/Properties[Achievements]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        ResultType=":String"
-                        Value="Collapsed" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        ResultType=":String"
-                        Value="Stretch" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-              <ContentItem
-                DataType="Achievement"
-                Kind="Details"
-                Name="RowTemplate">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  DataType=":String"
-                  Kind="Value"
-                  Name="Description">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Achievement/Properties[Description]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType="AchievementCategory"
-                  Kind="Details"
-                  Name="AchievementCategory">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Achievement/Properties[AchievementCategory]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    DataType="AchievementCategory"
-                    Kind="Details"
-                    Name="RowTemplate1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  DataType="User"
-                  Kind="Details"
-                  Name="AchievedByUser">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Achievement/Properties[AchievedByUser]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    DataType="User"
-                    Kind="Details"
-                    Name="RowTemplate2">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  DataType="User"
-                  Kind="Details"
-                  Name="NominatedByUser">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Achievement/Properties[NominatedByUser]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    DataType="User"
-                    Kind="Details"
-                    Name="RowTemplate3">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  DataType=":Date"
-                  Kind="Value"
-                  Name="NominatedOn">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Achievement/Properties[NominatedOn]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-            </ContentItem>
-          </ContentItem>
-          <ContentItem
-            Kind="Group"
-            Name="DetailsColumn">
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      ResultType=":Boolean"
-                      Value="True" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      ResultType=":Double"
-                      Value="3" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
-            <ContentItem
-              DataType="Achievement"
-              Kind="Details"
-              Name="AchievementDetails">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Achievement Details" />
-              </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="RecentAchievements/Properties[Achievements]" />
-                    <MemberExpression
-                      Member="SelectedItem" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        ResultType=":String"
-                        Value="Top" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-              <ContentItem
-                DataType=":String"
-                Kind="Value"
-                Name="Description1">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Achievement/Properties[Description]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType="AchievementCategory"
-                Kind="Details"
-                Name="AchievementCategory1">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Achievement/Properties[AchievementCategory]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  DataType="AchievementCategory"
-                  Kind="Details"
-                  Name="RowTemplate4">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
-                DataType="User"
-                Kind="Details"
-                Name="AchievedByUser1">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Achievement/Properties[AchievedByUser]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  DataType="User"
-                  Kind="Details"
-                  Name="RowTemplate5">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
-                DataType="User"
-                Kind="Details"
-                Name="NominatedByUser1"
-                View="Microsoft.LightSwitch.RichClient:Summary">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Achievement/Properties[NominatedByUser]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                DataType=":Date"
-                Kind="Value"
-                Name="NominatedOn1">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="Achievement/Properties[NominatedOn]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
-              DataType="CollectionView$Rating"
-              Kind="Collection"
-              Name="Ratings"
-              View="Microsoft.LightSwitch.RichClient:DataGrid">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="R8ings" />
-              </ContentItem.Attributes>
-              <ContentItem.CommandItems>
-                <ContentItem
-                  Kind="Command"
-                  Name="Ratings_AddAndEditNew">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="RecentAchievements/Properties[Ratings]" />
-                        <CallExpression
-                          Target="AddAndEditNew" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="Ratings_EditSelected">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="RecentAchievements/Properties[Ratings]" />
-                        <CallExpression
-                          Target="EditSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Kind="Command"
-                  Name="Ratings_DeleteSelected">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="RecentAchievements/Properties[Ratings]" />
-                        <CallExpression
-                          Target="DeleteSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem.CommandItems>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="RecentAchievements/Properties[Ratings]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        ResultType=":String"
-                        Value="Stretch" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-              <ContentItem
-                DataType="Rating"
-                Kind="Details"
-                Name="RowTemplate7">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  DataType=":DateTime"
-                  Kind="Value"
-                  Name="RatedOn">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Rating/Properties[RatedOn]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  DataType="User"
-                  Kind="Details"
-                  Name="RatedByUser">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Rating/Properties[RatedByUser]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    DataType="User"
-                    Kind="Details"
-                    Name="RowTemplate8">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-              </ContentItem>
-            </ContentItem>
-          </ContentItem>
-        </ContentItem>
-      </ContentItem>
-    </Screen.RootContentItem>
   </Screen>
 </ModelFragment>

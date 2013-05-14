@@ -216,6 +216,21 @@ namespace LightSwitchApplication
         partial void SaveChanges_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GetMissingUsers_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void GetMissingUsers_Executing();
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void GetMissingUsers_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.User> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void GetMissingUsers_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.User> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void GetMissingUsers_ExecuteFailed(global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -562,6 +577,39 @@ namespace LightSwitchApplication
             private static void __SaveChanges_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
             {
                 d.SaveChanges_ExecuteFailed(ex);
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.User>
+                __GetMissingUsersEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.User>(
+                    "GetMissingUsers",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GetMissingUsers_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GetMissingUsers_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GetMissingUsers_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GetMissingUsers_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__GetMissingUsers_PreprocessQuery);
+            private static bool __GetMissingUsers_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.GetMissingUsers_CanExecute(ref r);
+                return r;
+            }
+            private static void __GetMissingUsers_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.GetMissingUsers_Executing();
+            }
+            private static void __GetMissingUsers_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.GetMissingUsers_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.User>)args[0]);
+            }
+            private static void __GetMissingUsers_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.GetMissingUsers_ExecuteFailed(ex);
+            }
+            private static global::System.Linq.IQueryable __GetMissingUsers_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.User> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.User>)args[0];
+                d.GetMissingUsers_PreprocessQuery(ref query);
+                return query;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]

@@ -37,6 +37,13 @@ namespace LightSwitchApplication.Implementation
         }
     
     #region Queries
+        public global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.User> GetMissingUsers()
+        {
+            global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.User> query;
+            query = this.GetQuery<global::LightSwitchApplication.Implementation.User>("Users");
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods

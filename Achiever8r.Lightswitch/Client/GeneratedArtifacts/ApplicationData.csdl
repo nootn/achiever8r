@@ -136,6 +136,7 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Rating" EntitySet="Ratings" />
     </AssociationSet>
+    <FunctionImport Name="GetMissingUsers" ReturnType="Collection(LightSwitchApplication.User)" EntitySet="Users" m:HttpMethod="GET" />
     <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
       <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
     </FunctionImport>

@@ -286,6 +286,14 @@ namespace LightSwitchApplication
             return this.Details.Methods.Ratings_SingleOrDefault.CreateInvocation(Id).Execute();
         }
         
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        public global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.User> GetMissingUsers()
+        {
+            return this.Details.Methods.GetMissingUsers.CreateInvocation().Execute();
+        }
+        
         #endregion
     
         #region Details Class
@@ -395,6 +403,14 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.Ratings_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Rating>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.User> GetMissingUsers
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.GetMissingUsers) as global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.User>;
                     }
                 }
                 
@@ -531,6 +547,16 @@ namespace LightSwitchApplication
                     c(d, ref d._Ratings_SingleOrDefault, sf);
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.User>.Entry
+                    GetMissingUsers = new global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.User>.Entry(
+                        "GetMissingUsers",
+                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._GetMissingUsers_Stub);
+                private static void _GetMissingUsers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.User>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
+                {
+                    c(d, ref d._GetMissingUsers, sf);
+                }
+    
             }
     
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -616,6 +642,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.Rating>.Data _Ratings_SingleOrDefault;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.User>.Data _GetMissingUsers;
             
         }
     

@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 5/13/2013 9:17:47 PM
+// Generation date: 5/14/2013 10:22:17 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -257,11 +257,10 @@ namespace LightSwitchApplication.Implementation
                 "t\" EntitySet=\"Achievements\" /><End Role=\"Rating\" EntitySet=\"Ratings\" /></Associa" +
                 "tionSet><AssociationSet Name=\"Rating_User\" Association=\"LightSwitchApplication.R" +
                 "ating_User\"><End Role=\"User\" EntitySet=\"Users\" /><End Role=\"Rating\" EntitySet=\"R" +
-                "atings\" /></AssociationSet><FunctionImport Name=\"Microsoft_LightSwitch_GetCanInf" +
-                "ormation\" ReturnType=\"Edm.String\" m:HttpMethod=\"GET\"><Param";
+                "atings\" /></AssociationSet><FunctionImport Name=\"GetMissingUsers\" ReturnType=\"Co" +
+                "llection(LightSwitchApplication.User)\" EntitySet=\"Users\" m:";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart1 = "eter Name=\"dataServiceMembers\" Type=\"Edm.String\" Mode=\"In\" /></FunctionImport></E" +
-                "ntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
+            private const string ModelPart1 = @"HttpMethod=""GET"" /><FunctionImport Name=""Microsoft_LightSwitch_GetCanInformation"" ReturnType=""Edm.String"" m:HttpMethod=""GET""><Parameter Name=""dataServiceMembers"" Type=""Edm.String"" Mode=""In"" /></FunctionImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {

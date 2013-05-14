@@ -344,6 +344,16 @@
         Name="User"
         EntitySet="Users" />
     </AssociationSet>
+    <QueryOperation
+      Name="GetMissingUsers"
+      ReturnType="User*">
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Users" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+    </QueryOperation>
   </EntityContainer>
   <EntityType
     Name="AchievementCategory">
