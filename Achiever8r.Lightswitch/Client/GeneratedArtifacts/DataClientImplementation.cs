@@ -106,6 +106,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("NominatedOn");
         }
         
+        partial void OnNumberOfRatingsChanged()
+        {
+            this.___OnPropertyChanged("NumberOfRatings");
+        }
+        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Achievement.DetailsClass.IImplementation.AchievementCategory
         {
             get

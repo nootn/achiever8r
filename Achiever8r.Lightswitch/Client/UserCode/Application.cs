@@ -63,5 +63,15 @@ namespace LightSwitchApplication
         {
             result = User.HasPermission(Permissions.ApplicationAdministration);
         }
+
+        partial void RecentAchievements_CanRun(ref bool result)
+        {
+            result = User.HasPermission(Permissions.GeneralAccess);
+        }
+
+        partial void CurrentRankings_CanRun(ref bool result)
+        {
+            result = User.HasPermission(Permissions.GeneralAccess);
+        }
     }
 }

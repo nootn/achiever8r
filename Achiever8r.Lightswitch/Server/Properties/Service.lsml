@@ -437,6 +437,68 @@
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
     </QueryOperation>
+    <QueryOperation
+      Name="Rankings"
+      ReturnType="Achievement*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="GreaterThanOrEqual">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="NominatedOn" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="StartDate" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="LessThanOrEqual">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="NominatedOn" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="EndDate" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Achievements" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="StartDate"
+        ParameterType=":Date?" />
+      <QueryOperationParameter
+        Name="EndDate"
+        ParameterType=":Date?" />
+      <QueryOperation.SortCriteria>
+        <SortCriterion
+          Direction="Descending">
+          <ChainExpression>
+            <MemberExpression
+              Member="NumberOfRatings" />
+          </ChainExpression>
+        </SortCriterion>
+      </QueryOperation.SortCriteria>
+    </QueryOperation>
   </EntityContainer>
   <EntityType
     Name="AchievementCategory">
@@ -566,6 +628,16 @@
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="NumberOfRatings"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <Hidden />
+          <DisplayName
+            Value="Number Of R8ings" />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

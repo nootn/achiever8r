@@ -44,6 +44,17 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.Achievement> Rankings(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate)
+        {
+            global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.Achievement> query;
+            query = global::System.Linq.Queryable.OrderByDescending(
+                global::System.Linq.Queryable.Where(
+                    this.GetQuery<global::LightSwitchApplication.Implementation.Achievement>("Achievements"),
+                    (a) => ((StartDate.HasValue && (a.NominatedOn >= StartDate)) && (EndDate.HasValue && (a.NominatedOn <= EndDate)))),
+                (a) => a.NumberOfRatings);
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods

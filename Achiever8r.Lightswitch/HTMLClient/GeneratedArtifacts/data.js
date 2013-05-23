@@ -69,6 +69,9 @@ window.myapp = msls.application;
         /// <field name="Ratings" type="msls.EntityCollection" elementType="msls.application.Rating">
         /// Gets the ratings for this achievement.
         /// </field>
+        /// <field name="NumberOfRatings" type="Number">
+        /// Gets or sets the numberOfRatings for this achievement.
+        /// </field>
         /// <field name="details" type="msls.application.Achievement.Details">
         /// Gets the details for this achievement.
         /// </field>
@@ -194,7 +197,8 @@ window.myapp = msls.application;
             { name: "AchievedByUser", kind: "reference", type: User },
             { name: "NominatedByUser", kind: "reference", type: User },
             { name: "NominatedOn", type: Date },
-            { name: "Ratings", kind: "collection", elementType: Rating }
+            { name: "Ratings", kind: "collection", elementType: Rating },
+            { name: "NumberOfRatings", type: Number }
         ]),
 
         User: $defineEntity(User, [
@@ -255,6 +259,16 @@ window.myapp = msls.application;
                     return new $DataServiceQuery({ _entitySet: this.Users },
                         lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/GetMissingUsers()",
                         {
+                        });
+                }
+            },
+            {
+                name: "Rankings", value: function (StartDate, EndDate) {
+                    return new $DataServiceQuery({ _entitySet: this.Achievements },
+                        lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/Rankings()",
+                        {
+                            StartDate: $toODataString(StartDate, "DateTime?"),
+                            EndDate: $toODataString(EndDate, "DateTime?")
                         });
                 }
             }

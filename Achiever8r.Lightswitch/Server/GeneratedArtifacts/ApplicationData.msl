@@ -20,6 +20,7 @@
           <ScalarProperty Name="Achievement_User" ColumnName="Achievement_User" />
           <ScalarProperty Name="Achievement_User1" ColumnName="Achievement_User1" />
           <ScalarProperty Name="NominatedOn" ColumnName="NominatedOn" />
+          <ScalarProperty Name="NumberOfRatings" ColumnName="NumberOfRatings" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

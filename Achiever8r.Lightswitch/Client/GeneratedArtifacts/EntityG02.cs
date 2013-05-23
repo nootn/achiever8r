@@ -180,6 +180,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public int NumberOfRatings
+        {
+            get
+            {
+                return global::LightSwitchApplication.Achievement.DetailsClass.GetValue(this, global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties.NumberOfRatings);
+            }
+            set
+            {
+                global::LightSwitchApplication.Achievement.DetailsClass.SetValue(this, global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties.NumberOfRatings, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void NumberOfRatings_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void NumberOfRatings_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void NumberOfRatings_Changed();
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public string DisplayName
         {
             get
@@ -402,6 +426,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, int> NumberOfRatings
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties.NumberOfRatings) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, int>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, string> DisplayName
                 {
                     get
@@ -452,6 +484,7 @@ namespace LightSwitchApplication
                 new byte[] RowVersion { get; set; }
                 new string Description { get; set; }
                 new global::System.DateTime NominatedOn { get; set; }
+                new int NumberOfRatings { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation AchievementCategory { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation AchievedByUser { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation NominatedByUser { get; set; }
@@ -611,6 +644,43 @@ namespace LightSwitchApplication
                 private static void _NominatedOn_OnValueChanged(global::LightSwitchApplication.Achievement e)
                 {
                     e.NominatedOn_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, int>.Entry
+                    NumberOfRatings = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, int>.Entry(
+                        "NumberOfRatings",
+                        global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties._NumberOfRatings_Stub,
+                        global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties._NumberOfRatings_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties._NumberOfRatings_Validate,
+                        global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties._NumberOfRatings_GetImplementationValue,
+                        global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties._NumberOfRatings_SetImplementationValue,
+                        global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties._NumberOfRatings_OnValueChanged);
+                private static void _NumberOfRatings_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Achievement.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, int>.Data> c, global::LightSwitchApplication.Achievement.DetailsClass d, object sf)
+                {
+                    c(d, ref d._NumberOfRatings, sf);
+                }
+                private static bool _NumberOfRatings_ComputeIsReadOnly(global::LightSwitchApplication.Achievement e)
+                {
+                    bool result = false;
+                    e.NumberOfRatings_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _NumberOfRatings_Validate(global::LightSwitchApplication.Achievement e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.NumberOfRatings_Validate(r);
+                }
+                private static int _NumberOfRatings_GetImplementationValue(global::LightSwitchApplication.Achievement.DetailsClass d)
+                {
+                    return d.ImplementationEntity.NumberOfRatings;
+                }
+                private static void _NumberOfRatings_SetImplementationValue(global::LightSwitchApplication.Achievement.DetailsClass d, int v)
+                {
+                    d.ImplementationEntity.NumberOfRatings = v;
+                }
+                private static void _NumberOfRatings_OnValueChanged(global::LightSwitchApplication.Achievement e)
+                {
+                    e.NumberOfRatings_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -809,6 +879,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, global::System.DateTime>.Data _NominatedOn;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, int>.Data _NumberOfRatings;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, string>.Data _DisplayName;

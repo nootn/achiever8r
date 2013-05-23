@@ -42,6 +42,7 @@
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="NominatedOn" Type="datetime" Nullable="false" />
+    <Property Name="NumberOfRatings" Type="int" Nullable="false" />
     <Property Name="Achievement_AchievementCategory" Type="int" Nullable="false" />
     <Property Name="Achievement_User" Type="int" Nullable="false" />
     <Property Name="Achievement_User1" Type="int" Nullable="false" />

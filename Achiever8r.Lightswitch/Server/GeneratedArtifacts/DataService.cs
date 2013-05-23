@@ -231,6 +231,21 @@ namespace LightSwitchApplication
         partial void GetMissingUsers_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Rankings_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void Rankings_Executing(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Rankings_PreprocessQuery(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate, ref global::System.Linq.IQueryable<global::LightSwitchApplication.Achievement> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void Rankings_Executed(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate, global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Achievement> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void Rankings_ExecuteFailed(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate, global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -609,6 +624,39 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.IQueryable<global::LightSwitchApplication.User> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.User>)args[0];
                 d.GetMissingUsers_PreprocessQuery(ref query);
+                return query;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Achievement>
+                __RankingsEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.Achievement>(
+                    "Rankings",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rankings_CanExecute,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rankings_Executing,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rankings_Executed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rankings_Failed,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__Rankings_PreprocessQuery);
+            private static bool __Rankings_CanExecute(global::LightSwitchApplication.ApplicationDataService d, bool r)
+            {
+                d.Rankings_CanExecute(ref r);
+                return r;
+            }
+            private static void __Rankings_Executing(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.Rankings_Executing((global::System.Nullable<global::System.DateTime>)args[0], (global::System.Nullable<global::System.DateTime>)args[1]);
+            }
+            private static void __Rankings_Executed(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                d.Rankings_Executed((global::System.Nullable<global::System.DateTime>)args[0], (global::System.Nullable<global::System.DateTime>)args[1], (global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.Achievement>)args[2]);
+            }
+            private static void __Rankings_Failed(global::LightSwitchApplication.ApplicationDataService d, object[] args, global::System.Exception ex)
+            {
+                d.Rankings_ExecuteFailed((global::System.Nullable<global::System.DateTime>)args[0], (global::System.Nullable<global::System.DateTime>)args[1], ex);
+            }
+            private static global::System.Linq.IQueryable __Rankings_PreprocessQuery(global::LightSwitchApplication.ApplicationDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.Achievement> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.Achievement>)args[2];
+                d.Rankings_PreprocessQuery((global::System.Nullable<global::System.DateTime>)args[0], (global::System.Nullable<global::System.DateTime>)args[1], ref query);
                 return query;
             }
     

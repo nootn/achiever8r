@@ -643,4 +643,372 @@ namespace LightSwitchApplication
             }
         }
     }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+    public sealed partial class CurrentRankings
+        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass>
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private CurrentRankings() : base("LightSwitchApplication:CurrentRankings")
+        {
+            global::LightSwitchApplication.CurrentRankings.DetailsClass.Initialize(this);
+        }
+
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static CurrentRankings CreateInstance()
+        {
+            return new global::LightSwitchApplication.CurrentRankings(
+            );
+        }
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CurrentRankings_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CurrentRankings_Created();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CurrentRankings_Activated();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CurrentRankings_Saving(ref bool handled);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CurrentRankings_Saved();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CurrentRankings_Closing(ref bool cancel);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CurrentRankings_SaveError(global::System.Exception exception, ref bool handled);
+     
+        #region Private Properties
+        
+        /// <summary>
+        /// Gets the Application object for this application.  The Application object provides access to active screens, methods to open screens and access to the current user.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Gets the containing data workspace.  The data workspace provides access to all data sources in the application.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
+            }
+        }
+        
+        #endregion
+ 
+        partial void Rankings_SelectionChanged();
+
+        partial void Rankings_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Rankings_Loaded(bool succeeded);
+
+        partial void AchievementStartDate_Changed();
+
+        partial void AchievementEndDate_Changed();
+
+        /// <summary>
+        /// Gets the Rankings visual collection. The collection contains all records currently shown on the respective list or grid control.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.Achievement> Rankings
+        {
+            get
+            {
+                return global::LightSwitchApplication.CurrentRankings.DetailsClass.GetValue(this, global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties.Rankings);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Rankings_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime AchievementStartDate
+        {
+            get 
+            {
+                return global::LightSwitchApplication.CurrentRankings.DetailsClass.GetValue(this, global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties.AchievementStartDate);
+            }
+            set
+            {
+                global::LightSwitchApplication.CurrentRankings.DetailsClass.SetValue(this, global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties.AchievementStartDate, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementStartDate_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime AchievementEndDate
+        {
+            get 
+            {
+                return global::LightSwitchApplication.CurrentRankings.DetailsClass.GetValue(this, global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties.AchievementEndDate);
+            }
+            set
+            {
+                global::LightSwitchApplication.CurrentRankings.DetailsClass.SetValue(this, global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties.AchievementEndDate, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void AchievementEndDate_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public sealed class DetailsClass
+            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySet, global::LightSwitchApplication.CurrentRankings.DetailsClass.CommandSet, global::LightSwitchApplication.CurrentRankings.DetailsClass.MethodSet>
+        {
+
+            static DetailsClass()
+            {
+                var initializePropertyEntry = global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties.Rankings;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass>.Entry
+                __CurrentRankingsEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass>.Entry(
+                    global::LightSwitchApplication.CurrentRankings.DetailsClass.__CurrentRankings_InvokeInitializeDataWorkspace,
+                    global::LightSwitchApplication.CurrentRankings.DetailsClass.__CurrentRankings_InvokeSavingEvent,
+                    global::LightSwitchApplication.CurrentRankings.DetailsClass.__CurrentRankings_InvokeSavedEvent,
+                    global::LightSwitchApplication.CurrentRankings.DetailsClass.__CurrentRankings_InvokeClosingEvent,
+                    global::LightSwitchApplication.CurrentRankings.DetailsClass.__CurrentRankings_InvokeCreated,
+                    global::LightSwitchApplication.CurrentRankings.DetailsClass.__CurrentRankings_InvokeActivated,
+                    global::LightSwitchApplication.CurrentRankings.DetailsClass.__CurrentRankings_InvokeSaveErrorEvent);
+            private static void __CurrentRankings_InvokeInitializeDataWorkspace(global::LightSwitchApplication.CurrentRankings s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+            {
+                s.CurrentRankings_InitializeDataWorkspace(saveChangesTo);
+            }
+            private static bool __CurrentRankings_InvokeSavingEvent(global::LightSwitchApplication.CurrentRankings s)
+            {
+                bool handled = false;
+                s.CurrentRankings_Saving(ref handled);
+                return handled;
+            }
+            private static void __CurrentRankings_InvokeSavedEvent(global::LightSwitchApplication.CurrentRankings s)
+            {
+                s.CurrentRankings_Saved();
+            }
+            private static bool __CurrentRankings_InvokeClosingEvent(global::LightSwitchApplication.CurrentRankings s)
+            {
+                bool cancel = false;
+                s.CurrentRankings_Closing(ref cancel);
+                return cancel;
+            }
+            private static void __CurrentRankings_InvokeCreated(global::LightSwitchApplication.CurrentRankings s)
+            {
+                s.CurrentRankings_Created();
+            }
+            private static void __CurrentRankings_InvokeActivated(global::LightSwitchApplication.CurrentRankings s)
+            {
+                s.CurrentRankings_Activated();
+            }
+            private static bool __CurrentRankings_InvokeSaveErrorEvent(global::LightSwitchApplication.CurrentRankings s, global::System.Exception ex)
+            {
+                bool handled = false;
+                s.CurrentRankings_SaveError(ex, ref handled);
+                return handled;
+            }
+
+            public DetailsClass() : base()
+            {
+            }
+
+            public new global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySet Properties
+            {
+                get
+                {
+                    return base.Properties;
+                }
+            }
+
+            public new global::LightSwitchApplication.CurrentRankings.DetailsClass.CommandSet Commands
+            {
+                get
+                {
+                    return base.Commands;
+                }
+            }
+
+            public new global::LightSwitchApplication.CurrentRankings.DetailsClass.MethodSet Methods
+            {
+                get
+                {
+                    return base.Methods;
+                }
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable RankingsQuery(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate)
+            {
+                return this.Screen.DataWorkspace.ApplicationData.Rankings(StartDate, EndDate);
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::LightSwitchApplication.Achievement>.Data _Rankings;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>.Data _AchievementStartDate;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>.Data _AchievementEndDate;
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class PropertySet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::LightSwitchApplication.Achievement> Rankings
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::LightSwitchApplication.Achievement>)base.GetItem(global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties.Rankings);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime> AchievementStartDate
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>)base.GetItem(global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties.AchievementStartDate);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime> AchievementEndDate
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>)base.GetItem(global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties.AchievementEndDate);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class CommandSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class MethodSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class PropertySetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::LightSwitchApplication.Achievement>.Entry
+                    Rankings = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::LightSwitchApplication.Achievement>.Entry(
+                        "Rankings",
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._Rankings_Stub,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._Rankings_Validate,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._Rankings_CreateQuery,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._Rankings_SelectionChanged,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._Rankings_OnCollectionChanged,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._Rankings_OnLoaded);
+                private static void _Rankings_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.CurrentRankings.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::LightSwitchApplication.Achievement>.Data> c, global::LightSwitchApplication.CurrentRankings.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Rankings, sf);
+                }
+                private static void _Rankings_Validate(global::LightSwitchApplication.CurrentRankings s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.Rankings_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Rankings_CreateQuery(global::LightSwitchApplication.CurrentRankings.DetailsClass d, object[] args)
+                {
+                    return d.RankingsQuery((global::System.Nullable<global::System.DateTime>)args[0], (global::System.Nullable<global::System.DateTime>)args[1]);
+                }
+                private static void _Rankings_SelectionChanged(global::LightSwitchApplication.CurrentRankings s)
+                {
+                    s.Rankings_SelectionChanged();
+                }
+                private static void _Rankings_OnCollectionChanged(global::LightSwitchApplication.CurrentRankings s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.Rankings_Changed(e);
+                }
+                private static void _Rankings_OnLoaded(global::LightSwitchApplication.CurrentRankings s, bool succeeded)
+                {
+                    s.Rankings_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>.Entry
+                    AchievementStartDate = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>.Entry(
+                        "AchievementStartDate",
+                        false,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._AchievementStartDate_Stub,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._AchievementStartDate_Validate,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._AchievementStartDate_OnValueChanged);
+                private static void _AchievementStartDate_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.CurrentRankings.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>.Data> c, global::LightSwitchApplication.CurrentRankings.DetailsClass d, object sf)
+                {
+                    c(d, ref d._AchievementStartDate, sf);
+                }
+                private static void _AchievementStartDate_Validate(global::LightSwitchApplication.CurrentRankings s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.AchievementStartDate_Validate(r);
+                }
+                private static void _AchievementStartDate_OnValueChanged(global::LightSwitchApplication.CurrentRankings s)
+                {
+                    s.AchievementStartDate_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>.Entry
+                    AchievementEndDate = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>.Entry(
+                        "AchievementEndDate",
+                        false,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._AchievementEndDate_Stub,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._AchievementEndDate_Validate,
+                        global::LightSwitchApplication.CurrentRankings.DetailsClass.PropertySetProperties._AchievementEndDate_OnValueChanged);
+                private static void _AchievementEndDate_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.CurrentRankings.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.CurrentRankings, global::LightSwitchApplication.CurrentRankings.DetailsClass, global::System.DateTime>.Data> c, global::LightSwitchApplication.CurrentRankings.DetailsClass d, object sf)
+                {
+                    c(d, ref d._AchievementEndDate, sf);
+                }
+                private static void _AchievementEndDate_Validate(global::LightSwitchApplication.CurrentRankings s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.AchievementEndDate_Validate(r);
+                }
+                private static void _AchievementEndDate_OnValueChanged(global::LightSwitchApplication.CurrentRankings s)
+                {
+                    s.AchievementEndDate_Changed();
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class CommandSetProperties
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class MethodSetProperties
+            {
+            }
+        }
+    }
 }

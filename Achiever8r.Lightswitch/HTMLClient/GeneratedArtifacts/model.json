@@ -337,6 +337,36 @@
               {
                 "member": { "__id": "ApplicationData/Members[Users]" }
               }
+            },
+            {
+              "id": "ApplicationData/Members[Rankings]",
+              "name": "Rankings",
+              "elementType": { "__id": "Achievement" },
+              "query": { "__id": "ApplicationData/Members[Rankings]" },
+              "returnType": { "__id": "Achievement*" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[Achievements]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[Rankings]/Parameters[StartDate]",
+                  "name": "StartDate",
+                  "parameterType": { "__id": ":Date?" }
+                },
+                {
+                  "id": "ApplicationData/Members[Rankings]/Parameters[EndDate]",
+                  "name": "EndDate",
+                  "parameterType": { "__id": ":Date?" }
+                }
+              ],
+              "sortCriteria":
+              [
+                {
+                  "member": { "__id": "Achievement/Properties[NumberOfRatings]" }
+                }
+              ]
             }
           ]
         },
@@ -495,6 +525,13 @@
               "fromEnd": { "__id": "Rating_Achievement/Ends[Achievement]" },
               "propertyType": { "__id": "Rating*" },
               "toEnd": { "__id": "Rating_Achievement/Ends[Rating]" }
+            },
+            {
+              "id": "Achievement/Properties[NumberOfRatings]",
+              "name": "NumberOfRatings",
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@Hidden": { }
             }
           ]
         },

@@ -17,6 +17,7 @@
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="NominatedOn" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="NumberOfRatings" Type="Edm.Int32" Nullable="false" />
     <Property Name="Achievement_AchievementCategory" Type="Edm.Int32" Nullable="false" />
     <Property Name="Achievement_User" Type="Edm.Int32" Nullable="false" />
     <Property Name="Achievement_User1" Type="Edm.Int32" Nullable="false" />
@@ -138,6 +139,10 @@
       <End Role="Rating" EntitySet="Ratings" />
     </AssociationSet>
     <FunctionImport Name="GetMissingUsers" ReturnType="Collection(LightSwitchApplication.User)" EntitySet="Users" m:HttpMethod="GET" />
+    <FunctionImport Name="Rankings" ReturnType="Collection(LightSwitchApplication.Achievement)" EntitySet="Achievements" m:HttpMethod="GET">
+      <Parameter Name="StartDate" Type="Edm.DateTime" Mode="In" />
+      <Parameter Name="EndDate" Type="Edm.DateTime" Mode="In" />
+    </FunctionImport>
     <FunctionImport Name="Microsoft_LightSwitch_GetCanInformation" ReturnType="Edm.String" m:HttpMethod="GET">
       <Parameter Name="dataServiceMembers" Type="Edm.String" Mode="In" />
     </FunctionImport>

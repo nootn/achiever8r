@@ -17,6 +17,7 @@
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="NominatedOn" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="NumberOfRatings" Type="Edm.Int32" Nullable="false" />
     <Property Name="Achievement_AchievementCategory" Type="Edm.Int32" Nullable="false" />
     <Property Name="Achievement_User" Type="Edm.Int32" Nullable="false" />
     <Property Name="Achievement_User1" Type="Edm.Int32" Nullable="false" />

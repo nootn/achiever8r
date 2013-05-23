@@ -197,16 +197,18 @@ namespace LightSwitchApplication.Implementation
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
         /// <param name="description">Initial value of the Description property.</param>
         /// <param name="nominatedOn">Initial value of the NominatedOn property.</param>
+        /// <param name="numberOfRatings">Initial value of the NumberOfRatings property.</param>
         /// <param name="achievement_AchievementCategory">Initial value of the Achievement_AchievementCategory property.</param>
         /// <param name="achievement_User">Initial value of the Achievement_User property.</param>
         /// <param name="achievement_User1">Initial value of the Achievement_User1 property.</param>
-        public static Achievement CreateAchievement(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String description, global::System.DateTime nominatedOn, global::System.Int32 achievement_AchievementCategory, global::System.Int32 achievement_User, global::System.Int32 achievement_User1)
+        public static Achievement CreateAchievement(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.String description, global::System.DateTime nominatedOn, global::System.Int32 numberOfRatings, global::System.Int32 achievement_AchievementCategory, global::System.Int32 achievement_User, global::System.Int32 achievement_User1)
         {
             Achievement achievement = new Achievement();
             achievement.Id = id;
             achievement.RowVersion = rowVersion;
             achievement.Description = description;
             achievement.NominatedOn = nominatedOn;
+            achievement.NumberOfRatings = numberOfRatings;
             achievement.Achievement_AchievementCategory = achievement_AchievementCategory;
             achievement.Achievement_User = achievement_User;
             achievement.Achievement_User1 = achievement_User1;
@@ -315,6 +317,30 @@ namespace LightSwitchApplication.Implementation
         private global::System.DateTime _NominatedOn;
         partial void OnNominatedOnChanging(global::System.DateTime value);
         partial void OnNominatedOnChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 NumberOfRatings
+        {
+            get
+            {
+                return _NumberOfRatings;
+            }
+            set
+            {
+                OnNumberOfRatingsChanging(value);
+                ReportPropertyChanging("NumberOfRatings");
+                _NumberOfRatings = value;
+                ReportPropertyChanged("NumberOfRatings");
+                OnNumberOfRatingsChanged();
+            }
+        }
+        private global::System.Int32 _NumberOfRatings;
+        partial void OnNumberOfRatingsChanging(global::System.Int32 value);
+        partial void OnNumberOfRatingsChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
