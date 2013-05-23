@@ -62,6 +62,7 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="RatedOn" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Rating_Achievement" Type="int" Nullable="false" />
     <Property Name="Rating_User" Type="int" Nullable="false" />
   </EntityType>

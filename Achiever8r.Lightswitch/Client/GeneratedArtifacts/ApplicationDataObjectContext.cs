@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 5/14/2013 10:22:17 PM
+// Generation date: 5/23/2013 8:10:54 PM
 namespace LightSwitchApplication.Implementation
 {
     
@@ -208,59 +208,59 @@ namespace LightSwitchApplication.Implementation
                 "dm.Int32\" Nullable=\"false\" annotation:StoreGeneratedPattern=\"Identity\" /><Proper" +
                 "ty Name=\"RowVersion\" Type=\"Edm.Binary\" Nullable=\"false\" ConcurrencyMode=\"Fixed\" " +
                 "annotation:StoreGeneratedPattern=\"Computed\" /><Property Name=\"RatedOn\" Type=\"Edm" +
-                ".DateTime\" Nullable=\"false\" /><Property Name=\"Rating_Achievement\" Type=\"Edm.Int3" +
-                "2\" Nullable=\"false\" /><Property Name=\"Rating_User\" Type=\"Edm.Int32\" Nullable=\"fa" +
-                "lse\" /><NavigationProperty Name=\"Achievement\" Relationship=\"LightSwitchApplicati" +
-                "on.Rating_Achievement\" ToRole=\"Achievement\" FromRole=\"Rating\" /><NavigationPrope" +
-                "rty Name=\"RatedByUser\" Relationship=\"LightSwitchApplication.Rating_User\" ToRole=" +
-                "\"User\" FromRole=\"Rating\" /></EntityType><Association Name=\"Achievement_Achieveme" +
-                "ntCategory\"><End Role=\"AchievementCategory\" Type=\"LightSwitchApplication.Achieve" +
-                "mentCategory\" Multiplicity=\"1\" /><End Role=\"Achievement\" Type=\"LightSwitchApplic" +
-                "ation.Achievement\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Ac" +
-                "hievementCategory\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"Achieve" +
-                "ment\"><PropertyRef Name=\"Achievement_AchievementCategory\" /></Dependent></Refere" +
-                "ntialConstraint></Association><Association Name=\"Achievement_User\"><End Role=\"Us" +
-                "er\" Type=\"LightSwitchApplication.User\" Multiplicity=\"1\" /><End Role=\"Achievement" +
-                "\" Type=\"LightSwitchApplication.Achievement\" Multiplicity=\"*\" /><ReferentialConst" +
-                "raint><Principal Role=\"User\"><PropertyRef Name=\"Id\" /></Principal><Dependent Rol" +
-                "e=\"Achievement\"><PropertyRef Name=\"Achievement_User\" /></Dependent></Referential" +
-                "Constraint></Association><Association Name=\"Achievement_User1\"><End Role=\"User\" " +
-                "Type=\"LightSwitchApplication.User\" Multiplicity=\"1\" /><End Role=\"Achievement\" Ty" +
-                "pe=\"LightSwitchApplication.Achievement\" Multiplicity=\"*\" /><ReferentialConstrain" +
-                "t><Principal Role=\"User\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"A" +
-                "chievement\"><PropertyRef Name=\"Achievement_User1\" /></Dependent></ReferentialCon" +
-                "straint></Association><Association Name=\"Rating_Achievement\"><End Role=\"Achievem" +
-                "ent\" Type=\"LightSwitchApplication.Achievement\" Multiplicity=\"1\"><OnDelete Action" +
-                "=\"Cascade\" /></End><End Role=\"Rating\" Type=\"LightSwitchApplication.Rating\" Multi" +
-                "plicity=\"*\" /><ReferentialConstraint><Principal Role=\"Achievement\"><PropertyRef " +
-                "Name=\"Id\" /></Principal><Dependent Role=\"Rating\"><PropertyRef Name=\"Rating_Achie" +
-                "vement\" /></Dependent></ReferentialConstraint></Association><Association Name=\"R" +
-                "ating_User\"><End Role=\"User\" Type=\"LightSwitchApplication.User\" Multiplicity=\"1\"" +
-                " /><End Role=\"Rating\" Type=\"LightSwitchApplication.Rating\" Multiplicity=\"*\" /><R" +
-                "eferentialConstraint><Principal Role=\"User\"><PropertyRef Name=\"Id\" /></Principal" +
-                "><Dependent Role=\"Rating\"><PropertyRef Name=\"Rating_User\" /></Dependent></Refere" +
-                "ntialConstraint></Association><EntityContainer Name=\"ApplicationData\" m:IsDefaul" +
-                "tEntityContainer=\"true\"><EntitySet Name=\"AchievementCategories\" EntityType=\"Ligh" +
-                "tSwitchApplication.AchievementCategory\" /><EntitySet Name=\"Achievements\" EntityT" +
-                "ype=\"LightSwitchApplication.Achievement\" /><EntitySet Name=\"Users\" EntityType=\"L" +
-                "ightSwitchApplication.User\" /><EntitySet Name=\"Ratings\" EntityType=\"LightSwitchA" +
-                "pplication.Rating\" /><AssociationSet Name=\"Achievement_AchievementCategory\" Asso" +
-                "ciation=\"LightSwitchApplication.Achievement_AchievementCategory\"><End Role=\"Achi" +
-                "evementCategory\" EntitySet=\"AchievementCategories\" /><End Role=\"Achievement\" Ent" +
-                "itySet=\"Achievements\" /></AssociationSet><AssociationSet Name=\"Achievement_User\"" +
-                " Association=\"LightSwitchApplication.Achievement_User\"><End Role=\"User\" EntitySe" +
-                "t=\"Users\" /><End Role=\"Achievement\" EntitySet=\"Achievements\" /></AssociationSet>" +
-                "<AssociationSet Name=\"Achievement_User1\" Association=\"LightSwitchApplication.Ach" +
-                "ievement_User1\"><End Role=\"User\" EntitySet=\"Users\" /><End Role=\"Achievement\" Ent" +
-                "itySet=\"Achievements\" /></AssociationSet><AssociationSet Name=\"Rating_Achievemen" +
-                "t\" Association=\"LightSwitchApplication.Rating_Achievement\"><End Role=\"Achievemen" +
-                "t\" EntitySet=\"Achievements\" /><End Role=\"Rating\" EntitySet=\"Ratings\" /></Associa" +
-                "tionSet><AssociationSet Name=\"Rating_User\" Association=\"LightSwitchApplication.R" +
-                "ating_User\"><End Role=\"User\" EntitySet=\"Users\" /><End Role=\"Rating\" EntitySet=\"R" +
-                "atings\" /></AssociationSet><FunctionImport Name=\"GetMissingUsers\" ReturnType=\"Co" +
-                "llection(LightSwitchApplication.User)\" EntitySet=\"Users\" m:";
+                ".DateTime\" Nullable=\"false\" /><Property Name=\"Comment\" Type=\"Edm.String\" Nullabl" +
+                "e=\"false\" MaxLength=\"255\" /><Property Name=\"Rating_Achievement\" Type=\"Edm.Int32\"" +
+                " Nullable=\"false\" /><Property Name=\"Rating_User\" Type=\"Edm.Int32\" Nullable=\"fals" +
+                "e\" /><NavigationProperty Name=\"Achievement\" Relationship=\"LightSwitchApplication" +
+                ".Rating_Achievement\" ToRole=\"Achievement\" FromRole=\"Rating\" /><NavigationPropert" +
+                "y Name=\"RatedByUser\" Relationship=\"LightSwitchApplication.Rating_User\" ToRole=\"U" +
+                "ser\" FromRole=\"Rating\" /></EntityType><Association Name=\"Achievement_Achievement" +
+                "Category\"><End Role=\"AchievementCategory\" Type=\"LightSwitchApplication.Achieveme" +
+                "ntCategory\" Multiplicity=\"1\" /><End Role=\"Achievement\" Type=\"LightSwitchApplicat" +
+                "ion.Achievement\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Achi" +
+                "evementCategory\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"Achieveme" +
+                "nt\"><PropertyRef Name=\"Achievement_AchievementCategory\" /></Dependent></Referent" +
+                "ialConstraint></Association><Association Name=\"Achievement_User\"><End Role=\"User" +
+                "\" Type=\"LightSwitchApplication.User\" Multiplicity=\"1\" /><End Role=\"Achievement\" " +
+                "Type=\"LightSwitchApplication.Achievement\" Multiplicity=\"*\" /><ReferentialConstra" +
+                "int><Principal Role=\"User\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=" +
+                "\"Achievement\"><PropertyRef Name=\"Achievement_User\" /></Dependent></ReferentialCo" +
+                "nstraint></Association><Association Name=\"Achievement_User1\"><End Role=\"User\" Ty" +
+                "pe=\"LightSwitchApplication.User\" Multiplicity=\"1\" /><End Role=\"Achievement\" Type" +
+                "=\"LightSwitchApplication.Achievement\" Multiplicity=\"*\" /><ReferentialConstraint>" +
+                "<Principal Role=\"User\"><PropertyRef Name=\"Id\" /></Principal><Dependent Role=\"Ach" +
+                "ievement\"><PropertyRef Name=\"Achievement_User1\" /></Dependent></ReferentialConst" +
+                "raint></Association><Association Name=\"Rating_Achievement\"><End Role=\"Achievemen" +
+                "t\" Type=\"LightSwitchApplication.Achievement\" Multiplicity=\"1\"><OnDelete Action=\"" +
+                "Cascade\" /></End><End Role=\"Rating\" Type=\"LightSwitchApplication.Rating\" Multipl" +
+                "icity=\"*\" /><ReferentialConstraint><Principal Role=\"Achievement\"><PropertyRef Na" +
+                "me=\"Id\" /></Principal><Dependent Role=\"Rating\"><PropertyRef Name=\"Rating_Achieve" +
+                "ment\" /></Dependent></ReferentialConstraint></Association><Association Name=\"Rat" +
+                "ing_User\"><End Role=\"User\" Type=\"LightSwitchApplication.User\" Multiplicity=\"1\" /" +
+                "><End Role=\"Rating\" Type=\"LightSwitchApplication.Rating\" Multiplicity=\"*\" /><Ref" +
+                "erentialConstraint><Principal Role=\"User\"><PropertyRef Name=\"Id\" /></Principal><" +
+                "Dependent Role=\"Rating\"><PropertyRef Name=\"Rating_User\" /></Dependent></Referent" +
+                "ialConstraint></Association><EntityContainer Name=\"ApplicationData\" m:IsDefaultE" +
+                "ntityContainer=\"true\"><EntitySet Name=\"AchievementCategories\" EntityType=\"LightS" +
+                "witchApplication.AchievementCategory\" /><EntitySet Name=\"Achievements\" EntityTyp" +
+                "e=\"LightSwitchApplication.Achievement\" /><EntitySet Name=\"Users\" EntityType=\"Lig" +
+                "htSwitchApplication.User\" /><EntitySet Name=\"Ratings\" EntityType=\"LightSwitchApp" +
+                "lication.Rating\" /><AssociationSet Name=\"Achievement_AchievementCategory\" Associ" +
+                "ation=\"LightSwitchApplication.Achievement_AchievementCategory\"><End Role=\"Achiev" +
+                "ementCategory\" EntitySet=\"AchievementCategories\" /><End Role=\"Achievement\" Entit" +
+                "ySet=\"Achievements\" /></AssociationSet><AssociationSet Name=\"Achievement_User\" A" +
+                "ssociation=\"LightSwitchApplication.Achievement_User\"><End Role=\"User\" EntitySet=" +
+                "\"Users\" /><End Role=\"Achievement\" EntitySet=\"Achievements\" /></AssociationSet><A" +
+                "ssociationSet Name=\"Achievement_User1\" Association=\"LightSwitchApplication.Achie" +
+                "vement_User1\"><End Role=\"User\" EntitySet=\"Users\" /><End Role=\"Achievement\" Entit" +
+                "ySet=\"Achievements\" /></AssociationSet><AssociationSet Name=\"Rating_Achievement\"" +
+                " Association=\"LightSwitchApplication.Rating_Achievement\"><End Role=\"Achievement\"" +
+                " EntitySet=\"Achievements\" /><End Role=\"Rating\" EntitySet=\"Ratings\" /></Associati" +
+                "onSet><AssociationSet Name=\"Rating_User\" Association=\"LightSwitchApplication.Rat" +
+                "ing_User\"><End Role=\"User\" EntitySet=\"Users\" /><End Role=\"Rating\" EntitySet=\"Rat" +
+                "ings\" /></AssociationSet><FunctionImport Name=\"GetMissingUs";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart1 = @"HttpMethod=""GET"" /><FunctionImport Name=""Microsoft_LightSwitch_GetCanInformation"" ReturnType=""Edm.String"" m:HttpMethod=""GET""><Parameter Name=""dataServiceMembers"" Type=""Edm.String"" Mode=""In"" /></FunctionImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
+            private const string ModelPart1 = @"ers"" ReturnType=""Collection(LightSwitchApplication.User)"" EntitySet=""Users"" m:HttpMethod=""GET"" /><FunctionImport Name=""Microsoft_LightSwitch_GetCanInformation"" ReturnType=""Edm.String"" m:HttpMethod=""GET""><Parameter Name=""dataServiceMembers"" Type=""Edm.String"" Mode=""In"" /></FunctionImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -1047,15 +1047,17 @@ namespace LightSwitchApplication.Implementation
         /// <param name="ID">Initial value of Id.</param>
         /// <param name="rowVersion">Initial value of RowVersion.</param>
         /// <param name="ratedOn">Initial value of RatedOn.</param>
+        /// <param name="comment">Initial value of Comment.</param>
         /// <param name="rating_Achievement">Initial value of Rating_Achievement.</param>
         /// <param name="rating_User">Initial value of Rating_User.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Rating CreateRating(int ID, byte[] rowVersion, global::System.DateTime ratedOn, int rating_Achievement, int rating_User)
+        public static Rating CreateRating(int ID, byte[] rowVersion, global::System.DateTime ratedOn, string comment, int rating_Achievement, int rating_User)
         {
             Rating rating = new Rating();
             rating.Id = ID;
             rating.RowVersion = rowVersion;
             rating.RatedOn = ratedOn;
+            rating.Comment = comment;
             rating.Rating_Achievement = rating_Achievement;
             rating.Rating_User = rating_User;
             return rating;
@@ -1145,6 +1147,32 @@ namespace LightSwitchApplication.Implementation
         private global::System.DateTime _RatedOn;
         partial void OnRatedOnChanging(global::System.DateTime value);
         partial void OnRatedOnChanged();
+        /// <summary>
+        /// There are no comments for Property Comment in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Comment
+        {
+            get
+            {
+                return this._Comment;
+            }
+            set
+            {
+                this.OnCommentChanging(value);
+                if (object.Equals(this.Comment, value))
+                {
+                    return;
+                }
+                this._Comment = value;
+                this.OnCommentChanged();
+                this.OnPropertyChanged("Comment");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Comment;
+        partial void OnCommentChanging(string value);
+        partial void OnCommentChanged();
         /// <summary>
         /// There are no comments for Property Rating_Achievement in the schema.
         /// </summary>

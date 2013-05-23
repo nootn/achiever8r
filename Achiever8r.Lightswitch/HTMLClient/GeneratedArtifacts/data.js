@@ -131,6 +131,9 @@ window.myapp = msls.application;
         /// <field name="RatedByUser" type="msls.application.User">
         /// Gets or sets the ratedByUser for this rating.
         /// </field>
+        /// <field name="Comment" type="String">
+        /// Gets or sets the comment for this rating.
+        /// </field>
         /// <field name="details" type="msls.application.Rating.Details">
         /// Gets the details for this rating.
         /// </field>
@@ -209,7 +212,8 @@ window.myapp = msls.application;
             { name: "RowVersion", type: Array },
             { name: "RatedOn", type: Date },
             { name: "Achievement", kind: "reference", type: Achievement },
-            { name: "RatedByUser", kind: "reference", type: User }
+            { name: "RatedByUser", kind: "reference", type: User },
+            { name: "Comment", type: String }
         ]),
 
         ApplicationData: $defineDataService(ApplicationData, lightSwitchApplication.rootUri + "/ApplicationData.svc", [

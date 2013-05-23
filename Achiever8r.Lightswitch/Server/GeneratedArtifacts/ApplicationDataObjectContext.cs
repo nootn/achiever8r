@@ -684,14 +684,16 @@ namespace LightSwitchApplication.Implementation
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
         /// <param name="ratedOn">Initial value of the RatedOn property.</param>
+        /// <param name="comment">Initial value of the Comment property.</param>
         /// <param name="rating_Achievement">Initial value of the Rating_Achievement property.</param>
         /// <param name="rating_User">Initial value of the Rating_User property.</param>
-        public static Rating CreateRating(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime ratedOn, global::System.Int32 rating_Achievement, global::System.Int32 rating_User)
+        public static Rating CreateRating(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.DateTime ratedOn, global::System.String comment, global::System.Int32 rating_Achievement, global::System.Int32 rating_User)
         {
             Rating rating = new Rating();
             rating.Id = id;
             rating.RowVersion = rowVersion;
             rating.RatedOn = ratedOn;
+            rating.Comment = comment;
             rating.Rating_Achievement = rating_Achievement;
             rating.Rating_User = rating_User;
             return rating;
@@ -775,6 +777,30 @@ namespace LightSwitchApplication.Implementation
         private global::System.DateTime _RatedOn;
         partial void OnRatedOnChanging(global::System.DateTime value);
         partial void OnRatedOnChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Comment
+        {
+            get
+            {
+                return _Comment;
+            }
+            set
+            {
+                OnCommentChanging(value);
+                ReportPropertyChanging("Comment");
+                _Comment = value;
+                ReportPropertyChanged("Comment");
+                OnCommentChanged();
+            }
+        }
+        private global::System.String _Comment;
+        partial void OnCommentChanging(global::System.String value);
+        partial void OnCommentChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

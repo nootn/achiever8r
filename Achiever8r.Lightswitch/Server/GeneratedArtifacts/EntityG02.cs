@@ -180,6 +180,24 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string DisplayName
+        {
+            get
+            {
+                return global::LightSwitchApplication.Achievement.DetailsClass.GetValue(this, global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties.DisplayName);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DisplayName_Compute(ref string result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DisplayName_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::LightSwitchApplication.AchievementCategory AchievementCategory
         {
             get
@@ -381,6 +399,14 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties.NominatedOn) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, global::System.DateTime>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, string> DisplayName
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties.DisplayName) as global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, string>;
                     }
                 }
                 
@@ -588,6 +614,28 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, string>.Entry
+                    DisplayName = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, string>.Entry(
+                        "DisplayName",
+                        global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties._DisplayName_Stub,
+                        global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties._DisplayName_Validate,
+                        global::LightSwitchApplication.Achievement.DetailsClass.PropertySetProperties._DisplayName_ComputeValue);
+                private static void _DisplayName_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Achievement.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, string>.Data> c, global::LightSwitchApplication.Achievement.DetailsClass d, object sf)
+                {
+                    c(d, ref d._DisplayName, sf);
+                }
+                private static void _DisplayName_Validate(global::LightSwitchApplication.Achievement e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.DisplayName_Validate(r);
+                }
+                private static string _DisplayName_ComputeValue(global::LightSwitchApplication.Achievement e)
+                {
+                    string value = default(string);
+                    e.DisplayName_Compute(ref value);
+                    return value;
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, global::LightSwitchApplication.AchievementCategory>.Entry
                     AchievementCategory = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, global::LightSwitchApplication.AchievementCategory>.Entry(
                         "AchievementCategory",
@@ -761,6 +809,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, global::System.DateTime>.Data _NominatedOn;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, string>.Data _DisplayName;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Achievement, global::LightSwitchApplication.Achievement.DetailsClass, global::LightSwitchApplication.AchievementCategory>.Data _AchievementCategory;

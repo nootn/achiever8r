@@ -561,6 +561,13 @@
         Association="Rating_Achievement"
         FromEnd="Achievement"
         ToEnd="Rating" />
+      <EntityProperty
+        Name="DisplayName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityType
@@ -675,13 +682,18 @@
           <NotSearchable />
           <DisplayName
             Value="R8ed On" />
+          <Hidden />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Achievement"
         Association="Rating_Achievement"
         FromEnd="Rating"
-        ToEnd="Achievement" />
+        ToEnd="Achievement">
+        <NavigationProperty.Attributes>
+          <IncludeInUniqueIndex />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="RatedByUser"
         Association="Rating_User"
@@ -690,8 +702,19 @@
         <NavigationProperty.Attributes>
           <DisplayName
             Value="R8ed By" />
+          <Hidden />
+          <IncludeInUniqueIndex />
         </NavigationProperty.Attributes>
       </NavigationProperty>
+      <EntityProperty
+        Name="Comment"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association

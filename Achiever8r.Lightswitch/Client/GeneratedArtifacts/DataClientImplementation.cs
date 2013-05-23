@@ -373,6 +373,11 @@ namespace LightSwitchApplication.Implementation
             this.___OnPropertyChanged("RatedOn");
         }
         
+        partial void OnCommentChanged()
+        {
+            this.___OnPropertyChanged("Comment");
+        }
+        
         global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Rating.DetailsClass.IImplementation.Achievement
         {
             get

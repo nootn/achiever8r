@@ -44,6 +44,7 @@
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="RatedOn" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="Comment" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Rating_Achievement" Type="Edm.Int32" Nullable="false" />
     <Property Name="Rating_User" Type="Edm.Int32" Nullable="false" />
     <NavigationProperty Name="Achievement" Relationship="LightSwitchApplication.Rating_Achievement" ToRole="Achievement" FromRole="Rating" />

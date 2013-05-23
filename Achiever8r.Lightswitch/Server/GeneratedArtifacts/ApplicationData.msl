@@ -41,6 +41,7 @@
           <ScalarProperty Name="RatedOn" ColumnName="RatedOn" />
           <ScalarProperty Name="Rating_Achievement" ColumnName="Rating_Achievement" />
           <ScalarProperty Name="Rating_User" ColumnName="Rating_User" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

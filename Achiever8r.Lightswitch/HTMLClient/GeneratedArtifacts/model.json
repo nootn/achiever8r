@@ -403,9 +403,9 @@
         },
         {
           "__isEntityType": 1,
-          ":@SummaryProperty": { "property": { "__id": "Achievement/Properties[Description]" } },
           "id": "Achievement",
           "name": "Achievement",
+          ":@SummaryProperty": { "property": { "__id": "Achievement/Properties[Description]" } },
           "methods":
           [
             {
@@ -589,7 +589,7 @@
         },
         {
           "__isEntityType": 1,
-          ":@SummaryProperty": { "property": { "__id": "Rating/Properties[Id]" } },
+          ":@SummaryProperty": { "property": { "__id": "Rating/Properties[Comment]" } },
           "id": "Rating",
           "name": "Rating",
           "methods":
@@ -632,7 +632,8 @@
               "name": "RatedOn",
               "propertyType": { "__id": ":DateTime" },
               ":@Required": { },
-              ":@NotSearchable": { }
+              ":@NotSearchable": { },
+              ":@Hidden": { }
             },
             {
               "id": "Rating/Properties[Achievement]",
@@ -641,7 +642,8 @@
               "elementType": { "__id": "Achievement" },
               "fromEnd": { "__id": "Rating_Achievement/Ends[Rating]" },
               "propertyType": { "__id": "Achievement" },
-              "toEnd": { "__id": "Rating_Achievement/Ends[Achievement]" }
+              "toEnd": { "__id": "Rating_Achievement/Ends[Achievement]" },
+              ":@IncludeInUniqueIndex": { }
             },
             {
               "id": "Rating/Properties[RatedByUser]",
@@ -650,7 +652,19 @@
               "elementType": { "__id": "User" },
               "fromEnd": { "__id": "Rating_User/Ends[Rating]" },
               "propertyType": { "__id": "User" },
-              "toEnd": { "__id": "Rating_User/Ends[User]" }
+              "toEnd": { "__id": "Rating_User/Ends[User]" },
+              ":@Hidden": { },
+              ":@IncludeInUniqueIndex": { }
+            },
+            {
+              "id": "Rating/Properties[Comment]",
+              "name": "Comment",
+              "propertyType": { "__id": ":String" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
             }
           ]
         },

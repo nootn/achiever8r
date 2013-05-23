@@ -65,6 +65,8 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:Achievement" />
+      <SummaryProperty
+        Property="Achievement/Properties[Description]" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>

@@ -12,5 +12,10 @@ namespace LightSwitchApplication
             NominatedByUser = DataWorkspace.ApplicationData.Users.Where(_=>_.LoginId.Equals(Application.User.Name)).Single();
             NominatedOn = DateTime.Now;
         }
+
+        partial void DisplayName_Compute(ref string result)
+        {
+            result = string.Format("{0} - {1} ({2})", AchievedByUser == null ? "[TBA]" : AchievedByUser.FullName, Description, AchievementCategory == null ? "[TBA]" : AchievementCategory.Description);
+        }
     }
 }

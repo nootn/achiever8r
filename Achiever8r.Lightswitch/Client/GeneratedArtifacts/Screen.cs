@@ -478,7 +478,9 @@ namespace LightSwitchApplication
                 return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
                     global::Microsoft.LightSwitch.DataServiceQueryable.Include(
                         global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                            this.Screen.DataWorkspace.ApplicationData.Achievements,
+                            global::Microsoft.LightSwitch.DataServiceQueryable.OrderByDescending(
+                                this.Screen.DataWorkspace.ApplicationData.Achievements,
+                                (a) => a.NominatedOn),
                             "AchievementCategory"),
                         "AchievedByUser"),
                     "NominatedByUser");
