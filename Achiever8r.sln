@@ -2,6 +2,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8A4D642E-824A-4D58-BD56-648CC30C8F17}") = "Achiever8r.Lightswitch", "Achiever8r.Lightswitch\Achiever8r.Lightswitch.ls3proj", "{62A2C623-BD3A-4FFF-805E-F3F886657627}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Achiever8r.SPA", "Achiever8r.SPA\Achiever8r.SPA.csproj", "{58251DD9-E2E5-40C6-941A-5CD1974996E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{1F2B0344-F3C8-49EC-846C-DC3C86638AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F2B0344-F3C8-49EC-846C-DC3C86638AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F2B0344-F3C8-49EC-846C-DC3C86638AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58251DD9-E2E5-40C6-941A-5CD1974996E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58251DD9-E2E5-40C6-941A-5CD1974996E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58251DD9-E2E5-40C6-941A-5CD1974996E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58251DD9-E2E5-40C6-941A-5CD1974996E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
