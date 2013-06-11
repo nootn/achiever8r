@@ -1,5 +1,13 @@
 ﻿@using System.Web
 @using System.Web.Optimization
+@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;                
+    }
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +33,7 @@
     <div id="applicationHost">
         @Html.Partial("_splash")
     </div>
-
+    <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />  
     @Scripts.Render("~/scripts/vendor")
         @if(HttpContext.Current.IsDebuggingEnabled) {
             <script type="text/javascript" src="~/App/durandal/amd/require.js" data-main="@Url.Content("~/App/main")"></script>

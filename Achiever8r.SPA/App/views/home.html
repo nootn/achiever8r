@@ -1,3 +1,10 @@
 ﻿<section>
     <h2 class="page-title" data-bind="text: title"></h2>
 </section>
+<span data-bind="text: loadedAt"></span>
+<p data-bind="visible: achievements().length <= 0">
+    No achievements
+</p>
+<ul id="achievementList" data-bind="foreach: achievements, visible: achievements().length > 0">
+   <li><span data-bind="text: description"></span></li> 
+</ul>

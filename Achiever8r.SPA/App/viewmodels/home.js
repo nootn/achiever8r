@@ -1,15 +1,20 @@
-﻿define(['services/logger'], function (logger) {
+﻿define(['services/logger', 'services/datacontext'], function (logger, datacontext) {
     var vm = {
         activate: activate,
-        title: 'Home View'
+        title: 'Home View',
+        achievements: ko.observableArray([]),
+        loadedAt: ko.observable(""),
     };
 
     return vm;
 
-    //#region Internal Methods
     function activate() {
-        logger.log('Home View Activated', null, 'home', true);
+
+        if (datacontext.loadAllAchievements(vm.achievements)) {
+            var newDate = new Date();
+            vm.loadedAt("Last Sync: " + moment().format('MMMM Do YYYY, h:mm:ss a'));
+        }
+        
         return true;
     }
-    //#endregion
 });

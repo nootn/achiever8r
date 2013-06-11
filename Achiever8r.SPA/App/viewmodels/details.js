@@ -8,7 +8,6 @@
 
     //#region Internal Methods
     function activate() {
-        logger.log('Details View Activated', null, 'details', true);
         return true;
     }
     //#endregion

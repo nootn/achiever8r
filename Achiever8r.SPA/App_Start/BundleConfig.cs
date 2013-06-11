@@ -20,6 +20,7 @@ namespace Achiever8r.SPA
                 .Include("~/scripts/breeze.debug.js")
                 .Include("~/scripts/bootstrap.js")
                 .Include("~/scripts/moment.js")
+                .Include("~/scripts/datajs-{version}.js")
               );
 
             bundles.Add(
