@@ -1507,25 +1507,22 @@ body.msls-opening-transition.msls-stage3 .msls-taskpage.msls-in {
             color: #fff;
         }
 
+select {
+    margin: 0px;
+}
+
 .msls-tap {
     cursor: pointer;
 }
 
-input.ui-input-text.ui-mini,
-textarea.ui-input-text.ui-mini {
-    height: 32px;
-    padding: 1px 8px;
-    margin: 0px;
-}
-
-input.ui-input-text, textarea.ui-input-text {
-    height: 36px;
-    padding: 1px 8px;
+.msls-presenter-content > textarea.ui-input-text,
+.msls-presenter-content > textarea.ui-input-text.ui-mini,
+.msls-presenter-content > div.ui-input-text.ui-mini,
+.msls-presenter-content > div.ui-input-text {
     margin: 0px;
 }
 
 textarea.ui-input-text {
-    padding: 8px;
     margin: 0px;
     height: 100% !important;
     width: 100%;
@@ -1543,8 +1540,9 @@ div.ui-slider {
     -ms-touch-action: none;
 }
 
-div.ui-slider-switch {
+.msls-ctl-flip-switch-control div.ui-slider-switch {
     height: 32px;
+    margin: 0px;
 }
 
 .ui-grid-solo {
@@ -1860,7 +1858,7 @@ a.msls-readonly,
     color: #d8000c;
 }
 
-fieldset.ui-controlgroup-horizontal div.ui-select {
+fieldset.ui-controlgroup-horizontal div.ui-select:not(:last-child) {
     margin-right: 1px;
 }
 
@@ -1890,6 +1888,10 @@ div.msls-dateTimePicker-hour,
 div.msls-dateTimePicker-minute,
 div.msls-dateTimePicker-period {
     min-width: 64px;
+}
+
+.msls-dateTimePicker-container .ui-controlgroup-horizontal .ui-btn {
+    border-width: 1px;
 }
 
 ul.msls-tile-list li {
@@ -1984,10 +1986,6 @@ html, body {
     line-height: 30px;
 }
 
-input.ui-input-text, textarea.ui-input-text {
-    font-size: 15px; }
-
-
 .ui-btn-up-a,
 .ui-btn-hover-a,
 .ui-btn-down-a {
@@ -2020,6 +2018,7 @@ input.ui-input-text, textarea.ui-input-text {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    padding-bottom: 1px;
 }
 
 .msls-text-container > p {
