@@ -398,7 +398,7 @@
               Name="columns"
               Kind="Details"
               DataType="Achievement"
-              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+              View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="columns" />
@@ -450,32 +450,6 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                 </ContentItem>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="200"
-                          ResultType=":Double" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="400"
-                          ResultType=":Double" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="right"
-                Kind="Group">
                 <ContentItem
                   Name="AchievedByUser"
                   Kind="Details"
@@ -924,6 +898,8 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="DeleteRating" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

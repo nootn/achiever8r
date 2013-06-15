@@ -163,6 +163,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCode\ApplicationDataService.cs" />
+    <Compile Include="UserCode\Shared\Extensions\DataWorkspaceExtensions.cs" />
     <Compile Include="UserCode\Shared\Achievement.cs" />
     <Compile Include="UserCode\Shared\Rating.cs" />
     <Compile Include="UserCode\Shared\User.cs" />

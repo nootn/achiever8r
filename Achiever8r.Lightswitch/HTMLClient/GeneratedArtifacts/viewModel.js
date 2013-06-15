@@ -109,6 +109,7 @@
         EditRating: $defineScreen(EditRating, [
             { name: "Rating", kind: "local", type: lightSwitchApplication.Rating }
         ], [
+            { name: "DeleteRating" }
         ]),
 
         showBrowseAchievements: $defineShowScreen(function showBrowseAchievements(options) {

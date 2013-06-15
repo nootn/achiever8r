@@ -74,11 +74,6 @@
         /// </field>
         RowTemplate_postRender: $parameters,
         /// <field>
-        /// Called after the right content item has been rendered.
-        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
-        /// </field>
-        right_postRender: $parameters,
-        /// <field>
         /// Called after the AchievedByUser content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
@@ -116,6 +111,16 @@
         /// <br/>beforeApplyChanges(msls.application.EditRating screen)
         /// </field>
         beforeApplyChanges: [lightSwitchApplication.EditRating],
+        /// <field>
+        /// Called to determine if the DeleteRating method can be executed.
+        /// <br/>canExecute(msls.application.EditRating screen)
+        /// </field>
+        DeleteRating_canExecute: [lightSwitchApplication.EditRating],
+        /// <field>
+        /// Called to execute the DeleteRating method.
+        /// <br/>execute(msls.application.EditRating screen)
+        /// </field>
+        DeleteRating_execute: [lightSwitchApplication.EditRating],
         /// <field>
         /// Called after the Details content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)

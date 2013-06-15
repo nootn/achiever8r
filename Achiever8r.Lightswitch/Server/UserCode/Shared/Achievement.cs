@@ -24,7 +24,7 @@ namespace LightSwitchApplication
             //NOTE: due to not being able to set the nominated user in "Achievement.js" we can assume that if it's null here, it's being created in the HTML app:
             if (NominatedByUser == null)
             {
-                NominatedByUser = DataWorkspace.ApplicationData.Users.Where(_ => _.LoginId.Equals(Application.User.Name)).Single();
+                NominatedByUser = DataWorkspace.GetCurrentUser();
             }
 
             if (!NominatedByUser.LoginId.Equals(Application.User.Name, StringComparison.InvariantCultureIgnoreCase))

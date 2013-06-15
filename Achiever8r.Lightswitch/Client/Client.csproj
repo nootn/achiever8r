@@ -181,6 +181,9 @@
     <Compile Include="..\Server\UserCode\Shared\Achievement.cs">
       <Link>UserCode\Shared\Achievement.cs</Link>
     </Compile>
+    <Compile Include="..\Server\UserCode\Shared\Extensions\DataWorkspaceExtensions.cs">
+      <Link>UserCode\Extensions\DataWorkspaceExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Server\UserCode\Shared\Rating.cs">
       <Link>UserCode\Shared\Rating.cs</Link>
     </Compile>

@@ -43,8 +43,8 @@ namespace LightSwitchApplication
                     newAppUser.FullName = secUser.FullName;
                 }
 
-                                //Ensure the current user is there, and that their name is up to date
-                var existing = db.ApplicationData.Users.Where(_ => _.LoginId.Equals(User.Name, StringComparison.InvariantCultureIgnoreCase)).SingleOrDefault();
+                //Ensure the current user is there, and that their name is up to date
+                var existing = db.GetCurrentUser();
                 if (existing == null)
                 {
                     existing = db.ApplicationData.Users.AddNew();

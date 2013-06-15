@@ -1039,7 +1039,7 @@
                         "displayName": "columns",
                         "name": "columns",
                         "kind": "Details",
-                        "view": { "__id": ":ColumnsLayout" },
+                        "view": { "__id": ":RowsLayout" },
                         "dataSource":
                         {
                           "member": { "__id": "EditAchievement/Properties[Achievement]" }
@@ -1087,27 +1087,7 @@
                                     }
                                   }
                                 ]
-                              }
-                            ],
-                            "propertySources":
-                            [
-                              {
-                                "property": { "__id": ":RootControl/Properties[MinWidth]" },
-                                "value": 200
                               },
-                              {
-                                "property": { "__id": ":RootControl/Properties[MaxWidth]" },
-                                "value": 400
-                              }
-                            ]
-                          },
-                          {
-                            "displayName": "right",
-                            "name": "right",
-                            "kind": "Group",
-                            "view": { "__id": ":RowsLayout" },
-                            "childContentItems":
-                            [
                               {
                                 "displayName": "Achieved By",
                                 "name": "AchievedByUser",
@@ -1484,6 +1464,10 @@
                   "parameterType": { "__id": ":String" }
                 }
               ]
+            },
+            {
+              "id": "EditRating/Methods[DeleteRating]",
+              "name": "DeleteRating"
             }
           ],
           "properties":

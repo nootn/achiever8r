@@ -9,6 +9,12 @@ namespace LightSwitchApplication
     {
         partial void RatedByUser_Validate(EntityValidationResultsBuilder results)
         {
+            //NOTE: similar to Achievement, if the RatedByUser is null we must be coming from the HTML client, so set it
+            if (RatedByUser == null)
+            {
+                RatedByUser = DataWorkspace.GetCurrentUser();
+            }
+
             if (!RatedByUser.LoginId.Equals(Application.User.Name, StringComparison.InvariantCultureIgnoreCase))
             {
                 results.AddPropertyError("You can only alter your own r8ing, not someone else's");
@@ -22,7 +28,7 @@ namespace LightSwitchApplication
 
         partial void Rating_Created()
         {
-            RatedByUser = DataWorkspace.ApplicationData.Users.Where(_ => _.LoginId.Equals(Application.User.Name, StringComparison.InvariantCultureIgnoreCase)).Single();
+            RatedByUser = DataWorkspace.GetCurrentUser();
             RatedOn = DateTime.Now;
         }
 
