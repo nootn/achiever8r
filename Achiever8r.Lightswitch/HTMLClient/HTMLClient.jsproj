@@ -85,6 +85,7 @@
     <Content Include="Scripts\winjs-1.0.js" />
     <Content Include="Scripts\winjs-1.0.min.js" />
     <Content Include="UserCode\Achievement.js" />
+    <Content Include="UserCode\EditAchievement.js" />
     <Content Include="UserCode\EditRating.js" />
     <Content Include="UserCode\Rating.js" />
   </ItemGroup>

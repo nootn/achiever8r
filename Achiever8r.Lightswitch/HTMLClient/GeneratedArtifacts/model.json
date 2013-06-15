@@ -537,9 +537,9 @@
         },
         {
           "__isEntityType": 1,
-          ":@SummaryProperty": { "property": { "__id": "User/Properties[LoginId]" } },
           "id": "User",
           "name": "User",
+          ":@SummaryProperty": { "property": { "__id": "User/Properties[FullName]" } },
           "methods":
           [
             {
@@ -852,7 +852,7 @@
                         "displayName": "Achievements",
                         "name": "Achievement",
                         "kind": "Collection",
-                        "view": { "__id": ":List" },
+                        "view": { "__id": ":TileList" },
                         "dataSource":
                         {
                           "member": { "__id": "BrowseAchievements/Properties[Achievements]" }
@@ -863,13 +863,84 @@
                             "displayName": "Achievement",
                             "name": "RowTemplate",
                             "kind": "Details",
-                            "view": { "__id": ":Summary" },
+                            "view": { "__id": ":RowsLayout" },
                             "dataSource":
                             {
                               "links":
                               [
                               ]
-                            }
+                            },
+                            "childContentItems":
+                            [
+                              {
+                                "displayName": "Achieved By",
+                                "name": "AchievedByUser",
+                                "kind": "Details",
+                                "view": { "__id": ":Summary" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Achievement/Properties[AchievedByUser]" }
+                                },
+                                "propertySources":
+                                [
+                                  {
+                                    "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                                    "value": "Top"
+                                  }
+                                ]
+                              },
+                              {
+                                "displayName": "Category",
+                                "name": "AchievementCategory",
+                                "kind": "Details",
+                                "view": { "__id": ":Summary" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Achievement/Properties[AchievementCategory]" }
+                                },
+                                "propertySources":
+                                [
+                                  {
+                                    "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                                    "value": "Top"
+                                  }
+                                ]
+                              },
+                              {
+                                "displayName": "Description",
+                                "name": "Description",
+                                "kind": "Value",
+                                "view": { "__id": ":Text" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Achievement/Properties[Description]" }
+                                },
+                                "propertySources":
+                                [
+                                  {
+                                    "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                                    "value": "Top"
+                                  }
+                                ]
+                              },
+                              {
+                                "displayName": "Number Of R8ings",
+                                "name": "NumberOfRatings",
+                                "kind": "Value",
+                                "view": { "__id": ":Text" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Achievement/Properties[NumberOfRatings]" }
+                                },
+                                "propertySources":
+                                [
+                                  {
+                                    "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                                    "value": "Top"
+                                  }
+                                ]
+                              }
+                            ]
                           }
                         ],
                         "propertySources":
@@ -922,6 +993,10 @@
                                 "targetParameter": { "__id": "!module/Methods[showEditAchievement]/Parameters[Achievement]" }
                               }
                             }
+                          },
+                          {
+                            "property": { "__id": ":RootCommand/Properties[Icon]" },
+                            "value": "msls-add"
                           }
                         ]
                       }
@@ -995,7 +1070,13 @@
                 "source":
                 {
                   "member": { "__id": "ApplicationData/Members[Achievements]" }
-                }
+                },
+                "sortCriteria":
+                [
+                  {
+                    "member": { "__id": "Achievement/Properties[NominatedOn]" }
+                  }
+                ]
               },
               "source":
               {
@@ -1054,13 +1135,13 @@
                             "childContentItems":
                             [
                               {
-                                "displayName": "Description",
-                                "name": "Description",
+                                "displayName": "Nominated On",
+                                "name": "NominatedOn",
                                 "kind": "Value",
-                                "view": { "__id": ":TextBox" },
+                                "view": { "__id": ":DatePicker" },
                                 "dataSource":
                                 {
-                                  "member": { "__id": "Achievement/Properties[Description]" }
+                                  "member": { "__id": "Achievement/Properties[NominatedOn]" }
                                 }
                               },
                               {
@@ -1089,6 +1170,16 @@
                                 ]
                               },
                               {
+                                "displayName": "Description",
+                                "name": "Description",
+                                "kind": "Value",
+                                "view": { "__id": ":TextBox" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Achievement/Properties[Description]" }
+                                }
+                              },
+                              {
                                 "displayName": "Achieved By",
                                 "name": "AchievedByUser",
                                 "kind": "Details",
@@ -1112,6 +1203,36 @@
                                     }
                                   }
                                 ]
+                              },
+                              {
+                                "displayName": "Number Of R8ings",
+                                "name": "NumberOfRatings",
+                                "kind": "Value",
+                                "view": { "__id": ":Text" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Achievement/Properties[NumberOfRatings]" }
+                                },
+                                "propertySources":
+                                [
+                                  {
+                                    "property": { "__id": ":RootControl/Properties[Tap]" },
+                                    "source":
+                                    {
+                                      "target": { "__id": "EditAchievement/Methods[showTab]" },
+                                      "arguments":
+                                      [
+                                        {
+                                          "parameter": { "__id": "EditAchievement/Methods[showTab]/Parameters[tabName]" },
+                                          "value":
+                                          {
+                                            "value": "Ratings"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
                               }
                             ],
                             "propertySources":
@@ -1131,7 +1252,7 @@
                     ]
                   },
                   {
-                    "displayName": "Ratings",
+                    "displayName": "R8ings",
                     "name": "Ratings",
                     "kind": "Tab",
                     "view": { "__id": ":RowsLayout" },
@@ -1141,7 +1262,7 @@
                         "displayName": "Ratings",
                         "name": "Ratings1",
                         "kind": "Collection",
-                        "view": { "__id": ":List" },
+                        "view": { "__id": ":TileList" },
                         "dataSource":
                         {
                           "member": { "__id": "EditAchievement/Properties[Ratings]" }
@@ -1152,13 +1273,67 @@
                             "displayName": "R8ing",
                             "name": "RowTemplate2",
                             "kind": "Details",
-                            "view": { "__id": ":Summary" },
+                            "view": { "__id": ":RowsLayout" },
                             "dataSource":
                             {
                               "links":
                               [
                               ]
-                            }
+                            },
+                            "childContentItems":
+                            [
+                              {
+                                "displayName": "R8ed On",
+                                "name": "RatedOn",
+                                "kind": "Value",
+                                "view": { "__id": ":Text" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Rating/Properties[RatedOn]" }
+                                },
+                                "propertySources":
+                                [
+                                  {
+                                    "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                                    "value": "Top"
+                                  }
+                                ]
+                              },
+                              {
+                                "displayName": "R8ed By",
+                                "name": "RatedByUser",
+                                "kind": "Details",
+                                "view": { "__id": ":Summary" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Rating/Properties[RatedByUser]" }
+                                },
+                                "propertySources":
+                                [
+                                  {
+                                    "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                                    "value": "Top"
+                                  }
+                                ]
+                              },
+                              {
+                                "displayName": "Comment",
+                                "name": "Comment",
+                                "kind": "Value",
+                                "view": { "__id": ":Text" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Rating/Properties[Comment]" }
+                                },
+                                "propertySources":
+                                [
+                                  {
+                                    "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                                    "value": "Top"
+                                  }
+                                ]
+                              }
+                            ]
                           }
                         ],
                         "propertySources":
@@ -1169,10 +1344,24 @@
                             {
                               "target": { "__id": "!module/Methods[showEditRating]" },
                               ":@AssociatedCollection": { "collection": { "__id": "EditAchievement/Properties[Ratings]" } },
-                              ":@CreateNewEntity":
-                              {
-                                "targetParameter": { "__id": "!module/Methods[showEditRating]/Parameters[Rating]" }
-                              }
+                              "arguments":
+                              [
+                                {
+                                  "parameter": { "__id": "!module/Methods[showEditRating]/Parameters[Rating]" },
+                                  "value":
+                                  {
+                                    "links":
+                                    [
+                                      {
+                                        "member": { "__id": "EditAchievement/Properties[Ratings]" }
+                                      },
+                                      {
+                                        "member": { "__id": "CollectionView$Rating/Properties[selectedItem]" }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
                             }
                           }
                         ]
@@ -1198,6 +1387,10 @@
                                 "targetParameter": { "__id": "!module/Methods[showEditRating]/Parameters[Rating]" }
                               }
                             }
+                          },
+                          {
+                            "property": { "__id": ":RootCommand/Properties[Icon]" },
+                            "value": "msls-add"
                           }
                         ]
                       }
@@ -1217,10 +1410,6 @@
               {
                 "property": { "__id": ":Screen/Properties[ScreenType]" },
                 "value": "Edit"
-              },
-              {
-                "property": { "__id": ":Screen/Properties[ShowAsDialog]" },
-                "value": true
               }
             ]
           },
@@ -1416,6 +1605,29 @@
                           }
                         ]
                       }
+                    ],
+                    "commandItems":
+                    [
+                      {
+                        "displayName": "Delete Record",
+                        "name": "DeleteRecord",
+                        "kind": "Command",
+                        "view": { "__id": ":CommandBarButton" },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[Tap]" },
+                            "source":
+                            {
+                              "target": { "__id": "EditRating/Methods[DeleteRecord]" }
+                            }
+                          },
+                          {
+                            "property": { "__id": ":RootCommand/Properties[Icon]" },
+                            "value": "msls-trash"
+                          }
+                        ]
+                      }
                     ]
                   }
                 ]
@@ -1432,10 +1644,6 @@
               {
                 "property": { "__id": ":Screen/Properties[ScreenType]" },
                 "value": "Edit"
-              },
-              {
-                "property": { "__id": ":Screen/Properties[ShowAsDialog]" },
-                "value": true
               }
             ]
           },
@@ -1468,6 +1676,10 @@
             {
               "id": "EditRating/Methods[DeleteRating]",
               "name": "DeleteRating"
+            },
+            {
+              "id": "EditRating/Methods[DeleteRecord]",
+              "name": "DeleteRecord"
             }
           ],
           "properties":

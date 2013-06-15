@@ -83,7 +83,7 @@
             {
                 name: "Achievements", kind: "collection", elementType: lightSwitchApplication.Achievement,
                 createQuery: function () {
-                    return this.dataWorkspace.ApplicationData.Achievements.expand("AchievementCategory").expand("AchievedByUser");
+                    return this.dataWorkspace.ApplicationData.Achievements.orderByDescending("NominatedOn").expand("AchievedByUser").expand("AchievementCategory");
                 }
             }
         ], [
@@ -109,7 +109,8 @@
         EditRating: $defineScreen(EditRating, [
             { name: "Rating", kind: "local", type: lightSwitchApplication.Rating }
         ], [
-            { name: "DeleteRating" }
+            { name: "DeleteRating" },
+            { name: "DeleteRecord" }
         ]),
 
         showBrowseAchievements: $defineShowScreen(function showBrowseAchievements(options) {

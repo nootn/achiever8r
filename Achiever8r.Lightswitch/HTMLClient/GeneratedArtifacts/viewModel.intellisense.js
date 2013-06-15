@@ -29,7 +29,27 @@
         /// Called after the RowTemplate content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        RowTemplate_postRender: $parameters
+        RowTemplate_postRender: $parameters,
+        /// <field>
+        /// Called after the AchievedByUser content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        AchievedByUser_postRender: $parameters,
+        /// <field>
+        /// Called after the AchievementCategory content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        AchievementCategory_postRender: $parameters,
+        /// <field>
+        /// Called after the Description content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Description_postRender: $parameters,
+        /// <field>
+        /// Called after the NumberOfRatings content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        NumberOfRatings_postRender: $parameters
     });
 
     msls._addEntryPoints(lightSwitchApplication.EditAchievement, {
@@ -59,10 +79,10 @@
         /// </field>
         left_postRender: $parameters,
         /// <field>
-        /// Called after the Description content item has been rendered.
+        /// Called after the NominatedOn content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        Description_postRender: $parameters,
+        NominatedOn_postRender: $parameters,
         /// <field>
         /// Called after the AchievementCategory content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
@@ -74,6 +94,11 @@
         /// </field>
         RowTemplate_postRender: $parameters,
         /// <field>
+        /// Called after the Description content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Description_postRender: $parameters,
+        /// <field>
         /// Called after the AchievedByUser content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
@@ -83,6 +108,11 @@
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
         RowTemplate1_postRender: $parameters,
+        /// <field>
+        /// Called after the NumberOfRatings content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        NumberOfRatings_postRender: $parameters,
         /// <field>
         /// Called after the Ratings content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
@@ -97,7 +127,22 @@
         /// Called after the RowTemplate2 content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        RowTemplate2_postRender: $parameters
+        RowTemplate2_postRender: $parameters,
+        /// <field>
+        /// Called after the RatedOn content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        RatedOn_postRender: $parameters,
+        /// <field>
+        /// Called after the RatedByUser content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        RatedByUser_postRender: $parameters,
+        /// <field>
+        /// Called after the Comment content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Comment_postRender: $parameters
     });
 
     msls._addEntryPoints(lightSwitchApplication.EditRating, {
@@ -121,6 +166,16 @@
         /// <br/>execute(msls.application.EditRating screen)
         /// </field>
         DeleteRating_execute: [lightSwitchApplication.EditRating],
+        /// <field>
+        /// Called to determine if the DeleteRecord method can be executed.
+        /// <br/>canExecute(msls.application.EditRating screen)
+        /// </field>
+        DeleteRecord_canExecute: [lightSwitchApplication.EditRating],
+        /// <field>
+        /// Called to execute the DeleteRecord method.
+        /// <br/>execute(msls.application.EditRating screen)
+        /// </field>
+        DeleteRecord_execute: [lightSwitchApplication.EditRating],
         /// <field>
         /// Called after the Details content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
