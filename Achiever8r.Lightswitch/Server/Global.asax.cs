@@ -6,6 +6,8 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using LightSwitchApplication.UserCode;
+using System.Security.Principal;
 
 namespace LightSwitchApplication
 {
@@ -26,9 +28,10 @@ namespace LightSwitchApplication
             );
         }
 
+
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
