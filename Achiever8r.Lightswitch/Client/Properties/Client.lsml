@@ -143,7 +143,18 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:Rating" />
+      <SummaryProperty
+        Property="Rating/Properties[DisplayName]" />
     </EntityType.Attributes>
+    <EntityType.Properties>
+      <EntityProperty>
+        <EntityProperty.Attributes>
+          <Computed />
+          <Proxy
+            Target="LightSwitchServiceApplication:Rating/Properties[DisplayName]" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
   </EntityType>
   <Association>
     <Association.Attributes>

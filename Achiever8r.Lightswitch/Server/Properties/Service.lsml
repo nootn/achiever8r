@@ -787,6 +787,13 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="DisplayName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association

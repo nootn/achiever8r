@@ -180,6 +180,24 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string DisplayName
+        {
+            get
+            {
+                return global::LightSwitchApplication.Rating.DetailsClass.GetValue(this, global::LightSwitchApplication.Rating.DetailsClass.PropertySetProperties.DisplayName);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DisplayName_Compute(ref string result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DisplayName_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.3.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::LightSwitchApplication.Achievement Achievement
         {
             get
@@ -334,6 +352,14 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.Rating.DetailsClass.PropertySetProperties.Comment) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, string>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, string> DisplayName
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Rating.DetailsClass.PropertySetProperties.DisplayName) as global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, string>;
                     }
                 }
                 
@@ -523,6 +549,28 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, string>.Entry
+                    DisplayName = new global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, string>.Entry(
+                        "DisplayName",
+                        global::LightSwitchApplication.Rating.DetailsClass.PropertySetProperties._DisplayName_Stub,
+                        global::LightSwitchApplication.Rating.DetailsClass.PropertySetProperties._DisplayName_Validate,
+                        global::LightSwitchApplication.Rating.DetailsClass.PropertySetProperties._DisplayName_ComputeValue);
+                private static void _DisplayName_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Rating.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, string>.Data> c, global::LightSwitchApplication.Rating.DetailsClass d, object sf)
+                {
+                    c(d, ref d._DisplayName, sf);
+                }
+                private static void _DisplayName_Validate(global::LightSwitchApplication.Rating e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.DisplayName_Validate(r);
+                }
+                private static string _DisplayName_ComputeValue(global::LightSwitchApplication.Rating e)
+                {
+                    string value = default(string);
+                    e.DisplayName_Compute(ref value);
+                    return value;
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, global::LightSwitchApplication.Achievement>.Entry
                     Achievement = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, global::LightSwitchApplication.Achievement>.Entry(
                         "Achievement",
@@ -629,6 +677,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, string>.Data _Comment;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityComputedProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, string>.Data _DisplayName;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Rating, global::LightSwitchApplication.Rating.DetailsClass, global::LightSwitchApplication.Achievement>.Data _Achievement;

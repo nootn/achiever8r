@@ -74,6 +74,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="PresentationCore" />
     <Reference Include="Microsoft.CSharp" />
@@ -164,6 +166,9 @@
     <Compile Include="UserCode\Shared\Achievement.cs" />
     <Compile Include="UserCode\Shared\Rating.cs" />
     <Compile Include="UserCode\Shared\User.cs" />
+    <Compile Include="Web\GetLoggedInUserName.ashx.cs">
+      <DependentUpon>GetLoggedInUserName.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Service.lsml">
@@ -189,6 +194,7 @@
     <None Include="Web.Release.Config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web\GetLoggedInUserName.ashx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>

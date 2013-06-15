@@ -78,6 +78,7 @@
     <Content Include="Scripts\msls-1.0.0.min.js" />
     <Content Include="Scripts\winjs-1.0.js" />
     <Content Include="Scripts\winjs-1.0.min.js" />
+    <Content Include="UserCode\Achievement.js" />
   </ItemGroup>
   <ItemGroup>
     <ServiceMetadataReference Include="..\Server\Server.csproj">

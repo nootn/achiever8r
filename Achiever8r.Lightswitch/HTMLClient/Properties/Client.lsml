@@ -30,6 +30,16 @@
           Name="Achievement"
           ParameterType="Achievement" />
       </ApplicationMethod>
+      <ApplicationMethod
+        Name="showEditRating">
+        <ApplicationMethod.Attributes>
+          <ShowScreenMethod
+            TargetScreen="EditRating" />
+        </ApplicationMethod.Attributes>
+        <ApplicationMethodParameter
+          Name="Rating"
+          ParameterType="Rating" />
+      </ApplicationMethod>
     </Application.Methods>
   </Application>
   <EntityContainerGroup
@@ -79,6 +89,8 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:Rating" />
+      <SummaryProperty
+        Property="Rating/Properties[Comment]" />
     </EntityType.Attributes>
   </EntityType>
   <Association>
@@ -574,7 +586,49 @@
                   </ContentItem>
                 </ContentItem>
               </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="!module/Methods[showEditRating]">
+                        <CallExpression.Attributes>
+                          <AssociatedCollection
+                            Collection="EditAchievement/Properties[Ratings]" />
+                          <CreateNewEntity
+                            TargetParameter="!module/Methods[showEditRating]/Parameters[Rating]" />
+                        </CallExpression.Attributes>
+                      </CallExpression>
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
             </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="AddRating"
+                Kind="Command">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="!module/Methods[showEditRating]">
+                          <CallExpression.Attributes>
+                            <AssociatedCollection
+                              Collection="EditAchievement/Properties[Ratings]" />
+                            <CreateNewEntity
+                              TargetParameter="!module/Methods[showEditRating]/Parameters[Rating]" />
+                          </CallExpression.Attributes>
+                        </CallExpression>
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem.CommandItems>
           </ContentItem>
         </ContentItem>
         <ContentItem
@@ -667,6 +721,218 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+    </Screen.Properties>
+  </Screen>
+  <Screen
+    Name="EditRating">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="ApplicationData" />
+    </Screen.Attributes>
+    <Screen.RootContentItem>
+      <ContentItem
+        Name="RootContentItem"
+        Kind="Screen"
+        View="Microsoft.LightSwitch.MobileWeb:Screen">
+        <ContentItem
+          Name="Tabs"
+          Kind="Group"
+          View="Microsoft.LightSwitch.MobileWeb:TabPages">
+          <ContentItem
+            Name="Details"
+            Kind="Group"
+            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Details" />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="columns"
+              Kind="Details"
+              DataType="Rating"
+              View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="columns" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="EditRating/Properties[Rating]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="left"
+                Kind="Group">
+                <ContentItem
+                  Name="Achievement"
+                  Kind="Details"
+                  DataType="Achievement"
+                  View="Microsoft.LightSwitch.MobileWeb:Summary">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Rating/Properties[Achievement]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="200"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="400"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="right"
+                Kind="Group">
+                <ContentItem
+                  Name="RatedByUser"
+                  Kind="Details"
+                  DataType="User"
+                  View="Microsoft.LightSwitch.MobileWeb:Summary">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Rating/Properties[RatedByUser]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="RatedOn"
+                  Kind="Value"
+                  DataType=":DateTime"
+                  View="Microsoft.LightSwitch.MobileWeb:Text">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Rating/Properties[RatedOn]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Comment"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Rating/Properties[Comment]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="200"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="400"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
+        <ContentItem
+          Name="Popups"
+          Kind="Group"
+          View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+        <ContentItem.PropertySources>
+          <ControlPropertySource
+            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ScreenType]">
+            <ScreenExpressionTree>
+              <ChainExpression>
+                <ConstantExpression
+                  Value="Edit"
+                  ResultType=":String" />
+              </ChainExpression>
+            </ScreenExpressionTree>
+          </ControlPropertySource>
+          <ControlPropertySource
+            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ShowAsDialog]">
+            <ScreenExpressionTree>
+              <ChainExpression>
+                <ConstantExpression
+                  Value="True"
+                  ResultType=":Boolean" />
+              </ChainExpression>
+            </ScreenExpressionTree>
+          </ControlPropertySource>
+        </ContentItem.PropertySources>
+      </ContentItem>
+    </Screen.RootContentItem>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="showTab">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+        <ScreenMethodParameter
+          Name="tabName"
+          ParameterType=":String" />
+      </ScreenMethod>
+      <ScreenMethod
+        Name="showDialog">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+        <ScreenMethodParameter
+          Name="dialogName"
+          ParameterType=":String" />
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenProperty
+        Name="Rating"
+        PropertyType="Rating">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
 </ModelFragment>

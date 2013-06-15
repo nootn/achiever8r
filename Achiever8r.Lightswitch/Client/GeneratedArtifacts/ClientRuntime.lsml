@@ -619,6 +619,8 @@
     <EntityType.Attributes>
       <DisplayName
         Value="R8ing" />
+      <SummaryProperty
+        Property="Rating/Properties[DisplayName]" />
     </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
@@ -686,6 +688,13 @@
           <Required />
           <MaxLength
             Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DisplayName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

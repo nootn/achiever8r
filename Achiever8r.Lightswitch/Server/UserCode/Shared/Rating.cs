@@ -25,5 +25,10 @@ namespace LightSwitchApplication
             RatedByUser = DataWorkspace.ApplicationData.Users.Where(_ => _.LoginId.Equals(Application.User.Name, StringComparison.InvariantCultureIgnoreCase)).Single();
             RatedOn = DateTime.Now;
         }
+
+        partial void DisplayName_Compute(ref string result)
+        {
+            result = string.Format("{0} - {1}", RatedByUser == null ? "[?]" : RatedByUser.DisplayName, Comment);
+        }
     }
 }

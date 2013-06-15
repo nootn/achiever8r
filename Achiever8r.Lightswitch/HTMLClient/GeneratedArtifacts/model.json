@@ -626,9 +626,9 @@
         },
         {
           "__isEntityType": 1,
-          ":@SummaryProperty": { "property": { "__id": "Rating/Properties[Comment]" } },
           "id": "Rating",
           "name": "Rating",
+          ":@SummaryProperty": { "property": { "__id": "Rating/Properties[Comment]" } },
           "methods":
           [
             {
@@ -1180,6 +1180,45 @@
                               ]
                             }
                           }
+                        ],
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootCollectionControl/Properties[ItemTap]" },
+                            "source":
+                            {
+                              "target": { "__id": "!module/Methods[showEditRating]" },
+                              ":@AssociatedCollection": { "collection": { "__id": "EditAchievement/Properties[Ratings]" } },
+                              ":@CreateNewEntity":
+                              {
+                                "targetParameter": { "__id": "!module/Methods[showEditRating]/Parameters[Rating]" }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "commandItems":
+                    [
+                      {
+                        "displayName": "Add Rating",
+                        "name": "AddRating",
+                        "kind": "Command",
+                        "view": { "__id": ":CommandBarButton" },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[Tap]" },
+                            "source":
+                            {
+                              "target": { "__id": "!module/Methods[showEditRating]" },
+                              ":@AssociatedCollection": { "collection": { "__id": "EditAchievement/Properties[Ratings]" } },
+                              ":@CreateNewEntity":
+                              {
+                                "targetParameter": { "__id": "!module/Methods[showEditRating]/Parameters[Rating]" }
+                              }
+                            }
+                          }
                         ]
                       }
                     ]
@@ -1270,6 +1309,191 @@
               {
                 "target": { "__id": "EditAchievement/Properties[Ratings]/Query" }
               }
+            }
+          ]
+        },
+        {
+          "displayName": "Edit Rating",
+          "id": "EditRating",
+          "name": "EditRating",
+          "launchMode": "Single",
+          ":@SaveChangesTo":
+          {
+            "property": { "__id": "DataWorkspace/Members[ApplicationData]" }
+          },
+          "rootContentItem":
+          {
+            "displayName": "Root Content Item",
+            "name": "RootContentItem",
+            "kind": "Screen",
+            "view": { "__id": ":Screen" },
+            "childContentItems":
+            [
+              {
+                "displayName": "Tabs",
+                "name": "Tabs",
+                "kind": "Group",
+                "view": { "__id": ":TabPages" },
+                "childContentItems":
+                [
+                  {
+                    "displayName": "Details",
+                    "name": "Details",
+                    "kind": "Tab",
+                    "view": { "__id": ":RowsLayout" },
+                    "childContentItems":
+                    [
+                      {
+                        "displayName": "columns",
+                        "name": "columns",
+                        "kind": "Details",
+                        "view": { "__id": ":RowsLayout" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "EditRating/Properties[Rating]" }
+                        },
+                        "childContentItems":
+                        [
+                          {
+                            "displayName": "left",
+                            "name": "left",
+                            "kind": "Group",
+                            "view": { "__id": ":RowsLayout" },
+                            "childContentItems":
+                            [
+                              {
+                                "displayName": "Achievement",
+                                "name": "Achievement",
+                                "kind": "Details",
+                                "view": { "__id": ":Summary" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Rating/Properties[Achievement]" }
+                                }
+                              }
+                            ],
+                            "propertySources":
+                            [
+                              {
+                                "property": { "__id": ":RootControl/Properties[MinWidth]" },
+                                "value": 200
+                              },
+                              {
+                                "property": { "__id": ":RootControl/Properties[MaxWidth]" },
+                                "value": 400
+                              }
+                            ]
+                          },
+                          {
+                            "displayName": "right",
+                            "name": "right",
+                            "kind": "Group",
+                            "view": { "__id": ":RowsLayout" },
+                            "childContentItems":
+                            [
+                              {
+                                "displayName": "R8ed By",
+                                "name": "RatedByUser",
+                                "kind": "Details",
+                                "view": { "__id": ":Summary" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Rating/Properties[RatedByUser]" }
+                                }
+                              },
+                              {
+                                "displayName": "R8ed On",
+                                "name": "RatedOn",
+                                "kind": "Value",
+                                "view": { "__id": ":Text" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Rating/Properties[RatedOn]" }
+                                }
+                              },
+                              {
+                                "displayName": "Comment",
+                                "name": "Comment",
+                                "kind": "Value",
+                                "view": { "__id": ":TextBox" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Rating/Properties[Comment]" }
+                                }
+                              }
+                            ],
+                            "propertySources":
+                            [
+                              {
+                                "property": { "__id": ":RootControl/Properties[MinWidth]" },
+                                "value": 200
+                              },
+                              {
+                                "property": { "__id": ":RootControl/Properties[MaxWidth]" },
+                                "value": 400
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "displayName": "Popups",
+                "name": "Popups",
+                "kind": "Group",
+                "view": { "__id": ":DialogPages" }
+              }
+            ],
+            "propertySources":
+            [
+              {
+                "property": { "__id": ":Screen/Properties[ScreenType]" },
+                "value": "Edit"
+              },
+              {
+                "property": { "__id": ":Screen/Properties[ShowAsDialog]" },
+                "value": true
+              }
+            ]
+          },
+          "methods":
+          [
+            {
+              "id": "EditRating/Methods[showTab]",
+              "name": "showTab",
+              "parameters":
+              [
+                {
+                  "id": "EditRating/Methods[showTab]/Parameters[tabName]",
+                  "name": "tabName",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            },
+            {
+              "id": "EditRating/Methods[showDialog]",
+              "name": "showDialog",
+              "parameters":
+              [
+                {
+                  "id": "EditRating/Methods[showDialog]/Parameters[dialogName]",
+                  "name": "dialogName",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "EditRating/Properties[Rating]",
+              "name": "Rating",
+              "elementType": { "__id": "Rating" },
+              "propertyType": { "__id": "Rating" },
+              ":@IsParameter": { }
             }
           ]
         },
@@ -1503,6 +1727,19 @@
               "id": "!module/Methods[showEditAchievement]/Parameters[Achievement]",
               "name": "Achievement",
               "parameterType": { "__id": "Achievement" }
+            }
+          ]
+        },
+        {
+          "id": "!module/Methods[showEditRating]",
+          "name": "showEditRating",
+          ":@ShowScreenMethod": { "targetScreen": { "__id": "EditRating" } },
+          "parameters":
+          [
+            {
+              "id": "!module/Methods[showEditRating]/Parameters[Rating]",
+              "name": "Rating",
+              "parameterType": { "__id": "Rating" }
             }
           ]
         }

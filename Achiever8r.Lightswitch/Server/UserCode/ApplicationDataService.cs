@@ -30,5 +30,11 @@ namespace LightSwitchApplication
         {
             entity.Achievement.NumberOfRatings = entity.Achievement.NumberOfRatings - 1;
         }
+
+        partial void Achievements_Validate(Achievement entity, EntitySetValidationResultsBuilder results)
+        {
+
+        }
+
     }
 }
