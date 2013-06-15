@@ -104,6 +104,9 @@
                 }
             }
         ], [
+            { name: "NumberOfRatings_Tap" },
+            { name: "AddRating_Tap" },
+            { name: "RatingsList_ItemTap" }
         ]),
 
         EditRating: $defineScreen(EditRating, [

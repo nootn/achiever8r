@@ -1260,7 +1260,7 @@
                     [
                       {
                         "displayName": "Ratings",
-                        "name": "Ratings1",
+                        "name": "RatingsList",
                         "kind": "Collection",
                         "view": { "__id": ":TileList" },
                         "dataSource":
@@ -1342,26 +1342,7 @@
                             "property": { "__id": ":RootCollectionControl/Properties[ItemTap]" },
                             "source":
                             {
-                              "target": { "__id": "!module/Methods[showEditRating]" },
-                              ":@AssociatedCollection": { "collection": { "__id": "EditAchievement/Properties[Ratings]" } },
-                              "arguments":
-                              [
-                                {
-                                  "parameter": { "__id": "!module/Methods[showEditRating]/Parameters[Rating]" },
-                                  "value":
-                                  {
-                                    "links":
-                                    [
-                                      {
-                                        "member": { "__id": "EditAchievement/Properties[Ratings]" }
-                                      },
-                                      {
-                                        "member": { "__id": "CollectionView$Rating/Properties[selectedItem]" }
-                                      }
-                                    ]
-                                  }
-                                }
-                              ]
+                              "target": { "__id": "EditAchievement/Methods[RatingsList_ItemTap]" }
                             }
                           }
                         ]
@@ -1380,12 +1361,7 @@
                             "property": { "__id": ":RootControl/Properties[Tap]" },
                             "source":
                             {
-                              "target": { "__id": "!module/Methods[showEditRating]" },
-                              ":@AssociatedCollection": { "collection": { "__id": "EditAchievement/Properties[Ratings]" } },
-                              ":@CreateNewEntity":
-                              {
-                                "targetParameter": { "__id": "!module/Methods[showEditRating]/Parameters[Rating]" }
-                              }
+                              "target": { "__id": "EditAchievement/Methods[AddRating_Tap]" }
                             }
                           },
                           {
@@ -1438,6 +1414,18 @@
                   "parameterType": { "__id": ":String" }
                 }
               ]
+            },
+            {
+              "id": "EditAchievement/Methods[NumberOfRatings_Tap]",
+              "name": "NumberOfRatings_Tap"
+            },
+            {
+              "id": "EditAchievement/Methods[AddRating_Tap]",
+              "name": "AddRating_Tap"
+            },
+            {
+              "id": "EditAchievement/Methods[RatingsList_ItemTap]",
+              "name": "RatingsList_ItemTap"
             }
           ],
           "properties":

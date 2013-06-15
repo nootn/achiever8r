@@ -638,7 +638,7 @@
                 Value="R8ings" />
             </ContentItem.Attributes>
             <ContentItem
-              Name="Ratings1"
+              Name="RatingsList"
               Kind="Collection"
               DataType="CollectionView$Rating"
               View="Microsoft.LightSwitch.MobileWeb:TileList">
@@ -751,21 +751,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showEditRating]">
-                        <CallExpression.Attributes>
-                          <AssociatedCollection
-                            Collection="EditAchievement/Properties[Ratings]" />
-                        </CallExpression.Attributes>
-                        <ArgumentExpression
-                          Parameter="Rating">
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="EditAchievement/Properties[Ratings]" />
-                            <MemberExpression
-                              Member="selectedItem" />
-                          </ChainExpression>
-                        </ArgumentExpression>
-                      </CallExpression>
+                        Target="EditAchievement/Methods[RatingsList_ItemTap]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -781,14 +767,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showEditRating]">
-                          <CallExpression.Attributes>
-                            <AssociatedCollection
-                              Collection="EditAchievement/Properties[Ratings]" />
-                            <CreateNewEntity
-                              TargetParameter="!module/Methods[showEditRating]/Parameters[Rating]" />
-                          </CallExpression.Attributes>
-                        </CallExpression>
+                          Target="EditAchievement/Methods[AddRating_Tap]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -848,6 +827,12 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="NumberOfRatings_Tap" />
+      <ScreenMethod
+        Name="AddRating_Tap" />
+      <ScreenMethod
+        Name="RatingsList_ItemTap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

@@ -30,5 +30,6 @@ namespace LightSwitchApplication
         {
             entity.Achievement.NumberOfRatings = entity.Achievement.NumberOfRatings - 1;
         }
+
     }
 }

@@ -64,6 +64,36 @@
         /// </field>
         beforeApplyChanges: [lightSwitchApplication.EditAchievement],
         /// <field>
+        /// Called to determine if the NumberOfRatings_Tap method can be executed.
+        /// <br/>canExecute(msls.application.EditAchievement screen)
+        /// </field>
+        NumberOfRatings_Tap_canExecute: [lightSwitchApplication.EditAchievement],
+        /// <field>
+        /// Called to execute the NumberOfRatings_Tap method.
+        /// <br/>execute(msls.application.EditAchievement screen)
+        /// </field>
+        NumberOfRatings_Tap_execute: [lightSwitchApplication.EditAchievement],
+        /// <field>
+        /// Called to determine if the AddRating_Tap method can be executed.
+        /// <br/>canExecute(msls.application.EditAchievement screen)
+        /// </field>
+        AddRating_Tap_canExecute: [lightSwitchApplication.EditAchievement],
+        /// <field>
+        /// Called to execute the AddRating_Tap method.
+        /// <br/>execute(msls.application.EditAchievement screen)
+        /// </field>
+        AddRating_Tap_execute: [lightSwitchApplication.EditAchievement],
+        /// <field>
+        /// Called to determine if the RatingsList_ItemTap method can be executed.
+        /// <br/>canExecute(msls.application.EditAchievement screen)
+        /// </field>
+        RatingsList_ItemTap_canExecute: [lightSwitchApplication.EditAchievement],
+        /// <field>
+        /// Called to execute the RatingsList_ItemTap method.
+        /// <br/>execute(msls.application.EditAchievement screen)
+        /// </field>
+        RatingsList_ItemTap_execute: [lightSwitchApplication.EditAchievement],
+        /// <field>
         /// Called after the Details content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
@@ -119,10 +149,10 @@
         /// </field>
         Ratings_postRender: $parameters,
         /// <field>
-        /// Called after the Ratings1 content item has been rendered.
+        /// Called after the RatingsList content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
-        Ratings1_postRender: $parameters,
+        RatingsList_postRender: $parameters,
         /// <field>
         /// Called after the RowTemplate2 content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
