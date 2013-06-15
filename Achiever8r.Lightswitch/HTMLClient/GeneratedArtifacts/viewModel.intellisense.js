@@ -21,6 +21,11 @@
         /// </field>
         AchievementList_postRender: $parameters,
         /// <field>
+        /// Called after the Status content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Status_postRender: $parameters,
+        /// <field>
         /// Called after the Achievement content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
@@ -99,6 +104,11 @@
         /// </field>
         Details_postRender: $parameters,
         /// <field>
+        /// Called after the Status content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Status_postRender: $parameters,
+        /// <field>
         /// Called after the columns content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
@@ -148,6 +158,11 @@
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
         Ratings_postRender: $parameters,
+        /// <field>
+        /// Called after the StatusR8ings content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        StatusR8ings_postRender: $parameters,
         /// <field>
         /// Called after the RatingsList content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
@@ -211,6 +226,11 @@
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
         Details_postRender: $parameters,
+        /// <field>
+        /// Called after the Status content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Status_postRender: $parameters,
         /// <field>
         /// Called after the columns content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)

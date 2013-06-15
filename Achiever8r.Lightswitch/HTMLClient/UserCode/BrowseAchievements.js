@@ -1,10 +1,7 @@
 ﻿/// <reference path="../GeneratedArtifacts/viewModel.js" />
+/// <reference path="../Scripts/jquery.signalR-1.0.1.js" />
 
-
-myapp.EditRating.DeleteRecord_execute = function (screen) {
-    screen.Rating.deleteEntity();
-};
-myapp.EditRating.created = function (screen) {
+myapp.BrowseAchievements.created = function (screen) {
     $(function () {
         contact = $.connection.notifyHub;
         contact.client.broadcastMessage = function (message) {

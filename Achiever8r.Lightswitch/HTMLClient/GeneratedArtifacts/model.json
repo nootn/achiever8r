@@ -849,6 +849,27 @@
                     "childContentItems":
                     [
                       {
+                        "displayName": "Status",
+                        "name": "Status",
+                        "kind": "Value",
+                        "view": { "__id": ":Text" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "BrowseAchievements/Properties[Status]" }
+                        },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                            "value": "Hidden"
+                          },
+                          {
+                            "property": { "__id": ":RootControl/Properties[FontStyle]" },
+                            "value": "Large"
+                          }
+                        ]
+                      },
+                      {
                         "displayName": "Achievements",
                         "name": "Achievement",
                         "kind": "Collection",
@@ -1082,6 +1103,12 @@
               {
                 "target": { "__id": "BrowseAchievements/Properties[Achievements]/Query" }
               }
+            },
+            {
+              "id": "BrowseAchievements/Properties[Status]",
+              "name": "Status",
+              "elementType": { "__id": ":String?" },
+              "propertyType": { "__id": ":String?" }
             }
           ]
         },
@@ -1116,6 +1143,27 @@
                     "view": { "__id": ":RowsLayout" },
                     "childContentItems":
                     [
+                      {
+                        "displayName": "Status",
+                        "name": "Status",
+                        "kind": "Value",
+                        "view": { "__id": ":Text" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "EditAchievement/Properties[Status]" }
+                        },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                            "value": "None"
+                          },
+                          {
+                            "property": { "__id": ":RootControl/Properties[FontStyle]" },
+                            "value": "Large"
+                          }
+                        ]
+                      },
                       {
                         "displayName": "columns",
                         "name": "columns",
@@ -1258,6 +1306,27 @@
                     "view": { "__id": ":RowsLayout" },
                     "childContentItems":
                     [
+                      {
+                        "displayName": "Status",
+                        "name": "StatusR8ings",
+                        "kind": "Value",
+                        "view": { "__id": ":Text" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "EditAchievement/Properties[Status]" }
+                        },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                            "value": "None"
+                          },
+                          {
+                            "property": { "__id": ":RootControl/Properties[FontStyle]" },
+                            "value": "Large"
+                          }
+                        ]
+                      },
                       {
                         "displayName": "Ratings",
                         "name": "RatingsList",
@@ -1438,6 +1507,12 @@
               ":@IsParameter": { }
             },
             {
+              "id": "EditAchievement/Properties[Status]",
+              "name": "Status",
+              "elementType": { "__id": ":String?" },
+              "propertyType": { "__id": ":String?" }
+            },
+            {
               "id": "EditAchievement/Properties[Ratings]",
               "name": "Ratings",
               "pageSize": 15,
@@ -1500,6 +1575,27 @@
                     "view": { "__id": ":RowsLayout" },
                     "childContentItems":
                     [
+                      {
+                        "displayName": "Status",
+                        "name": "Status",
+                        "kind": "Value",
+                        "view": { "__id": ":Text" },
+                        "dataSource":
+                        {
+                          "member": { "__id": "EditRating/Properties[Status]" }
+                        },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+                            "value": "None"
+                          },
+                          {
+                            "property": { "__id": ":RootControl/Properties[FontStyle]" },
+                            "value": "Large"
+                          }
+                        ]
+                      },
                       {
                         "displayName": "columns",
                         "name": "columns",
@@ -1678,6 +1774,12 @@
               "elementType": { "__id": "Rating" },
               "propertyType": { "__id": "Rating" },
               ":@IsParameter": { }
+            },
+            {
+              "id": "EditRating/Properties[Status]",
+              "name": "Status",
+              "elementType": { "__id": ":String?" },
+              "propertyType": { "__id": ":String?" }
             }
           ]
         },

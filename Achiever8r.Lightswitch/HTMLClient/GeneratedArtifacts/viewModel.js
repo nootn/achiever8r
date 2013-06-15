@@ -21,6 +21,9 @@
         /// <field name="Achievements" type="msls.VisualCollection" elementType="msls.application.Achievement">
         /// Gets the achievements for this screen.
         /// </field>
+        /// <field name="Status" type="String">
+        /// Gets or sets the status for this screen.
+        /// </field>
         /// <field name="details" type="msls.application.BrowseAchievements.Details">
         /// Gets the details for this screen.
         /// </field>
@@ -42,6 +45,9 @@
         /// </param>
         /// <field name="Achievement" type="msls.application.Achievement">
         /// Gets or sets the achievement for this screen.
+        /// </field>
+        /// <field name="Status" type="String">
+        /// Gets or sets the status for this screen.
         /// </field>
         /// <field name="Ratings" type="msls.VisualCollection" elementType="msls.application.Rating">
         /// Gets the ratings for this screen.
@@ -68,6 +74,9 @@
         /// <field name="Rating" type="msls.application.Rating">
         /// Gets or sets the rating for this screen.
         /// </field>
+        /// <field name="Status" type="String">
+        /// Gets or sets the status for this screen.
+        /// </field>
         /// <field name="details" type="msls.application.EditRating.Details">
         /// Gets the details for this screen.
         /// </field>
@@ -85,12 +94,14 @@
                 createQuery: function () {
                     return this.dataWorkspace.ApplicationData.Achievements.orderByDescending("NominatedOn").expand("AchievedByUser").expand("AchievementCategory");
                 }
-            }
+            },
+            { name: "Status", kind: "local", type: String }
         ], [
         ]),
 
         EditAchievement: $defineScreen(EditAchievement, [
             { name: "Achievement", kind: "local", type: lightSwitchApplication.Achievement },
+            { name: "Status", kind: "local", type: String },
             {
                 name: "Ratings", kind: "collection", elementType: lightSwitchApplication.Rating,
                 getNavigationProperty: function () {
@@ -110,7 +121,8 @@
         ]),
 
         EditRating: $defineScreen(EditRating, [
-            { name: "Rating", kind: "local", type: lightSwitchApplication.Rating }
+            { name: "Rating", kind: "local", type: lightSwitchApplication.Rating },
+            { name: "Status", kind: "local", type: String }
         ], [
             { name: "DeleteRating" },
             { name: "DeleteRecord" }
