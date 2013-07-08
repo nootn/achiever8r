@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.LightSwitch.Client.JavaScript.Runtime</id>
+    <version>1.0.1.0</version>
+    <title>Microsoft.LightSwitch.Client.JavaScript.Runtime</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkID=286972</licenseUrl>
+    <projectUrl>http://go.microsoft.com/fwlink/?LinkID=277089</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Includes the runtime environment and themes for Visual Studio LightSwitch HTML applications</description>
+    <releaseNotes />
+    <copyright>Copyright Microsoft Corporation</copyright>
+    <language />
+    <tags>Microsoft lightswitch javascript html</tags>
+    <dependencies>
+      <dependency id="jquery" version="[1.9.1, 2.0.0)" />
+      <dependency id="jquery.mobile" version="[1.3.0, 1.4.0)" />
+      <dependency id="datajs" version="1.1.0" />
+    </dependencies>
+  </metadata>
+</package>
